@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Text;
 using System.Threading;
 using FluentAssertions;
@@ -16,7 +15,6 @@ namespace NumSharp.UnitTest.Backends.Unmanaged
         [TestMethod]
         public void Case1()
         {
-#if DEBUG
             var l = new Stack<IntPtr>();
             var stack = new StackedMemoryPool(12, 100);
             stack.GarbageCollectionDelay = 1000;
@@ -38,7 +36,7 @@ namespace NumSharp.UnitTest.Backends.Unmanaged
 
             stack.Return(l.Pop());
             manual.Wait(5000).Should().BeTrue();
-#endif
         }
     }
 }
+
