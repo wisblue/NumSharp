@@ -28,7 +28,7 @@
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <Platforms>AnyCPU;x64</Platforms>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <Configurations>Debug;Release;Publish</Configurations>
+    <Configurations>Publish;Debug;Release</Configurations>
     <PackageVersion>0.40.0</PackageVersion>
   </PropertyGroup>
 
@@ -75,7 +75,7 @@
   </Target>
 
   <ItemGroup>
-    <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>

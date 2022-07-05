@@ -1,22 +1,28 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <IsPackable>false</IsPackable>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <Platforms>AnyCPU</Platforms>
     <AssemblyOriginatorKeyFile>Open.snk</AssemblyOriginatorKeyFile>
-    <Configurations>Debug;Release;Publish</Configurations>
+    <Configurations>Publish;Debug;Release</Configurations>
   </PropertyGroup>
 	
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Publish|AnyCPU'">
     <DocumentationFile />
+    <DebugType></DebugType>
     <Optimize>true</Optimize>
 	<SignAssembly>true</SignAssembly>
-	<DefineConstants>SIGNING</DefineConstants>
+	<DefineConstants>PUBLISH;NET;NET6_0;NETCOREAPP</DefineConstants>
+	<WarningLevel>4</WarningLevel>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <WarningLevel>4</WarningLevel>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Backends\Unmanaged\Iterators\**" />
     <Compile Remove="data\**" />
@@ -24,6 +30,7 @@
     <EmbeddedResource Remove="data\**" />
     <None Remove="Backends\Unmanaged\Iterators\**" />
     <None Remove="data\**" />
+    <None Remove="FluentAssertions" />
   </ItemGroup>
 
   <ItemGroup>  
@@ -32,11 +39,11 @@
 	<PackageReference Include="MSTest.TestFramework" Version="2.1.1" />
 	<PackageReference Include="coverlet.collector" Version="1.3.0" />
     <PackageReference Include="Codecov" Version="1.13.0" />
-    <PackageReference Include="FluentAssertions" Version="5.10.3" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="OpenCover" Version="4.7.922" />
     <PackageReference Include="System.Memory" Version="4.5.4" />
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="5.0.0" />	
+    <PackageReference Include="FluentAssertions" Version="5.10.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -61,16 +68,12 @@
 
   <ItemGroup>
     <EmbeddedResource Include="NumSharp.Bitmap\resources\captcha-a.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="NumSharp.Bitmap\resources\captcha-b.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="NumSharp.Bitmap\resources\captcha-c.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="NumSharp.Bitmap\resources\captcha-d.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
 </Project>

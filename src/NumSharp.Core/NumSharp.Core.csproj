@@ -28,16 +28,17 @@
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <Platforms>AnyCPU</Platforms>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <DelaySign>false</DelaySign>
-    <Configurations>Debug;Release;Publish</Configurations>
+    <Configurations>Publish;Debug;Release</Configurations>
     <AssemblyName>NumSharp</AssemblyName>
     <PackageVersion>0.40.0</PackageVersion>
 	<GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Publish|AnyCPU'">
+    <DebugType></DebugType>
     <Optimize>true</Optimize>
-	<SignAssembly>true</SignAssembly>
+    <DefineConstants>TRACE;PUBLISH;NETSTANDARD;NETSTANDARD2_0;</DefineConstants>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
 
   <ItemGroup>
