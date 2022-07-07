@@ -35,7 +35,7 @@ namespace NumSharp.Backends
         /// <param name="ndim">The number of dimensions of the array that `axis` should be normalized against.</param>
         /// <param name="argname">A prefix to put before the error message, typically the name of the argument.</param>
         /// <param name="allow_duplicate">If False, the default, disallow an axis from being specified twice.</param>
-        /// <returns>The normalized axis index, such that `0 <= normalized_axis < ndim`</returns>
+        /// <returns>The normalized axis index, such that `0 &lt;= normalized_axis &lt; ndim`</returns>
         public static int[] normalize_axis_tuple(int[] axis, object argname = null, bool allow_duplicate = false)
         {
             for (int i = 0; i < axis.Length; i++)
@@ -57,7 +57,7 @@ namespace NumSharp.Backends
         /// <param name="ndim">The number of dimensions of the array that `axis` should be normalized against.</param>
         /// <param name="argname">A prefix to put before the error message, typically the name of the argument.</param>
         /// <param name="allow_duplicate">If False, the default, disallow an axis from being specified twice.</param>
-        /// <returns>The normalized axis index, such that `0 <= normalized_axis < ndim`</returns>
+        /// <returns>The normalized axis index, such that `0 &lt;&#61; normalized_axis &lt; ndim`</returns>
         public static int[] normalize_axis_tuple(int axis, object argname = null, bool allow_duplicate = false)
         {
             return normalize_axis_tuple(new int[] {axis}, argname, allow_duplicate);

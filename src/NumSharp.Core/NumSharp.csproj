@@ -18,7 +18,7 @@
     <PackageTags>Numpy, NumSharp, MachineLearning, Math, Scientific, Numeric, Mathlab, SciSharp</PackageTags>
     <PackageLicenseUrl></PackageLicenseUrl>
     <LangVersion>8.0</LangVersion>
-    <PackageIconUrl>https://avatars3.githubusercontent.com/u/44989469?s=200&amp;v=4</PackageIconUrl>
+    <PackageIcon>numsharp.icon128.png</PackageIcon>
     <PackageId>NumSharp</PackageId>
     <Product>NumSharp</Product>
     <Company>SciSharp STACK</Company>
@@ -28,10 +28,9 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <AssemblyOriginatorKeyFile>Open.snk</AssemblyOriginatorKeyFile>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
-    <Platforms>AnyCPU;x64;x86</Platforms>
+    <Platforms>AnyCPU;x86;x64</Platforms>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <DelaySign>false</DelaySign>
-    <Configurations>Debug;Release</Configurations>
+    <Configurations>Debug;Debug-Minimal;Release;Publish</Configurations>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
 
@@ -49,10 +48,11 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>TRACE;DEBUG;NETSTANDARD</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;NETSTANDARD;NETSTANDARD2_0;</DefineConstants>
+    <WarningLevel>1</WarningLevel>
     <NoWarn>1701;1702;IDE1006;0029</NoWarn>
     <DocumentationFile>NumSharp.xml</DocumentationFile>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
@@ -103,7 +103,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Publish|AnyCPU'">
     <DocumentationFile />
     <Optimize>true</Optimize>
-	<SignAssembly>true</SignAssembly>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Publish|x86'">
@@ -151,6 +151,10 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+      <None Include="numsharp.icon128.png" Pack="true" PackagePath=""/>
   </ItemGroup>
 
   <Target Name="LogDebugInfo">

@@ -49,7 +49,7 @@ namespace NumSharp
             return left.TensorEngine.Compare(left, np.asanyarray(right));
         }
 
-        /// NumPy signature: numpy.equal(x1, x2, /, out=None, *, where=True, casting='same_kind', order='K', dtype=None, subok=True[, signature, extobj]) = <ufunc 'equal'>
+        /// NumPy signature: numpy.equal(x1, x2, /, out=None, *, where=True, casting='same_kind', order='K', dtype=None, subok=True[, signature, extobj]) = &lt;ufunc 'equal'&gt;
         /// <summary>
         /// Compare two NDArrays element wise
         /// </summary>

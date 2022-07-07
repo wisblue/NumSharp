@@ -121,8 +121,6 @@ namespace NumSharp.Backends
                 }
             }
 
-
-            return @out;
         }
     }
 }

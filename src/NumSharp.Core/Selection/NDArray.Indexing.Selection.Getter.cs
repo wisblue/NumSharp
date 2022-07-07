@@ -56,7 +56,7 @@ namespace NumSharp
 
             int ints = 0;
             int bools = 0;
-            bool foundSlices = false;
+            //bool foundSlices = false;
             for (var i = 0; i < indicesObjects.Length; i++)
             {
                 switch (indicesObjects[i])

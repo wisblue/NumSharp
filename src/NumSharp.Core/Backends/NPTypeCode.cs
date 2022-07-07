@@ -448,8 +448,6 @@ namespace NumSharp
                 case NPY_TYPECHAR.NPY_COMPLEXLTR:
                     return NPTypeCode.Complex;
 
-                    return NPTypeCode.Decimal;
-
                 default:
                     throw new NotSupportedException($"NPY_TYPECHAR of type {typeCode} is not supported.");
             }

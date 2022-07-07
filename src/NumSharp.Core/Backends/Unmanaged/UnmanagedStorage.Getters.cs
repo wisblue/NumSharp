@@ -10,11 +10,11 @@ namespace NumSharp.Backends
         #region Getters
 
         /// <summary>
-        ///     Retrieves value of unspecified type (will figure using <see cref="IStorage.DType"/>).
+        ///     Retrieves value of unspecified type (will figure using <see cref="NPTypeCode"/>).
         /// </summary>
         /// <param name="indices">The shape's indices to get.</param>
         /// <returns></returns>
-        /// <exception cref="NullReferenceException">When <see cref="IStorage.DType"/> is not <see cref="object"/></exception>
+        /// <exception cref="NullReferenceException">When <see cref="object"/> is not <see cref="NPTypeCode"/> is not </exception>
         public unsafe ValueType GetValue(params int[] indices)
         {
             switch (TypeCode)

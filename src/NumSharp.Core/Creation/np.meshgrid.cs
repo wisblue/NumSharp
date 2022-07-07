@@ -21,7 +21,7 @@
             }
 
             int ndim = 2;
-            var s0 = (1, 1);
+            //var s0 = (1, 1);
             var output = new NDArray[] {x1.reshape(x1.size, 1), x2.reshape(1, x2.size)};
 
             if (kwargs.indexing == "xy" && ndim > 1)

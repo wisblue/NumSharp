@@ -126,7 +126,7 @@ namespace NumSharp
         /// <param name="shape"></param>
         /// <param name="order"></param>
         /// <returns>Array with values</returns>
-        /// <remarks>This constructor calls <see cref="IStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
+        /// <remarks>This constructor calls <see cref="UnmanagedStorage.Allocate"/></remarks>
         public NDArray(Array values, Shape shape = default, char order = 'C') : this(values.GetType().GetElementType())
         {
             if (order != 'C')
@@ -146,7 +146,7 @@ namespace NumSharp
         /// <param name="shape"></param>
         /// <param name="order"></param>
         /// <returns>Array with values</returns>
-        /// <remarks>This constructor calls <see cref="IStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
+        /// <remarks>This constructor calls <see cref="UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
         public NDArray(IArraySlice values, Shape shape = default, char order = 'C') : this(values.TypeCode)
         {
             if (order != 'C')
@@ -164,7 +164,7 @@ namespace NumSharp
         /// </summary>
         /// <param name="dtype">internal data type</param>
         /// <param name="shape">Shape of NDArray</param>
-        /// <remarks>This constructor calls <see cref="IStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
+        /// <remarks>This constructor calls <see cref="UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
         public NDArray(Type dtype, Shape shape) : this(dtype, shape, true) { }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace NumSharp
         /// </summary>
         /// <param name="dtype">Internal data type</param>
         /// <param name="size">The size as a single dimension shape</param>
-        /// <remarks>This constructor calls <see cref="IStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
+        /// <remarks>This constructor calls <see cref="UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
         public NDArray(Type dtype, int size) : this(dtype, Shape.Vector(size), true) { }
 
         /// <summary>
@@ -181,7 +181,7 @@ namespace NumSharp
         /// <param name="dtype">Internal data type</param>
         /// <param name="size">The size as a single dimension shape</param>
         /// <param name="fillZeros">Should set the values of the new allocation to default(dtype)? otherwise - old memory noise</param>
-        /// <remarks>This constructor calls <see cref="IStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
+        /// <remarks>This constructor calls <see cref="UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
         public NDArray(Type dtype, int size, bool fillZeros) : this(dtype, Shape.Vector(size), fillZeros) { }
 
         /// <summary>
@@ -190,7 +190,7 @@ namespace NumSharp
         /// </summary>
         /// <param name="dtype">internal data type</param>
         /// <param name="shape">Shape of NDArray</param>
-        /// <remarks>This constructor calls <see cref="IStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
+        /// <remarks>This constructor calls <see cref="UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
         public NDArray(NPTypeCode dtype, Shape shape) : this(dtype, shape, true) { }
 
         /// <summary>
@@ -198,7 +198,7 @@ namespace NumSharp
         /// </summary>
         /// <param name="dtype">Internal data type</param>
         /// <param name="size">The size as a single dimension shape</param>
-        /// <remarks>This constructor calls <see cref="IStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
+        /// <remarks>This constructor calls <see cref="UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
         public NDArray(NPTypeCode dtype, int size) : this(dtype, Shape.Vector(size), true) { }
 
         /// <summary>
@@ -207,7 +207,7 @@ namespace NumSharp
         /// <param name="dtype">Internal data type</param>
         /// <param name="size">The size as a single dimension shape</param>
         /// <param name="fillZeros">Should set the values of the new allocation to default(dtype)? otherwise - old memory noise</param>
-        /// <remarks>This constructor calls <see cref="IStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
+        /// <remarks>This constructor calls <see cref="UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
         public NDArray(NPTypeCode dtype, int size, bool fillZeros) : this(dtype, Shape.Vector(size), true) { }
 
         /// <summary>
@@ -217,7 +217,7 @@ namespace NumSharp
         /// <param name="dtype">internal data type</param>
         /// <param name="shape">Shape of NDArray</param>
         /// <param name="fillZeros">Should set the values of the new allocation to default(dtype)? otherwise - old memory noise</param>
-        /// <remarks>This constructor calls <see cref="IStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
+        /// <remarks>This constructor calls <see cref="UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
         public NDArray(Type dtype, Shape shape, bool fillZeros) : this(dtype)
         {
             Storage.Allocate(shape, dtype, fillZeros);
@@ -230,7 +230,7 @@ namespace NumSharp
         /// <param name="dtype">internal data type</param>
         /// <param name="shape">Shape of NDArray</param>
         /// <param name="fillZeros">Should set the values of the new allocation to default(dtype)? otherwise - old memory noise</param>
-        /// <remarks>This constructor calls <see cref="IStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
+        /// <remarks>This constructor calls <see cref="UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
         public NDArray(NPTypeCode dtype, Shape shape, bool fillZeros) : this(dtype)
         {
             Storage.Allocate(shape, dtype, fillZeros);
@@ -359,8 +359,7 @@ namespace NumSharp
         }
 
         /// <summary>
-        ///     Get: Gets internal storage array by calling <see cref="IStorage.GetData"/><br></br>
-        ///     Set: Replace internal storage by calling <see cref="IStorage.ReplaceData(System.Array)"/>
+        ///     Get: Gets internal storage array by calling <see cref="UnmanagedStorage.GetData"/><br></br>
         /// </summary>
         /// <remarks>Setting does not replace internal storage array.</remarks>
         protected internal IArraySlice Array
@@ -635,7 +634,7 @@ namespace NumSharp
         #region Setters
 
         /// <summary>
-        ///     Set a <see cref="IArraySlice"/> at given <see cref="indices"/>.
+        ///     Set a <see cref="IArraySlice"/> at given <see cref="IIndex"/>.
         /// </summary>
         /// <param name="value">The value to set</param>
         /// <param name="indices">The </param>
@@ -649,7 +648,7 @@ namespace NumSharp
         }
 
         /// <summary>
-        ///     Set a <see cref="NDArray"/> at given <see cref="indices"/>.
+        ///     Set a <see cref="NDArray"/> at given <see cref="IIndex"/>.
         /// </summary>
         /// <param name="value">The value to set</param>
         /// <param name="indices">The </param>
@@ -663,7 +662,7 @@ namespace NumSharp
         }
 
         /// <summary>
-        ///      Set a <see cref="NDArray"/>, <see cref="IArraySlice"/>, <see cref="Array"/> or a scalar value at given <see cref="indices"/>.
+        ///      Set a <see cref="NDArray"/>, <see cref="IArraySlice"/>, <see cref="Array"/> or a scalar value at given <see cref="IIndex"/>.
         /// </summary>
         /// <param name="value">The value to set</param>
         /// <param name="indices">The </param>
@@ -677,7 +676,7 @@ namespace NumSharp
         }
 
         /// <summary>
-        ///     Set a single value at given <see cref="indices"/>.
+        ///     Set a single value at given <see cref="IIndex"/>.
         /// </summary>
         /// <param name="value">The value to set</param>
         /// <param name="indices">The </param>
@@ -691,7 +690,7 @@ namespace NumSharp
         }
 
         /// <summary>
-        ///     Set a single value at given <see cref="indices"/>.
+        ///     Set a single value at given <see cref="IIndex"/>.
         /// </summary>
         /// <param name="value">The value to set</param>
         /// <param name="indices">The </param>
@@ -705,7 +704,7 @@ namespace NumSharp
         }
 
         /// <summary>
-        ///     Set a single value at given <see cref="indices"/>.
+        ///     Set a single value at given <see cref="IIndex"/>.
         /// </summary>
         /// <param name="value">The value to set</param>
         /// <param name="indices">The </param>
@@ -719,10 +718,10 @@ namespace NumSharp
         }
 
         /// <summary>
-        ///     Sets <see cref="values"/> as the internal data storage and changes the internal storage data type to <see cref="dtype"/> and casts <see cref="values"/> if necessary.
+        ///     Sets <see cref="Array"/> as the internal data storage and changes the internal storage data type to <see cref="dtype"/> and casts <see cref="Array"/> if necessary.
         /// </summary>
         /// <param name="values">The values to set as internal data soruce</param>
-        /// <param name="dtype">The type to change this storage to and the type to cast <see cref="values"/> if necessary.</param>
+        /// <param name="dtype">The type to change this storage to and the type to cast <see cref="Array"/> if necessary.</param>
         /// <remarks>Does not copy values unless cast is necessary.</remarks>
         // ReSharper disable once ParameterHidesMember
         public void ReplaceData(Array values, Type dtype)
@@ -731,7 +730,7 @@ namespace NumSharp
         }
 
         /// <summary>
-        ///     Sets <see cref="values"/> as the internal data storage and changes the internal storage data type to <see cref="values"/> type.
+        ///     Sets <see cref="Array"/> as the internal data storage and changes the internal storage data type to <see cref="Array"/> type.
         /// </summary>
         /// <param name="values"></param>
         /// <remarks>Does not copy values.</remarks>
@@ -741,7 +740,7 @@ namespace NumSharp
         }
 
         /// <summary>
-        ///     Sets <see cref="nd"/> as the internal data storage and changes the internal storage data type to <see cref="nd"/> type.
+        ///     Sets <see cref="NDArray"/> as the internal data storage and changes the internal storage data type to <see cref="NDArray"/> type.
         /// </summary>
         /// <param name="nd"></param>
         /// <remarks>Does not copy values and does change shape and dtype.</remarks>
@@ -762,7 +761,7 @@ namespace NumSharp
         }
 
         /// <summary>
-        ///     Sets <see cref="values"/> as the internal data source and changes the internal storage data type to <see cref="values"/> type.
+        ///     Sets <see cref="IArraySlice"/> as the internal data source and changes the internal storage data type to <see cref="IArraySlice"/> type.
         /// </summary>
         /// <param name="values"></param>
         /// <param name="dtype"></param>
@@ -773,7 +772,7 @@ namespace NumSharp
         }
 
         /// <summary>
-        ///     Sets <see cref="values"/> as the internal data source and changes the internal storage data type to <see cref="values"/> type.
+        ///     Sets <see cref="IArraySlice"/> as the internal data source and changes the internal storage data type to <see cref="IArraySlice"/> type.
         /// </summary>
         /// <param name="values"></param>
         /// <remarks>Does not copy values and doesn't change shape.</remarks>

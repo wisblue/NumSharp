@@ -46,7 +46,7 @@ namespace NumSharp
 
                     return ret;
 
-                    break;
+                    //break;
                 }
 
                 case 3:

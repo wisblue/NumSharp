@@ -76,7 +76,7 @@ namespace NumSharp.Backends
         }
 
         /// <summary>
-        ///     Set a single value at given <see cref="indices"/>.
+        ///     Set a single value at given <paramref name="indices"/>.
         /// </summary>
         /// <param name="value">The value to set</param>
         /// <param name="indices">The </param>
@@ -88,7 +88,7 @@ namespace NumSharp.Backends
             => *((T*)Address + _shape.GetOffset(indices)) = value;
 
         /// <summary>
-        ///     Set a single value at given <see cref="indices"/>.
+        ///     Set a single value at given <paramref name="indices"/>.
         /// </summary>
         /// <param name="value">The value to set</param>
         /// <param name="indices">The </param>
@@ -137,7 +137,7 @@ namespace NumSharp.Backends
         }
 
         /// <summary>
-        ///     Set a single value at given <see cref="indices"/>.
+        ///     Set a single value at given <paramref name="indices"/>.
         /// </summary>
         /// <param name="value">The value to set</param>
         /// <param name="indices">The </param>
@@ -166,7 +166,7 @@ namespace NumSharp.Backends
         }
 
         /// <summary>
-        ///     Set a <see cref="NDArray"/> at given <see cref="indices"/>.
+        ///     Set a <see cref="NDArray"/> at given <paramref name="indices"/>.
         /// </summary>
         /// <param name="value">The value to set</param>
         /// <param name="indices">The </param>
@@ -229,7 +229,7 @@ namespace NumSharp.Backends
         }
 
         /// <summary>
-        ///     Set a <see cref="IArraySlice"/> at given <see cref="indices"/>.
+        ///     Set a <see cref="IArraySlice"/> at given <paramref name="indices"/>.
         /// </summary>
         /// <param name="value">The value to set</param>
         /// <param name="indices">The </param>
@@ -362,7 +362,7 @@ namespace NumSharp.Backends
         #endregion
 
         /// <summary>
-        ///     Sets <see cref="values"/> as the internal data source and changes the internal storage data type to <see cref="values"/> type.
+        ///     Sets <paramref name="values"/> as the internal data source and changes the internal storage data type to <paramref name="values"/> type.
         /// </summary>
         /// <param name="values"></param>
         /// <remarks>Copies values only if <paramref name="values"/> type does not match <see cref="DType"/> and doesn't change shape.</remarks>
@@ -379,7 +379,7 @@ namespace NumSharp.Backends
         }
 
         /// <summary>
-        ///     Sets <see cref="values"/> as the internal data source and changes the internal storage data type to <see cref="values"/> type.
+        ///     Sets <paramref name="values"/> as the internal data source and changes the internal storage data type to <paramref name="values"/> type.
         /// </summary>
         /// <param name="values"></param>
         /// <remarks>Does not copy values and doesn't change shape.</remarks>
@@ -392,7 +392,7 @@ namespace NumSharp.Backends
         }
 
         /// <summary>
-        ///     Sets <see cref="values"/> as the internal data source and changes the internal storage data type to <see cref="values"/> type.
+        ///     Sets <paramref name="values"/> as the internal data source and changes the internal storage data type to <paramref name="values"/> type.
         /// </summary>
         /// <param name="values"></param>
         /// <param name="dtype"></param>
@@ -453,7 +453,7 @@ namespace NumSharp.Backends
         }
 
         /// <summary>
-        ///     Sets <see cref="nd"/> as the internal data storage and changes the internal storage data type to <see cref="nd"/> type.
+        ///     Sets <paramref name="nd"/> as the internal data storage and changes the internal storage data type to <paramref name="nd"/> type.
         /// </summary>
         /// <param name="nd"></param>
         /// <remarks>Does not copy values and does change shape and dtype.</remarks>
@@ -475,7 +475,7 @@ namespace NumSharp.Backends
         }
 
         /// <summary>
-        ///     Sets <see cref="values"/> as the internal data source and changes the internal storage data type to <see cref="values"/> type.
+        ///     Sets <paramref name="values"/> as the internal data source and changes the internal storage data type to <paramref name="values"/> type.
         /// </summary>
         /// <param name="values"></param>
         /// <param name="shape">The shape to set in this storage. (without checking if shape matches storage)</param>
@@ -491,7 +491,7 @@ namespace NumSharp.Backends
         }
 
         /// <summary>
-        ///     Sets <see cref="values"/> as the internal data source and changes the internal storage data type to <see cref="values"/> type.
+        ///     Sets <paramref name="values"/> as the internal data source and changes the internal storage data type to <paramref name="values"/> type.
         /// </summary>
         /// <param name="values"></param>
         /// <param name="shape">The shape to set in this storage. (without checking if shape matches storage)</param>
@@ -503,7 +503,7 @@ namespace NumSharp.Backends
         }
 
         /// <summary>
-        ///     Sets <see cref="values"/> as the internal data source and changes the internal storage data type to <see cref="values"/> type.
+        ///     Sets <paramref name="values"/> as the internal data source and changes the internal storage data type to <paramref name="values"/> type.
         /// </summary>
         /// <param name="values"></param>
         /// <param name="dtype"></param>
@@ -567,7 +567,7 @@ namespace NumSharp.Backends
         }
 
         /// <summary>
-        ///     Sets <see cref="nd"/> as the internal data storage and changes the internal storage data type to <see cref="nd"/> type.
+        ///     Sets <paramref name="nd"/> as the internal data storage and changes the internal storage data type to <paramref name="nd"/> type.
         /// </summary>
         /// <param name="nd"></param>
         /// <param name="shape">The shape to set in this storage. (without checking if shape matches storage)</param>

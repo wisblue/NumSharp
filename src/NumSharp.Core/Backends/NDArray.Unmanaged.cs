@@ -51,8 +51,8 @@ namespace NumSharp
             }
 
             /// <summary>
-            ///     Get: Gets internal storage array by calling <see cref="IStorage.GetData"/><br></br>
-            ///     Set: Replace internal storage by calling <see cref="IStorage.ReplaceData(System.Array)"/>
+            ///     Get: Gets internal storage array by calling <see cref="UnmanagedStorage.InternalArray"/><br></br>
+            ///     Set: Replace internal storage by calling <see cref="UnmanagedStorage.ReplaceData(System.Array)"/>
             /// </summary>
             /// <remarks>Setting does not replace internal storage array.</remarks>
             internal IArraySlice Array
@@ -87,7 +87,7 @@ namespace NumSharp
             /// <summary>
             ///     The size of a single item stored in <see cref="Address"/>.
             /// </summary>
-            /// <remarks>Equivalent to <see cref="NPTypeCode.SizeOf"/> extension.</remarks>
+            /// <remarks>Equivalent to <see cref="IMemoryBlock.ItemLength"/> extension.</remarks>
             public int ItemLength => Array.ItemLength;
 
             /// <summary>

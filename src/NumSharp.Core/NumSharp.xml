@@ -1960,8 +1960,26 @@
             <returns>The angle of the ray intersecting the unit circle at the given x-coordinate in radians [0, pi]. This is a scalar if x is a scalar.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.arccos.html</remarks>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:NumSharp.np.floor(NumSharp.NDArray@,System.Nullable{NumSharp.NPTypeCode})" -->
-        <!-- Badly formed XML comment ignored for member "M:NumSharp.np.floor(NumSharp.NDArray@,System.Type)" -->
+        <member name="M:NumSharp.np.floor(NumSharp.NDArray@,System.Nullable{NumSharp.NPTypeCode})">
+            <summary>
+                Return the floor of the input, element-wise. <br></br>
+                The floor of the scalar x is the largest integer i, such that i &lt;= x. It is often denoted as \lfloor x \rfloor.
+            </summary>
+            <param name="x">Input array</param>
+            <param name="outType">The dtype the returned ndarray should be of, only non integer values are supported.</param>
+            <returns>The floor of each element in x. This is a scalar if x is a scalar.</returns>
+            <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.floor.html</remarks>
+        </member>
+        <member name="M:NumSharp.np.floor(NumSharp.NDArray@,System.Type)">
+            <summary>
+                Return the floor of the input, element-wise. <br></br>
+                The floor of the scalar x is the largest integer i, such that i &lt;&#61; x. It is often denoted as \lfloor x \rfloor.
+            </summary>
+            <param name="x">Input array</param>
+            <param name="outType">The dtype the returned ndarray should be of, only non integer values are supported.</param>
+            <returns>The floor of each element in x. This is a scalar if x is a scalar.</returns>
+            <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.floor.html</remarks>
+        </member>
         <member name="M:NumSharp.np.log(NumSharp.NDArray@,System.Type)">
             <summary>
                 Natural logarithm, element-wise.
@@ -2340,8 +2358,26 @@
              The real and imaginary parts of complex numbers are rounded separately.The result of rounding a float is a float.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.around.html</remarks>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:NumSharp.np.sign(NumSharp.NDArray@,System.Nullable{NumSharp.NPTypeCode})" -->
-        <!-- Badly formed XML comment ignored for member "M:NumSharp.np.sign(NumSharp.NDArray@,System.Type)" -->
+        <member name="M:NumSharp.np.sign(NumSharp.NDArray@,System.Nullable{NumSharp.NPTypeCode})">
+            <summary>
+                Returns an element-wise indication of the sign of a number. <br></br>
+                The sign function returns -1 if x &lt; 0, 0 if x==0, 1 if x &lt; 0. nan is returned for nan inputs.
+            </summary>
+            <param name="x">Angle, in radians (2 \pi rad equals 360 degrees).</param>
+            <param name="outType">The dtype the returned ndarray should be of, only non integer values are supported.</param>
+            <returns>The sign of x. This is a scalar if x is a scalar.</returns>
+            <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.sign.html</remarks>
+        </member>
+        <member name="M:NumSharp.np.sign(NumSharp.NDArray@,System.Type)">
+            <summary>
+                Returns an element-wise indication of the sign of a number. <br></br>
+                The sign function returns -1 if x &lt; 0, 0 if x==0, 1 if x &gt; 0. nan is returned for nan inputs.
+            </summary>
+            <param name="x">Angle, in radians (2 \pi rad equals 360 degrees).</param>
+            <param name="outType">The dtype the returned ndarray should be of, only non integer values are supported.</param>
+            <returns>The sign of x. This is a scalar if x is a scalar.</returns>
+            <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.sign.html</remarks>
+        </member>
         <member name="M:NumSharp.np.sin(NumSharp.NDArray@,System.Nullable{NumSharp.NPTypeCode})">
             <summary>
                 Trigonometric sine, element-wise.
@@ -3144,13 +3180,13 @@
         </member>
         <member name="M:NumSharp.NDArray.CopyTo(NumSharp.Backends.Unmanaged.IMemoryBlock)">
             <summary>
-                Copies the entire contents of this storage to given address (using <see cref="!:Count"/>).
+                Copies the entire contents of this storage to given address.
             </summary>
             <param name="slice">The slice to copy to.</param>
         </member>
         <member name="M:NumSharp.NDArray.CopyTo(System.Void*)">
             <summary>
-                Copies the entire contents of this storage to given address (using <see cref="!:Count"/>).
+                Copies the entire contents of this storage to given address.
             </summary>
             <param name="address">The address to copy to.</param>
         </member>
@@ -3163,11 +3199,11 @@
         <member name="M:NumSharp.NDArray.CopyTo(System.IntPtr)">
             <summary>
                 Copies the entire contents of this storage to given address.
-            </summary>
+            </summary>å
         </member>
         <member name="M:NumSharp.NDArray.CopyTo``1(NumSharp.Backends.Unmanaged.IMemoryBlock{``0})">
             <summary>
-                Copies the entire contents of this storage to given address (using <see cref="!:Count"/>).
+                Copies the entire contents of this storage to given address .
             </summary>
             <param name="block">The slice to copy to.</param>
         </member>
@@ -3240,7 +3276,7 @@
             <param name="shape"></param>
             <param name="order"></param>
             <returns>Array with values</returns>
-            <remarks>This constructor calls <see cref="!:IStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
+            <remarks>This constructor calls <see cref="M:NumSharp.Backends.UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
         </member>
         <member name="M:NumSharp.NDArray.#ctor(NumSharp.Backends.Unmanaged.IArraySlice,NumSharp.Shape,System.Char)">
             <summary>
@@ -3251,7 +3287,7 @@
             <param name="shape"></param>
             <param name="order"></param>
             <returns>Array with values</returns>
-            <remarks>This constructor calls <see cref="!:IStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
+            <remarks>This constructor calls <see cref="M:NumSharp.Backends.UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
         </member>
         <member name="M:NumSharp.NDArray.#ctor(System.Type,NumSharp.Shape)">
             <summary>
@@ -3260,7 +3296,7 @@
             </summary>
             <param name="dtype">internal data type</param>
             <param name="shape">Shape of NDArray</param>
-            <remarks>This constructor calls <see cref="!:IStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
+            <remarks>This constructor calls <see cref="M:NumSharp.Backends.UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
         </member>
         <member name="M:NumSharp.NDArray.#ctor(System.Type,System.Int32)">
             <summary>
@@ -3268,7 +3304,7 @@
             </summary>
             <param name="dtype">Internal data type</param>
             <param name="size">The size as a single dimension shape</param>
-            <remarks>This constructor calls <see cref="!:IStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
+            <remarks>This constructor calls <see cref="M:NumSharp.Backends.UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
         </member>
         <member name="M:NumSharp.NDArray.#ctor(System.Type,System.Int32,System.Boolean)">
             <summary>
@@ -3277,7 +3313,7 @@
             <param name="dtype">Internal data type</param>
             <param name="size">The size as a single dimension shape</param>
             <param name="fillZeros">Should set the values of the new allocation to default(dtype)? otherwise - old memory noise</param>
-            <remarks>This constructor calls <see cref="!:IStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
+            <remarks>This constructor calls <see cref="M:NumSharp.Backends.UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
         </member>
         <member name="M:NumSharp.NDArray.#ctor(NumSharp.NPTypeCode,NumSharp.Shape)">
             <summary>
@@ -3286,7 +3322,7 @@
             </summary>
             <param name="dtype">internal data type</param>
             <param name="shape">Shape of NDArray</param>
-            <remarks>This constructor calls <see cref="!:IStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
+            <remarks>This constructor calls <see cref="M:NumSharp.Backends.UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
         </member>
         <member name="M:NumSharp.NDArray.#ctor(NumSharp.NPTypeCode,System.Int32)">
             <summary>
@@ -3294,7 +3330,7 @@
             </summary>
             <param name="dtype">Internal data type</param>
             <param name="size">The size as a single dimension shape</param>
-            <remarks>This constructor calls <see cref="!:IStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
+            <remarks>This constructor calls <see cref="M:NumSharp.Backends.UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
         </member>
         <member name="M:NumSharp.NDArray.#ctor(NumSharp.NPTypeCode,System.Int32,System.Boolean)">
             <summary>
@@ -3303,7 +3339,7 @@
             <param name="dtype">Internal data type</param>
             <param name="size">The size as a single dimension shape</param>
             <param name="fillZeros">Should set the values of the new allocation to default(dtype)? otherwise - old memory noise</param>
-            <remarks>This constructor calls <see cref="!:IStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
+            <remarks>This constructor calls <see cref="M:NumSharp.Backends.UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
         </member>
         <member name="M:NumSharp.NDArray.#ctor(System.Type,NumSharp.Shape,System.Boolean)">
             <summary>
@@ -3313,7 +3349,7 @@
             <param name="dtype">internal data type</param>
             <param name="shape">Shape of NDArray</param>
             <param name="fillZeros">Should set the values of the new allocation to default(dtype)? otherwise - old memory noise</param>
-            <remarks>This constructor calls <see cref="!:IStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
+            <remarks>This constructor calls <see cref="M:NumSharp.Backends.UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
         </member>
         <member name="M:NumSharp.NDArray.#ctor(NumSharp.NPTypeCode,NumSharp.Shape,System.Boolean)">
             <summary>
@@ -3323,7 +3359,7 @@
             <param name="dtype">internal data type</param>
             <param name="shape">Shape of NDArray</param>
             <param name="fillZeros">Should set the values of the new allocation to default(dtype)? otherwise - old memory noise</param>
-            <remarks>This constructor calls <see cref="!:IStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
+            <remarks>This constructor calls <see cref="M:NumSharp.Backends.UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
         </member>
         <member name="P:NumSharp.NDArray.dtype">
             <summary>
@@ -3397,8 +3433,7 @@
         </member>
         <member name="P:NumSharp.NDArray.Array">
             <summary>
-                Get: Gets internal storage array by calling <see cref="!:IStorage.GetData"/><br></br>
-                Set: Replace internal storage by calling <see cref="!:IStorage.ReplaceData(System.Array)"/>
+                Get: Gets internal storage array by calling <see cref="M:NumSharp.Backends.UnmanagedStorage.GetData(System.Int32[])"/><br></br>
             </summary>
             <remarks>Setting does not replace internal storage array.</remarks>
         </member>
@@ -3576,7 +3611,7 @@
         </member>
         <member name="M:NumSharp.NDArray.SetData(NumSharp.Backends.Unmanaged.IArraySlice,System.Int32[])">
             <summary>
-                Set a <see cref="T:NumSharp.Backends.Unmanaged.IArraySlice"/> at given <see cref="!:indices"/>.
+                Set a <see cref="T:NumSharp.Backends.Unmanaged.IArraySlice"/> at given <see cref="T:NumSharp.IIndex"/>.
             </summary>
             <param name="value">The value to set</param>
             <param name="indices">The </param>
@@ -3587,7 +3622,7 @@
         </member>
         <member name="M:NumSharp.NDArray.SetData(NumSharp.NDArray,System.Int32[])">
             <summary>
-                Set a <see cref="T:NumSharp.NDArray"/> at given <see cref="!:indices"/>.
+                Set a <see cref="T:NumSharp.NDArray"/> at given <see cref="T:NumSharp.IIndex"/>.
             </summary>
             <param name="value">The value to set</param>
             <param name="indices">The </param>
@@ -3598,7 +3633,7 @@
         </member>
         <member name="M:NumSharp.NDArray.SetData(System.Object,System.Int32[])">
             <summary>
-                 Set a <see cref="T:NumSharp.NDArray"/>, <see cref="T:NumSharp.Backends.Unmanaged.IArraySlice"/>, <see cref="P:NumSharp.NDArray.Array"/> or a scalar value at given <see cref="!:indices"/>.
+                 Set a <see cref="T:NumSharp.NDArray"/>, <see cref="T:NumSharp.Backends.Unmanaged.IArraySlice"/>, <see cref="P:NumSharp.NDArray.Array"/> or a scalar value at given <see cref="T:NumSharp.IIndex"/>.
             </summary>
             <param name="value">The value to set</param>
             <param name="indices">The </param>
@@ -3609,7 +3644,7 @@
         </member>
         <member name="M:NumSharp.NDArray.SetValue(System.ValueType,System.Int32[])">
             <summary>
-                Set a single value at given <see cref="!:indices"/>.
+                Set a single value at given <see cref="T:NumSharp.IIndex"/>.
             </summary>
             <param name="value">The value to set</param>
             <param name="indices">The </param>
@@ -3620,7 +3655,7 @@
         </member>
         <member name="M:NumSharp.NDArray.SetValue(System.Object,System.Int32[])">
             <summary>
-                Set a single value at given <see cref="!:indices"/>.
+                Set a single value at given <see cref="T:NumSharp.IIndex"/>.
             </summary>
             <param name="value">The value to set</param>
             <param name="indices">The </param>
@@ -3631,7 +3666,7 @@
         </member>
         <member name="M:NumSharp.NDArray.SetValue``1(``0,System.Int32[])">
             <summary>
-                Set a single value at given <see cref="!:indices"/>.
+                Set a single value at given <see cref="T:NumSharp.IIndex"/>.
             </summary>
             <param name="value">The value to set</param>
             <param name="indices">The </param>
@@ -3642,22 +3677,22 @@
         </member>
         <member name="M:NumSharp.NDArray.ReplaceData(System.Array,System.Type)">
             <summary>
-                Sets <see cref="!:values"/> as the internal data storage and changes the internal storage data type to <see cref="P:NumSharp.NDArray.dtype"/> and casts <see cref="!:values"/> if necessary.
+                Sets <see cref="P:NumSharp.NDArray.Array"/> as the internal data storage and changes the internal storage data type to <see cref="P:NumSharp.NDArray.dtype"/> and casts <see cref="P:NumSharp.NDArray.Array"/> if necessary.
             </summary>
             <param name="values">The values to set as internal data soruce</param>
-            <param name="dtype">The type to change this storage to and the type to cast <see cref="!:values"/> if necessary.</param>
+            <param name="dtype">The type to change this storage to and the type to cast <see cref="P:NumSharp.NDArray.Array"/> if necessary.</param>
             <remarks>Does not copy values unless cast is necessary.</remarks>
         </member>
         <member name="M:NumSharp.NDArray.ReplaceData(System.Array)">
             <summary>
-                Sets <see cref="!:values"/> as the internal data storage and changes the internal storage data type to <see cref="!:values"/> type.
+                Sets <see cref="P:NumSharp.NDArray.Array"/> as the internal data storage and changes the internal storage data type to <see cref="P:NumSharp.NDArray.Array"/> type.
             </summary>
             <param name="values"></param>
             <remarks>Does not copy values.</remarks>
         </member>
         <member name="M:NumSharp.NDArray.ReplaceData(NumSharp.NDArray)">
             <summary>
-                Sets <see cref="!:nd"/> as the internal data storage and changes the internal storage data type to <see cref="!:nd"/> type.
+                Sets <see cref="T:NumSharp.NDArray"/> as the internal data storage and changes the internal storage data type to <see cref="T:NumSharp.NDArray"/> type.
             </summary>
             <param name="nd"></param>
             <remarks>Does not copy values and does change shape and dtype.</remarks>
@@ -3672,7 +3707,7 @@
         </member>
         <member name="M:NumSharp.NDArray.ReplaceData(NumSharp.Backends.Unmanaged.IArraySlice,System.Type)">
             <summary>
-                Sets <see cref="!:values"/> as the internal data source and changes the internal storage data type to <see cref="!:values"/> type.
+                Sets <see cref="T:NumSharp.Backends.Unmanaged.IArraySlice"/> as the internal data source and changes the internal storage data type to <see cref="T:NumSharp.Backends.Unmanaged.IArraySlice"/> type.
             </summary>
             <param name="values"></param>
             <param name="dtype"></param>
@@ -3680,7 +3715,7 @@
         </member>
         <member name="M:NumSharp.NDArray.ReplaceData(NumSharp.Backends.Unmanaged.IArraySlice)">
             <summary>
-                Sets <see cref="!:values"/> as the internal data source and changes the internal storage data type to <see cref="!:values"/> type.
+                Sets <see cref="T:NumSharp.Backends.Unmanaged.IArraySlice"/> as the internal data source and changes the internal storage data type to <see cref="T:NumSharp.Backends.Unmanaged.IArraySlice"/> type.
             </summary>
             <param name="values"></param>
             <remarks>Does not copy values and doesn't change shape.</remarks>
@@ -3799,8 +3834,8 @@
         </member>
         <member name="P:NumSharp.NDArray._Unsafe.Array">
             <summary>
-                Get: Gets internal storage array by calling <see cref="!:IStorage.GetData"/><br></br>
-                Set: Replace internal storage by calling <see cref="!:IStorage.ReplaceData(System.Array)"/>
+                Get: Gets internal storage array by calling <see cref="F:NumSharp.Backends.UnmanagedStorage.InternalArray"/><br></br>
+                Set: Replace internal storage by calling <see cref="M:NumSharp.Backends.UnmanagedStorage.ReplaceData(System.Array)"/>
             </summary>
             <remarks>Setting does not replace internal storage array.</remarks>
         </member>
@@ -3822,7 +3857,7 @@
             <summary>
                 The size of a single item stored in <see cref="P:NumSharp.NDArray._Unsafe.Address"/>.
             </summary>
-            <remarks>Equivalent to <see cref="!:NPTypeCode.SizeOf"/> extension.</remarks>
+            <remarks>Equivalent to <see cref="P:NumSharp.Backends.Unmanaged.IMemoryBlock.ItemLength"/> extension.</remarks>
         </member>
         <member name="P:NumSharp.NDArray._Unsafe.BytesLength">
             <summary>
@@ -3942,7 +3977,7 @@
         </member>
         <member name="M:NumSharp.NDArray.AsOrMakeGeneric``1">
             <summary>
-                Tries to cast to <see cref="T:NumSharp.Generic.NDArray`1"/>, otherwise calls <see cref="!:NDArray&lt;T&gt;.astype"/>.
+                Tries to cast to <see cref="T:NumSharp.Generic.NDArray`1"/>, otherwise calls <see cref="M:NumSharp.NDArray.astype(System.Type,System.Boolean)"/>.
             </summary>
             <typeparam name="T">The type of the generic</typeparam>
             <returns>This NDArray as a generic version.</returns>
@@ -4014,53 +4049,51 @@
         </member>
         <member name="M:NumSharp.NDArray.Scalar(System.Object,System.Type)">
             <summary>
-                Creates a scalar <see cref="T:NumSharp.NDArray"/> of <see cref="!:value"/> and <see cref="P:NumSharp.NDArray.dtype"/>.
+                Creates a scalar <see cref="T:NumSharp.NDArray"/> of <see cref="T:System.Type"/>.
             </summary>
             <param name="value">The value of the scalar</param>
             <param name="dtype">The type of the scalar.</param>
             <returns></returns>
-            <remarks>In case when <see cref="!:value"/> is not <see cref="P:NumSharp.NDArray.dtype"/>, <see cref="!:Converts.ChangeType(object,System.Type)"/> will be called.</remarks>
+            <remarks>In case when <paramref name="value"/> is not <paramref name="dtype"/>, <see cref="M:NumSharp.Utilities.Converts.ChangeType(System.Object,NumSharp.NPTypeCode)"/> will be called.</remarks>
         </member>
         <member name="M:NumSharp.NDArray.Scalar(System.Object)">
             <summary>
-                Creates a scalar <see cref="T:NumSharp.NDArray"/> of <see cref="!:value"/> and <see cref="P:NumSharp.NDArray.dtype"/>.
+                Creates a scalar <see cref="T:NumSharp.NDArray"/> of <paramref name="value"/>.
             </summary>
             <param name="value">The value of the scalar</param>
             <returns></returns>
-            <remarks>In case when <see cref="!:value"/> is not <see cref="P:NumSharp.NDArray.dtype"/>, <see cref="!:Converts.ChangeType(object,System.Type)"/> will be called.</remarks>
+            <remarks>In case when <paramref crefname="value"/> is not <see cref="P:NumSharp.NDArray.dtype"/>, <see cref="M:NumSharp.Utilities.Converts.ChangeType(System.Object,NumSharp.NPTypeCode)"/> will be called.</remarks>
         </member>
         <member name="M:NumSharp.NDArray.Scalar(System.ValueType)">
             <summary>
-                Creates a scalar <see cref="T:NumSharp.NDArray"/> of <see cref="!:value"/> and <see cref="P:NumSharp.NDArray.dtype"/>.
+                Creates a scalar <see cref="T:NumSharp.NDArray"/> of <paramref name="value"/> .
             </summary>
             <param name="value">The value of the scalar</param>
             <returns></returns>
-            <remarks>In case when <see cref="!:value"/> is not <see cref="P:NumSharp.NDArray.dtype"/>, <see cref="!:Converts.ChangeType(object,System.Type)"/> will be called.</remarks>
+            <remarks>In case when <paramref name="value"/> is not <see cref="T:System.ValueType"/>, <see cref="M:NumSharp.Utilities.Converts.ChangeType(System.Object,NumSharp.NPTypeCode)"/> will be called.</remarks>
         </member>
         <member name="M:NumSharp.NDArray.Scalar``1(``0)">
             <summary>
-                Creates a scalar <see cref="T:NumSharp.NDArray"/> of <see cref="!:value"/> and <see cref="P:NumSharp.NDArray.dtype"/>.
+                Creates a scalar <see cref="T:NumSharp.NDArray"/> of <paramref name="value"/>.
             </summary>
             <param name="value">The value of the scalar</param>
             <returns></returns>
-            <remarks>In case when <see cref="!:value"/> is not <see cref="P:NumSharp.NDArray.dtype"/>, <see cref="!:Converts.ChangeType(object,System.Type)"/> will be called.</remarks>
         </member>
         <member name="M:NumSharp.NDArray.Scalar``1(System.Object)">
             <summary>
-                Creates a scalar <see cref="T:NumSharp.NDArray"/> of <see cref="!:value"/> and <see cref="P:NumSharp.NDArray.dtype"/>.
+                Creates a scalar <see cref="T:NumSharp.NDArray"/> of <paramref name="value"/> and <see cref="P:NumSharp.NDArray.dtype"/>.
             </summary>
             <param name="value">The value of the scalar, attempt to convert will be performed</param>
             <returns></returns>
-            <remarks>In case when <see cref="!:value"/> is not <see cref="P:NumSharp.NDArray.dtype"/>, <see cref="!:Converts.ChangeType(object,System.Type)"/> will be called.</remarks>
         </member>
         <member name="M:NumSharp.NDArray.Scalar(System.Object,NumSharp.NPTypeCode)">
             <summary>
-                Creates a scalar <see cref="T:NumSharp.NDArray"/> of <see cref="!:value"/> and <see cref="P:NumSharp.NDArray.dtype"/>.
+                Creates a scalar <see cref="T:NumSharp.NDArray"/> of <paramref name="value"/> and <see cref="P:NumSharp.NDArray.dtype"/>.
             </summary>
             <param name="value">The value of the scalar</param>
             <param name="typeCode">The type code of the scalar.</param>
             <returns></returns>
-            <remarks>In case when <see cref="!:value"/> is not <see cref="P:NumSharp.NDArray.dtype"/>, <see cref="!:Converts.ChangeType(object,System.Type)"/> will be called.</remarks>
+            <remarks>In case when <paramref name="value"/> is not <see cref="P:NumSharp.NDArray.dtype"/>, <see cref="M:NumSharp.Utilities.Converts.ChangeType(System.Object,NumSharp.NPTypeCode)"/> will be called.</remarks>
         </member>
         <member name="M:NumSharp.NDArray.vstack(NumSharp.NDArray[])">
             <summary>
@@ -4295,7 +4328,14 @@
             <param name="obj">NDArray to compare</param>
             <returns>if reference is same</returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:NumSharp.NDArray.equal(NumSharp.NDArray)" -->
+        <member name="M:NumSharp.NDArray.equal(NumSharp.NDArray)">
+            NumPy signature: numpy.equal(x1, x2, /, out=None, *, where=True, casting='same_kind', order='K', dtype=None, subok=True[, signature, extobj]) = &lt;ufunc 'equal'&gt;
+            <summary>
+            Compare two NDArrays element wise
+            </summary>
+            <param name="np2">NDArray to compare with</param>
+            <returns>NDArray with result of each element compare</returns>
+        </member>
         <member name="M:NumSharp.NDArray.array_equal(NumSharp.NDArray)">
             <summary>
                 True if two arrays have the same shape and elements, False otherwise.
@@ -4785,8 +4825,36 @@
         <member name="M:NumSharp.Backends.DefaultEngine.AreBroadcastable(NumSharp.NDArray[])">
             <remarks>Based on https://docs.scipy.org/doc/numpy-1.16.1/user/basics.broadcasting.html </remarks>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:NumSharp.Backends.DefaultEngine.normalize_axis_tuple(System.Int32[],System.Object,System.Boolean)" -->
-        <!-- Badly formed XML comment ignored for member "M:NumSharp.Backends.DefaultEngine.normalize_axis_tuple(System.Int32,System.Object,System.Boolean)" -->
+        <member name="M:NumSharp.Backends.DefaultEngine.normalize_axis_tuple(System.Int32[],System.Object,System.Boolean)">
+            <summary>
+                Normalizes an axis argument into a tuple of non-negative integer axes.
+                This handles shorthands such as ``1`` and converts them to ``(1,)``,
+                as well as performing the handling of negative indices covered by
+                `normalize_axis_index`.
+                By default, this forbids axes from being specified multiple times.
+                    Used internally by multi-axis-checking logic.
+            </summary>
+            <param name="axis">The un-normalized index or indices of the axis.</param>
+            <param name="ndim">The number of dimensions of the array that `axis` should be normalized against.</param>
+            <param name="argname">A prefix to put before the error message, typically the name of the argument.</param>
+            <param name="allow_duplicate">If False, the default, disallow an axis from being specified twice.</param>
+            <returns>The normalized axis index, such that `0 &lt;= normalized_axis &lt; ndim`</returns>
+        </member>
+        <member name="M:NumSharp.Backends.DefaultEngine.normalize_axis_tuple(System.Int32,System.Object,System.Boolean)">
+            <summary>
+                Normalizes an axis argument into a tuple of non-negative integer axes.
+                This handles shorthands such as ``1`` and converts them to ``(1,)``,
+                as well as performing the handling of negative indices covered by
+                `normalize_axis_index`.
+                By default, this forbids axes from being specified multiple times.
+                    Used internally by multi-axis-checking logic.
+            </summary>
+            <param name="axis">The un-normalized index or indices of the axis.</param>
+            <param name="ndim">The number of dimensions of the array that `axis` should be normalized against.</param>
+            <param name="argname">A prefix to put before the error message, typically the name of the argument.</param>
+            <param name="allow_duplicate">If False, the default, disallow an axis from being specified twice.</param>
+            <returns>The normalized axis index, such that `0 &lt;&#61; normalized_axis &lt; ndim`</returns>
+        </member>
         <member name="F:NumSharp.Backends.DefaultEngine.ParallelAbove">
             <summary>
                 The threshold atwhich after n-items in an array, computation will use Parallel.For
@@ -4843,7 +4911,7 @@
              Warning: The default `atol` is not appropriate for comparing numbers
              that are much smaller than one(see Notes).
              
-             See also <seealso cref="!:allclose"/>
+             See also <seealso cref="M:NumSharp.np.allclose(NumSharp.NDArray,NumSharp.NDArray,System.Double,System.Double,System.Boolean)"/>
             
             Notes:
              For finite values, isclose uses the following equation to test whether
@@ -4895,14 +4963,14 @@
         </member>
         <member name="M:NumSharp.Backends.Unmanaged.ArraySlice.Scalar(System.Object)">
             <summary>
-                Wrap a <see cref="!:val"/> inside <see cref="T:NumSharp.Backends.Unmanaged.ArraySlice`1"/>.
+                Wrap a <paramref name="val"/> inside <see cref="T:NumSharp.Backends.Unmanaged.ArraySlice`1"/>.
             </summary>
             <param name="val">The value to wrap into an arrayslice.</param>
             <returns></returns>
         </member>
         <member name="M:NumSharp.Backends.Unmanaged.ArraySlice.Scalar(System.Object,NumSharp.NPTypeCode)">
             <summary>
-                Wrap a <see cref="!:T"/> inside <see cref="T:NumSharp.Backends.Unmanaged.ArraySlice`1"/>.
+                Wrap a <paramref name="val" /> inside <see cref="T:NumSharp.Backends.Unmanaged.ArraySlice`1"/>.
             </summary>
             <param name="val">The value to wrap into an arrayslice.</param>
             <param name="typeCode">The type expected to be returned</param>
@@ -4910,7 +4978,7 @@
         </member>
         <member name="M:NumSharp.Backends.Unmanaged.ArraySlice.Scalar``1(``0)">
             <summary>
-                Wrap a <see cref="!:T"/> inside <see cref="T:NumSharp.Backends.Unmanaged.ArraySlice`1"/>.
+                Wrap a <param name="val"/> inside <see cref="T:NumSharp.Backends.Unmanaged.ArraySlice`1"/>.
             </summary>
             <param name="val"></param>
             <returns></returns>
@@ -5192,7 +5260,7 @@
                 Performs dispose on the internal unmanaged memory block.<br></br>
             </summary>
             <remarks>
-                Dangerous because this <see cref="T:NumSharp.Backends.Unmanaged.ArraySlice"/> might be a <see cref="!:IsSlice"/> therefore there might be other slices that point to current <see cref="P:NumSharp.Backends.Unmanaged.IArraySlice.MemoryBlock"/>.<br></br>
+                Dangerous because this <see cref="T:NumSharp.Backends.Unmanaged.IArraySlice"/> might be a <see cref="P:NumSharp.Shape.IsSliced"/> therefore there might be other slices that point to current <see cref="P:NumSharp.Backends.Unmanaged.IArraySlice.MemoryBlock"/>.<br></br>
                 So releasing the <see cref="P:NumSharp.Backends.Unmanaged.IArraySlice.MemoryBlock"/> might cause memory corruption elsewhere.<br></br>
                 It is best to leave MemoryBlock to GC.
             </remarks>
@@ -5207,7 +5275,6 @@
             <summary>
                 The size of a single item stored in <see cref="P:NumSharp.Backends.Unmanaged.IMemoryBlock.Address"/>.
             </summary>
-            <remarks>Equivalent to <see cref="!:NPTypeCode.SizeOf"/> extension.</remarks>
         </member>
         <member name="P:NumSharp.Backends.Unmanaged.IMemoryBlock.Address">
             <summary>
@@ -5238,19 +5305,19 @@
         </member>
         <member name="M:NumSharp.Backends.Unmanaged.UnmanagedHelper.CopyTo(NumSharp.Backends.Unmanaged.IMemoryBlock,NumSharp.Backends.Unmanaged.IMemoryBlock)">
             <summary>
-                Copies the entire contents of this storage to given address (using <see cref="!:Count"/>).
+                Copies the entire contents of this storage to given address (using <see cref="M:System.Buffer.MemoryCopy(System.Void*,System.Void*,System.Int64,System.Int64)"/>).
             </summary>
             <param name="dst">The block to copy to.</param>
         </member>
         <member name="M:NumSharp.Backends.Unmanaged.UnmanagedHelper.CopyTo(NumSharp.Backends.Unmanaged.IMemoryBlock,NumSharp.Backends.Unmanaged.IMemoryBlock,System.Int32)">
             <summary>
-                Copies the entire contents of this storage to given address (using <see cref="!:Count"/>).
+                Copies the entire contents of this storage to given address (using <see cref="M:System.Buffer.MemoryCopy(System.Void*,System.Void*,System.Int64,System.Int64)"/>).
             </summary>
             <param name="dst">The block to copy to.</param>
         </member>
         <member name="M:NumSharp.Backends.Unmanaged.UnmanagedHelper.CopyTo(NumSharp.Backends.Unmanaged.IMemoryBlock,System.Void*,System.Int32)">
             <summary>
-                Copies the entire contents of this storage to given address (using <see cref="!:Count"/>).
+                Copies the entire contents of this storage to given address (using <see cref="M:System.Buffer.MemoryCopy(System.Void*,System.Void*,System.Int64,System.Int64)"/>).
             </summary>
             <param name="dst">The block to copy to.</param>
         </member>
@@ -5609,7 +5676,7 @@
         </member>
         <member name="P:NumSharp.Backends.UnmanagedStorage.TypeCode">
             <summary>
-                The <see cref="T:NumSharp.NPTypeCode"/> of <see cref="!:IStorage.DType"/>.
+                The <see cref="T:NumSharp.NPTypeCode"/>.
             </summary>
         </member>
         <member name="P:NumSharp.Backends.UnmanagedStorage.DTypeSize">
@@ -5636,7 +5703,7 @@
         </member>
         <member name="P:NumSharp.Backends.UnmanagedStorage.Engine">
             <summary>
-                The engine that was used to create this <see cref="!:IStorage"/>.
+                The engine that was used to create this <see cref="T:NumSharp.Backends.UnmanagedStorage"/>.
             </summary>
         </member>
         <member name="M:NumSharp.Backends.UnmanagedStorage.CreateBroadcastedUnsafe(NumSharp.Backends.Unmanaged.IArraySlice,NumSharp.Shape)">
@@ -5701,15 +5768,15 @@
             <param name="sourceArray">The array to change his type</param>
             <param name="to_dtype">The type to change to.</param>
             <remarks>If the return type is equal to source type, this method does not return a copy.</remarks>
-            <returns>Returns <see cref="!:sourceArray"/> or new array with changed type to <see cref="!:to_dtype"/></returns>
+            <returns>Returns <paramref name="sourceArray"/> or new array with changed type to <paramref name="to_dtype"/></returns>
         </member>
         <member name="M:NumSharp.Backends.UnmanagedStorage._ChangeTypeOfArray``1(NumSharp.Backends.Unmanaged.IArraySlice)">
             <summary>
-                Changes the type of <paramref name="sourceArray"/> to <paramref name="to_dtype"/> if necessary.
+                Changes the type of <paramref name="sourceArray"/> to <see cref="T:NumSharp.Backends.Unmanaged.ArraySlice`1"/> if necessary.
             </summary>
             <param name="sourceArray">The array to change his type</param>
             <remarks>If the return type is equal to source type, this method does not return a copy.</remarks>
-            <returns>Returns <see cref="!:sourceArray"/> or new array with changed type to <see cref="!:to_dtype"/></returns>
+            <returns>Returns <param name="sourceArray"/> or new array with changed type to <see cref="T:NumSharp.Backends.Unmanaged.ArraySlice`1"/></returns>
         </member>
         <member name="M:NumSharp.Backends.UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)">
             <summary>
@@ -5741,7 +5808,7 @@
         </member>
         <member name="M:NumSharp.Backends.UnmanagedStorage.Allocate``1(NumSharp.Backends.Unmanaged.ArraySlice{``0},NumSharp.Shape,System.Boolean)">
             <summary>
-                Assign this <see cref="T:NumSharp.Backends.Unmanaged.ArraySlice`1"/> as the internal array storage and assign <see cref="!:shape"/> to it.
+                Assign this <see cref="T:NumSharp.Backends.Unmanaged.ArraySlice`1"/> as the internal array storage and assign <paramref name="shape"/> to it.
             </summary>
             <param name="values">The array to set as internal data storage</param>
             <param name="shape">The shape of the array.</param>
@@ -5809,11 +5876,11 @@
         </member>
         <member name="M:NumSharp.Backends.UnmanagedStorage.GetValue(System.Int32[])">
             <summary>
-                Retrieves value of unspecified type (will figure using <see cref="!:IStorage.DType"/>).
+                Retrieves value of unspecified type (will figure using <see cref="T:NumSharp.NPTypeCode"/>).
             </summary>
             <param name="indices">The shape's indices to get.</param>
             <returns></returns>
-            <exception cref="T:System.NullReferenceException">When <see cref="!:IStorage.DType"/> is not <see cref="T:System.Object"/></exception>
+            <exception cref="T:System.NullReferenceException">When <see cref="T:System.Object"/> is not <see cref="T:NumSharp.NPTypeCode"/> is not </exception>
         </member>
         <member name="M:NumSharp.Backends.UnmanagedStorage.GetData(System.Int32[])">
             <summary>
@@ -5954,7 +6021,7 @@
         </member>
         <member name="M:NumSharp.Backends.UnmanagedStorage.SetValue``1(``0,System.Int32[])">
             <summary>
-                Set a single value at given <see cref="!:indices"/>.
+                Set a single value at given <paramref name="indices"/>.
             </summary>
             <param name="value">The value to set</param>
             <param name="indices">The </param>
@@ -5965,7 +6032,7 @@
         </member>
         <member name="M:NumSharp.Backends.UnmanagedStorage.SetValue(System.Object,System.Int32[])">
             <summary>
-                Set a single value at given <see cref="!:indices"/>.
+                Set a single value at given <paramref name="indices"/>.
             </summary>
             <param name="value">The value to set</param>
             <param name="indices">The </param>
@@ -5976,7 +6043,7 @@
         </member>
         <member name="M:NumSharp.Backends.UnmanagedStorage.SetData(System.Object,System.Int32[])">
             <summary>
-                Set a single value at given <see cref="!:indices"/>.
+                Set a single value at given <paramref name="indices"/>.
             </summary>
             <param name="value">The value to set</param>
             <param name="indices">The </param>
@@ -5987,7 +6054,7 @@
         </member>
         <member name="M:NumSharp.Backends.UnmanagedStorage.SetData(NumSharp.NDArray,System.Int32[])">
             <summary>
-                Set a <see cref="T:NumSharp.NDArray"/> at given <see cref="!:indices"/>.
+                Set a <see cref="T:NumSharp.NDArray"/> at given <paramref name="indices"/>.
             </summary>
             <param name="value">The value to set</param>
             <param name="indices">The </param>
@@ -5998,7 +6065,7 @@
         </member>
         <member name="M:NumSharp.Backends.UnmanagedStorage.SetData(NumSharp.Backends.Unmanaged.IArraySlice,System.Int32[])">
             <summary>
-                Set a <see cref="T:NumSharp.Backends.Unmanaged.IArraySlice"/> at given <see cref="!:indices"/>.
+                Set a <see cref="T:NumSharp.Backends.Unmanaged.IArraySlice"/> at given <paramref name="indices"/>.
             </summary>
             <param name="value">The value to set</param>
             <param name="indices">The </param>
@@ -6051,21 +6118,21 @@
         </member>
         <member name="M:NumSharp.Backends.UnmanagedStorage.ReplaceData(System.Array)">
             <summary>
-                Sets <see cref="!:values"/> as the internal data source and changes the internal storage data type to <see cref="!:values"/> type.
+                Sets <paramref name="values"/> as the internal data source and changes the internal storage data type to <paramref name="values"/> type.
             </summary>
             <param name="values"></param>
             <remarks>Copies values only if <paramref name="values"/> type does not match <see cref="P:NumSharp.Backends.UnmanagedStorage.DType"/> and doesn't change shape.</remarks>
         </member>
         <member name="M:NumSharp.Backends.UnmanagedStorage.ReplaceData(NumSharp.Backends.Unmanaged.IArraySlice)">
             <summary>
-                Sets <see cref="!:values"/> as the internal data source and changes the internal storage data type to <see cref="!:values"/> type.
+                Sets <paramref name="values"/> as the internal data source and changes the internal storage data type to <paramref name="values"/> type.
             </summary>
             <param name="values"></param>
             <remarks>Does not copy values and doesn't change shape.</remarks>
         </member>
         <member name="M:NumSharp.Backends.UnmanagedStorage.ReplaceData(NumSharp.Backends.Unmanaged.IArraySlice,System.Type)">
             <summary>
-                Sets <see cref="!:values"/> as the internal data source and changes the internal storage data type to <see cref="!:values"/> type.
+                Sets <paramref name="values"/> as the internal data source and changes the internal storage data type to <paramref name="values"/> type.
             </summary>
             <param name="values"></param>
             <param name="dtype"></param>
@@ -6089,14 +6156,14 @@
         </member>
         <member name="M:NumSharp.Backends.UnmanagedStorage.ReplaceData(NumSharp.NDArray)">
             <summary>
-                Sets <see cref="!:nd"/> as the internal data storage and changes the internal storage data type to <see cref="!:nd"/> type.
+                Sets <paramref name="nd"/> as the internal data storage and changes the internal storage data type to <paramref name="nd"/> type.
             </summary>
             <param name="nd"></param>
             <remarks>Does not copy values and does change shape and dtype.</remarks>
         </member>
         <member name="M:NumSharp.Backends.UnmanagedStorage.ReplaceData(System.Array,NumSharp.Shape)">
             <summary>
-                Sets <see cref="!:values"/> as the internal data source and changes the internal storage data type to <see cref="!:values"/> type.
+                Sets <paramref name="values"/> as the internal data source and changes the internal storage data type to <paramref name="values"/> type.
             </summary>
             <param name="values"></param>
             <param name="shape">The shape to set in this storage. (without checking if shape matches storage)</param>
@@ -6104,7 +6171,7 @@
         </member>
         <member name="M:NumSharp.Backends.UnmanagedStorage.ReplaceData(NumSharp.Backends.Unmanaged.IArraySlice,NumSharp.Shape)">
             <summary>
-                Sets <see cref="!:values"/> as the internal data source and changes the internal storage data type to <see cref="!:values"/> type.
+                Sets <paramref name="values"/> as the internal data source and changes the internal storage data type to <paramref name="values"/> type.
             </summary>
             <param name="values"></param>
             <param name="shape">The shape to set in this storage. (without checking if shape matches storage)</param>
@@ -6112,7 +6179,7 @@
         </member>
         <member name="M:NumSharp.Backends.UnmanagedStorage.ReplaceData(NumSharp.Backends.Unmanaged.IArraySlice,System.Type,NumSharp.Shape)">
             <summary>
-                Sets <see cref="!:values"/> as the internal data source and changes the internal storage data type to <see cref="!:values"/> type.
+                Sets <paramref name="values"/> as the internal data source and changes the internal storage data type to <paramref name="values"/> type.
             </summary>
             <param name="values"></param>
             <param name="dtype"></param>
@@ -6139,7 +6206,7 @@
         </member>
         <member name="M:NumSharp.Backends.UnmanagedStorage.ReplaceData(NumSharp.NDArray,NumSharp.Shape)">
             <summary>
-                Sets <see cref="!:nd"/> as the internal data storage and changes the internal storage data type to <see cref="!:nd"/> type.
+                Sets <paramref name="nd"/> as the internal data storage and changes the internal storage data type to <paramref name="nd"/> type.
             </summary>
             <param name="nd"></param>
             <param name="shape">The shape to set in this storage. (without checking if shape matches storage)</param>
@@ -6434,16 +6501,6 @@
                 Gets the default value of <paramref name="typeCode"/>.
             </summary>
         </member>
-        <member name="F:NumSharp.StorageType.Unmanaged">
-            <summary>
-                <see cref="!:UnmanagedByteStorage&lt;T&gt;"/>
-            </summary>
-        </member>
-        <member name="F:NumSharp.StorageType.TypedArray">
-            <summary>
-                <see cref="!:TypedArrayStorage"/>
-            </summary>
-        </member>
         <member name="M:NumSharp.TensorEngine.GetStorage(System.Type)">
             <summary>
                 Get storage for given <paramref name="dtype"/>.
@@ -6645,7 +6702,7 @@
             <param name="dtype">Internal data type</param>
             <param name="size">The size as a single dimension shape</param>
             <param name="fillZeros">Should set the values of the new allocation to default(dtype)? otherwise - old memory noise</param>
-            <remarks>This constructor calls <see cref="!:IStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
+            <remarks>This constructor calls <see cref="M:NumSharp.Backends.UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
         </member>
         <member name="M:NumSharp.Generic.NDArray`1.#ctor(System.Array,NumSharp.Shape,System.Char)">
             <summary>
@@ -6656,7 +6713,7 @@
             <param name="shape"></param>
             <param name="order"></param>
             <returns>Array with values</returns>
-            <remarks>This constructor calls <see cref="!:IStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
+            <remarks>This constructor calls <see cref="M:NumSharp.Backends.UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
         </member>
         <member name="M:NumSharp.Generic.NDArray`1.#ctor(NumSharp.Backends.Unmanaged.IArraySlice,NumSharp.Shape,System.Char)">
             <summary>
@@ -6667,7 +6724,7 @@
             <param name="shape"></param>
             <param name="order"></param>
             <returns>Array with values</returns>
-            <remarks>This constructor calls <see cref="!:IStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
+            <remarks>This constructor calls <see cref="M:NumSharp.Backends.UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
         </member>
         <member name="M:NumSharp.Generic.NDArray`1.#ctor(NumSharp.Shape)">
             <summary>
@@ -6675,14 +6732,14 @@
             type and shape are given.
             </summary>
             <param name="shape">Shape of NDArray</param>
-            <remarks>This constructor calls <see cref="!:IStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
+            <remarks>This constructor calls <see cref="M:NumSharp.Backends.UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
         </member>
         <member name="M:NumSharp.Generic.NDArray`1.#ctor(System.Int32)">
             <summary>
                 Constructor which initialize elements with length of <paramref name="size"/>
             </summary>
             <param name="size">The size as a single dimension shape</param>
-            <remarks>This constructor calls <see cref="!:IStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
+            <remarks>This constructor calls <see cref="M:NumSharp.Backends.UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
         </member>
         <member name="M:NumSharp.Generic.NDArray`1.#ctor(NumSharp.Shape,System.Boolean)">
             <summary>
@@ -6692,7 +6749,7 @@
             <param name="dtype">internal data type</param>
             <param name="shape">Shape of NDArray</param>
             <param name="fillZeros">Should set the values of the new allocation to default(dtype)? otherwise - old memory noise</param>
-            <remarks>This constructor calls <see cref="!:IStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
+            <remarks>This constructor calls <see cref="M:NumSharp.Backends.UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
         </member>
         <member name="P:NumSharp.Generic.NDArray`1.Array">
             <summary>
@@ -7256,61 +7313,60 @@
         </member>
         <member name="M:NumSharp.Utilities.ArrayConvert.Clone(System.Array)">
             <summary>
-                Creates a clone of given <see cref="!:sourceArray"/>.
+                Creates a clone of given <param name="sourceArray"/>.
             </summary>
             <param name="sourceArray">The array to clone</param>
             <remarks>If possible, for performance reasons use generic version of this method.</remarks>
         </member>
         <member name="M:NumSharp.Utilities.ArrayConvert.Clone``1(``0[])">
             <summary>
-                Creates a clone of given <see cref="!:sourceArray"/>.
+                Creates a clone of given <param name="sourceArray"/>.
             </summary>
             <param name="sourceArray">The array to clone</param>
         </member>
         <member name="M:NumSharp.Utilities.ArrayConvert.Clone``1(``0[0:,0:])">
             <summary>
-                Creates a clone of given <see cref="!:sourceArray"/> using <see cref="M:System.Array.CopyTo(System.Array,System.Int32)"/>.
+                Creates a clone of given <param name="sourceArray"/> using <see cref="M:System.Array.CopyTo(System.Array,System.Int32)"/>.
             </summary>
             <param name="sourceArray">The array to clone</param>
         </member>
         <member name="M:NumSharp.Utilities.ArrayConvert.Clone``1(``0[0:,0:,0:])">
             <summary>
-                Creates a clone of given <see cref="!:sourceArray"/> using <see cref="M:System.Array.CopyTo(System.Array,System.Int32)"/>.
+                Creates a clone of given <param name="sourceArray"/> using <see cref="M:System.Array.CopyTo(System.Array,System.Int32)"/>.
             </summary>
             <param name="sourceArray">The array to clone</param>
         </member>
         <member name="M:NumSharp.Utilities.ArrayConvert.Clone``1(``0[0:,0:,0:,0:])">
             <summary>
-                Creates a clone of given <see cref="!:sourceArray"/> using <see cref="M:System.Array.CopyTo(System.Array,System.Int32)"/>.
+                Creates a clone of given <param name="sourceArray"/> using <see cref="M:System.Array.CopyTo(System.Array,System.Int32)"/>.
             </summary>
             <param name="sourceArray">The array to clone</param>
         </member>
         <member name="M:NumSharp.Utilities.ArrayConvert.To(System.Array,System.Type)">
             <summary>
-                Converts <see cref="!:sourceArray"/> to an array of type <see cref="!:returnType"/>.
+                Converts <paramref name="sourceArray"/> to an array of type <see cref="T:System.Array"/>.
             </summary>
             <param name="sourceArray">The array to convert</param>
             <param name="returnType">The type to convert the data to</param>
             <returns></returns>
-            <remarks>If <see cref="!:sourceArray"/>'s element type equals to <see cref="!:returnType"/> then a copy is returned</remarks>
+            <remarks>If <paramref name="sourceArray"/>'s element type equals to <see cref="T:System.Array"/> then a copy is returned</remarks>
         </member>
         <member name="M:NumSharp.Utilities.ArrayConvert.To(System.Array,NumSharp.NPTypeCode)">
             <summary>
-                Converts <see cref="!:sourceArray"/> to an array of type <see cref="!:typeCode"/>.
+                Converts  <paramref name="sourceArray"/> to an array of type <see cref="T:NumSharp.NPTypeCode"/>.
             </summary>
             <param name="sourceArray">The array to convert</param>
             <param name="typeCode">The type to convert the data to</param>
             <returns></returns>
-            <remarks>If <see cref="!:sourceArray"/>'s element type equals to <see cref="!:typeCode"/> then a copy is returned</remarks>
+            <remarks>If <paramref name="sourceArray"/>'s element type equals to <see cref="T:NumSharp.NPTypeCode"/> then a copy is returned</remarks>
         </member>
         <member name="M:NumSharp.Utilities.ArrayConvert.To``1(System.Array)">
             <summary>
-                Converts <see cref="!:sourceArray"/> to an array of type <see cref="!:returnType"/>.
+                Converts <paramref name="sourceArray"/> to an array of type T.
             </summary>
             <param name="sourceArray">The array to convert</param>
             <param name="returnType">The type to convert the data to</param>
             <returns></returns>
-            <remarks>If <see cref="!:sourceArray"/>'s element type equals to <see cref="!:returnType"/> then a copy is returned</remarks>
         </member>
         <member name="M:NumSharp.Utilities.ArrayConvert.ToBoolean(System.Boolean[])">
             <summary>
@@ -7745,7 +7801,7 @@
             </summary>
             <param name="source">The array to insert copy and insert value to.</param>
             <param name="index">The index to insert to.</param>
-            <returns>a copy of <see cref="!:source"/> with the appended value.</returns>
+            <returns>a copy of <paramref name="source"/> with the appended value.</returns>
         </member>
         <member name="M:NumSharp.Utilities.Arrays.RemoveAt``1(``0[],System.Int32)">
             <summary>
@@ -7753,7 +7809,7 @@
             </summary>
             <param name="source">The array to remove <paramref name="index"/> from.</param>
             <param name="index">The index to remove.</param>
-            <returns>A copy of <see cref="!:source"/> without given <paramref name="index"/></returns>
+            <returns>A copy of <paramref name="source"/> without given <paramref name="index"/></returns>
         </member>
         <member name="M:NumSharp.Utilities.Arrays.CopyToExceptAt``1(``0[],System.Int32,``0[],System.Int32)">
             <summary>
@@ -7763,7 +7819,7 @@
             <param name="index">The index to ignore.</param>
             <param name="destinition">The copying destinition</param>
             <param name="destOffset">The <paramref name="destinition"/>'s offset</param>
-            <returns>A copy of <see cref="!:source"/> without given <paramref name="index"/></returns>
+            <returns>A copy of <paramref name="source"/> without given <paramref name="index"/></returns>
         </member>
         <member name="M:NumSharp.Utilities.Arrays.CopyToExceptAt``1(``0[],System.Int32,System.Int32,``0[],System.Int32)">
             <summary>
@@ -7774,7 +7830,7 @@
             <param name="index">The index to ignore.</param>
             <param name="destinition">The copying destinition</param>
             <param name="destOffset">The <paramref name="destinition"/>'s offset</param>
-            <returns>A copy of <see cref="!:source"/> without given <paramref name="index"/></returns>
+            <returns>A copy of <paramref name="source"/> without given <paramref name="index"/></returns>
         </member>
         <member name="M:NumSharp.Utilities.Arrays.Flatten(System.Array)">
             <summary>
@@ -8144,7 +8200,44 @@
             <param name="obj">The object to convert to <typeparamref name="T"/> from <see cref="T:System.String"/></param>
             <returns>A <typeparamref name="T"/></returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "T:NumSharp.Utilities.Hashset`1" -->
+        <member name="T:NumSharp.Utilities.Hashset`1">
+            <summary>
+            Implementation notes:
+            This uses an array-based implementation similar to <see cref="T:System.Collections.Generic.Dictionary`2"/>, using a buckets array
+            to map hash values to the Slots array. Items in the Slots array that hash to the same value
+            are chained together through the "next" indices. 
+            
+            The capacity is always prime; so during resizing, the capacity is chosen as the next prime
+            greater than double the last capacity. 
+            
+            The underlying data structures are lazily initialized. Because of the observation that, 
+            in practice, hashtables tend to contain only a few elements, the initial capacity is
+            set very small (3 elements) unless the ctor with a collection is used.
+            
+            The +/- 1 modifications in methods that add, check for containment, etc allow us to 
+            distinguish a hash code of 0 from an uninitialized bucket. This saves us from having to 
+            reset each bucket to -1 when resizing. See Contains, for example.
+            
+            Set methods such as UnionWith, IntersectWith, ExceptWith, and SymmetricExceptWith modify
+            this set.
+            
+            Some operations can perform faster if we can assume "other" contains unique elements
+            according to this equality comparer. The only times this is efficient to check is if
+            other is a hashset. Note that checking that it's a hashset alone doesn't suffice; we
+            also have to check that the hashset is using the same equality comparer. If other 
+            has a different equality comparer, it will have unique elements according to its own
+            equality comparer, but not necessarily according to ours. Therefore, to go these 
+            optimized routes we check that other is a hashset using the same equality comparer.
+            
+            A HashSet with no elements has the properties of the empty set. (See IsSubset, etc. for 
+            special empty set checks.)
+            
+            A couple of methods have a special case if other is this (e.g. SymmetricExceptWith). 
+            If we didn't have these checks, we could be iterating over the set and modifying at
+            the same time. 
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
         <member name="M:NumSharp.Utilities.Hashset`1.#ctor(System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.IEqualityComparer{`0})">
             <summary>
             Implementation Notes:
@@ -8154,7 +8247,13 @@
             <param name="collection"></param>
             <param name="comparer"></param>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:NumSharp.Utilities.Hashset`1.System#Collections#Generic#ICollection{T}#Add(`0)" -->
+        <member name="M:NumSharp.Utilities.Hashset`1.System#Collections#Generic#ICollection{T}#Add(`0)">
+            <summary>
+            Add item to this hashset. This is the explicit implementation of the <see cref="T:System.Collections.Generic.ICollection`1"/>
+            interface. The other Add method returns bool indicating whether item was added.
+            </summary>
+            <param name="item">item to add</param>
+        </member>
         <member name="M:NumSharp.Utilities.Hashset`1.Clear">
             <summary>
             Remove all items from this set. This clears the elements but not the underlying 
@@ -11034,7 +11133,11 @@
                 Is this shape a broadcast and/or has modified strides?
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "F:NumSharp.Shape.IsScalar" -->
+        <member name="F:NumSharp.Shape.IsScalar">
+            <summary>
+                Is this shape a scalar? (<see cref="P:NumSharp.Shape.NDim"/>==0 &amp;&amp; <see cref="F:NumSharp.Shape.size"/> == 1)
+            </summary>
+        </member>
         <member name="P:NumSharp.Shape.IsEmpty">
             <summary>
             True if the shape is not initialized.
@@ -11144,7 +11247,7 @@
         </member>
         <member name="M:NumSharp.Shape.GetSubshape(System.Int32[])">
             <summary>
-                Gets the shape based on given <see cref="!:indicies"/> and the index offset (C-Contiguous) inside the current storage.
+                Gets the shape based on given <paramref name="indicies"/> and the index offset (C-Contiguous) inside the current storage.
             </summary>
             <param name="indicies">The selection of indexes 0 based.</param>
             <returns></returns>
@@ -11269,7 +11372,7 @@
         </member>
         <member name="M:NumSharp.Shape.GetSubshape(System.Int32*,System.Int32)">
             <summary>
-                Gets the shape based on given <see cref="!:indicies"/> and the index offset (C-Contiguous) inside the current storage.
+                Gets the shape based on given <paramref name="indicies"/> and the index offset (C-Contiguous) inside the current storage.
             </summary>
             <param name="indicies">The selection of indexes 0 based.</param>
             <returns></returns>

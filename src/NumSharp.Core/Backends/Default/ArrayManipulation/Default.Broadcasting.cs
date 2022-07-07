@@ -470,7 +470,7 @@ namespace NumSharp.Backends
             if (shapes.Length <= 1)
                 return true;
 
-            int i, nd, k, j, tmp;
+            int i, nd, k, tmp;
 
             int len = shapes.Length;
 
@@ -522,7 +522,7 @@ namespace NumSharp.Backends
             if (shapes.Length <= 1)
                 return true;
 
-            int i, nd, k, j, tmp;
+            int i, nd, k, tmp;
 
             int len = shapes.Length;
 

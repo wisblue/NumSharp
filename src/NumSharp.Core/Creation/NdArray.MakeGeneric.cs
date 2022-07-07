@@ -32,7 +32,7 @@ namespace NumSharp
         }
 
         /// <summary>
-        ///     Tries to cast to <see cref="NDArray{T}"/>, otherwise calls <see cref="NDArray{T}.astype"/>.
+        ///     Tries to cast to <see cref="NDArray{T}"/>, otherwise calls <see cref="NDArray.astype"/>.
         /// </summary>
         /// <typeparam name="T">The type of the generic</typeparam>
         /// <returns>This NDArray as a generic version.</returns>

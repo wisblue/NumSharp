@@ -67,7 +67,7 @@ namespace NumSharp
         public bool IsBroadcasted => BroadcastInfo != null;
 
         /// <summary>
-        ///     Is this shape a scalar? (<see cref="NDim"/>==0 && <see cref="size"/> == 1)
+        ///     Is this shape a scalar? (<see cref="NDim"/>==0 &amp;&amp; <see cref="size"/> == 1)
         /// </summary>
         public bool IsScalar;
 
@@ -767,7 +767,7 @@ namespace NumSharp
 
 
         /// <summary>
-        ///     Gets the shape based on given <see cref="indicies"/> and the index offset (C-Contiguous) inside the current storage.
+        ///     Gets the shape based on given <paramref name="indicies"/> and the index offset (C-Contiguous) inside the current storage.
         /// </summary>
         /// <param name="indicies">The selection of indexes 0 based.</param>
         /// <returns></returns>
@@ -947,9 +947,8 @@ namespace NumSharp
         public void ChangeTensorLayout(char order = 'C')
         {
             return; //currently this does nothing.
-            //layout = order;
-            _computeStrides();
-            ComputeHashcode();
+            //_computeStrides();
+            //ComputeHashcode();
         }
 
         [MethodImpl((MethodImplOptions)768)]

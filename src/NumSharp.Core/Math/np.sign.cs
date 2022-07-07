@@ -7,7 +7,7 @@ namespace NumSharp
     {
         /// <summary>
         ///     Returns an element-wise indication of the sign of a number. <br></br>
-        ///     The sign function returns -1 if x < 0, 0 if x==0, 1 if x > 0. nan is returned for nan inputs.
+        ///     The sign function returns -1 if x &lt; 0, 0 if x==0, 1 if x &lt; 0. nan is returned for nan inputs.
         /// </summary>
         /// <param name="x">Angle, in radians (2 \pi rad equals 360 degrees).</param>
         /// <param name="outType">The dtype the returned ndarray should be of, only non integer values are supported.</param>
@@ -18,7 +18,7 @@ namespace NumSharp
 
         /// <summary>
         ///     Returns an element-wise indication of the sign of a number. <br></br>
-        ///     The sign function returns -1 if x < 0, 0 if x==0, 1 if x > 0. nan is returned for nan inputs.
+        ///     The sign function returns -1 if x &lt; 0, 0 if x==0, 1 if x &gt; 0. nan is returned for nan inputs.
         /// </summary>
         /// <param name="x">Angle, in radians (2 \pi rad equals 360 degrees).</param>
         /// <param name="outType">The dtype the returned ndarray should be of, only non integer values are supported.</param>

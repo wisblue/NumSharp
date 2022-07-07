@@ -8,12 +8,12 @@ namespace NumSharp
     public partial class NDArray
     {
         /// <summary>
-        ///     Creates a scalar <see cref="NDArray"/> of <see cref="value"/> and <see cref="dtype"/>.
+        ///     Creates a scalar <see cref="NDArray"/> of <see cref="Type"/>.
         /// </summary>
         /// <param name="value">The value of the scalar</param>
         /// <param name="dtype">The type of the scalar.</param>
         /// <returns></returns>
-        /// <remarks>In case when <see cref="value"/> is not <see cref="dtype"/>, <see cref="Converts.ChangeType(object,System.Type)"/> will be called.</remarks>
+        /// <remarks>In case when <paramref name="value"/> is not <paramref name="dtype"/>, <see cref="NumSharp.Utilities.Converts.ChangeType"/> will be called.</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static NDArray Scalar(object value, Type dtype)
         {
@@ -21,11 +21,11 @@ namespace NumSharp
         }
 
         /// <summary>
-        ///     Creates a scalar <see cref="NDArray"/> of <see cref="value"/> and <see cref="dtype"/>.
+        ///     Creates a scalar <see cref="NDArray"/> of <paramref name="value"/>.
         /// </summary>
         /// <param name="value">The value of the scalar</param>
         /// <returns></returns>
-        /// <remarks>In case when <see cref="value"/> is not <see cref="dtype"/>, <see cref="Converts.ChangeType(object,System.Type)"/> will be called.</remarks>
+        /// <remarks>In case when <paramref crefname="value"/> is not <see cref="dtype"/>, <see cref="NumSharp.Utilities.Converts.ChangeType"/> will be called.</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static NDArray Scalar(object value)
         {
@@ -33,11 +33,11 @@ namespace NumSharp
         }
 
         /// <summary>
-        ///     Creates a scalar <see cref="NDArray"/> of <see cref="value"/> and <see cref="dtype"/>.
+        ///     Creates a scalar <see cref="NDArray"/> of <paramref name="value"/> .
         /// </summary>
         /// <param name="value">The value of the scalar</param>
         /// <returns></returns>
-        /// <remarks>In case when <see cref="value"/> is not <see cref="dtype"/>, <see cref="Converts.ChangeType(object,System.Type)"/> will be called.</remarks>
+        /// <remarks>In case when <paramref name="value"/> is not <see cref="ValueType"/>, <see cref="NumSharp.Utilities.Converts.ChangeType"/> will be called.</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static NDArray Scalar(ValueType value)
         {
@@ -45,11 +45,10 @@ namespace NumSharp
         }
 
         /// <summary>
-        ///     Creates a scalar <see cref="NDArray"/> of <see cref="value"/> and <see cref="dtype"/>.
+        ///     Creates a scalar <see cref="NDArray"/> of <paramref name="value"/>.
         /// </summary>
         /// <param name="value">The value of the scalar</param>
         /// <returns></returns>
-        /// <remarks>In case when <see cref="value"/> is not <see cref="dtype"/>, <see cref="Converts.ChangeType(object,System.Type)"/> will be called.</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static NDArray Scalar<T>(T value) where T : unmanaged
         {
@@ -57,11 +56,10 @@ namespace NumSharp
         }
 
         /// <summary>
-        ///     Creates a scalar <see cref="NDArray"/> of <see cref="value"/> and <see cref="dtype"/>.
+        ///     Creates a scalar <see cref="NDArray"/> of <paramref name="value"/> and <see cref="dtype"/>.
         /// </summary>
         /// <param name="value">The value of the scalar, attempt to convert will be performed</param>
         /// <returns></returns>
-        /// <remarks>In case when <see cref="value"/> is not <see cref="dtype"/>, <see cref="Converts.ChangeType(object,System.Type)"/> will be called.</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static NDArray Scalar<T>(object value) where T : unmanaged
         {
@@ -69,12 +67,12 @@ namespace NumSharp
         }
 
         /// <summary>
-        ///     Creates a scalar <see cref="NDArray"/> of <see cref="value"/> and <see cref="dtype"/>.
+        ///     Creates a scalar <see cref="NDArray"/> of <paramref name="value"/> and <see cref="dtype"/>.
         /// </summary>
         /// <param name="value">The value of the scalar</param>
         /// <param name="typeCode">The type code of the scalar.</param>
         /// <returns></returns>
-        /// <remarks>In case when <see cref="value"/> is not <see cref="dtype"/>, <see cref="Converts.ChangeType(object,System.Type)"/> will be called.</remarks>
+        /// <remarks>In case when <paramref name="value"/> is not <see cref="dtype"/>, <see cref="NumSharp.Utilities.Converts.ChangeType"/> will be called.</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static NDArray Scalar(object value, NPTypeCode typeCode)
         {
