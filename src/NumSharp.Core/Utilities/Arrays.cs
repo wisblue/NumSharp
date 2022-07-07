@@ -220,7 +220,6 @@ namespace NumSharp.Utilities
         ///     Performs fast concatenation of multiple arrays
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="arrays"></param>
         /// <returns></returns>
         [MethodImpl((MethodImplOptions)768)]
         public static T[] Concat<T>(T[] left, T[] right)
@@ -356,9 +355,7 @@ namespace NumSharp.Utilities
         /// <summary>
         ///     Creates an array of 1D of type <paramref name="type"/>.
         /// </summary>
-        /// <typeparam name="T">The type of the array</typeparam>
         /// <param name="type">The type to create this array.</param>
-        /// <param name="length">The length of the array</param>
         /// <remarks>Do not use this if you are trying to create jagged or multidimensional array.</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Array Create(Type type, IEnumerable enumerable)
@@ -376,7 +373,6 @@ namespace NumSharp.Utilities
         /// <summary>
         ///     Creates an array of 1D of type <paramref name="type"/>.
         /// </summary>
-        /// <typeparam name="T">The type of the array</typeparam>
         /// <param name="type">The type to create this array.</param>
         /// <param name="length">The length of the array</param>
         /// <remarks>Do not use this if you are trying to create jagged or multidimensional array.</remarks>

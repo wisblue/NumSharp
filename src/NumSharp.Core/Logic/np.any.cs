@@ -45,7 +45,7 @@ namespace NumSharp
         /// <summary>
         ///     Test whether any array element along a given axis evaluates to True.
         /// </summary>
-        /// <param name="a">Input array or object that can be converted to an array.</param>
+        /// <param name="nd">Input array or object that can be converted to an array.</param>
         /// <param name="axis">Axis or axes along which a logical OR reduction is performed. The default (axis = None) is to perform a logical OR over all the dimensions of the input array. axis may be negative, in which case it counts from the last to the first axis.</param>
         /// <returns>A new boolean or ndarray is returned unless out is specified, in which case a reference to out is returned.</returns>
         /// <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.any.html</remarks>

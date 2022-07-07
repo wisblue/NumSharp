@@ -576,7 +576,7 @@ namespace NumSharp.Backends
         /// </summary>
         /// <param name="sourceArray">The array to change his type</param>
         /// <remarks>If the return type is equal to source type, this method does not return a copy.</remarks>
-        /// <returns>Returns <param name="sourceArray"/> or new array with changed type to <see cref="ArraySlice{TOut}"/></returns>
+        /// <returns>Returns <paramref name="sourceArray"/> or new array with changed type to <see cref="ArraySlice{TOut}"/></returns>
         [SuppressMessage("ReSharper", "AssignNullToNotNullAttribute")]
         protected static ArraySlice<TOut> _ChangeTypeOfArray<TOut>(IArraySlice sourceArray) where TOut : unmanaged
         {

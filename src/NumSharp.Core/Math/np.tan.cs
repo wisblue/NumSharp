@@ -75,7 +75,7 @@ namespace NumSharp
         ///     By IEEE convention, this function is defined for x2 = +/-0 and for either or both of x1 and x2 = +/-inf
         /// </summary>
         /// <param name="x">Input array y-coordinates.</param>
-        /// <param name="x">x-coordinates. If x1.shape != x2.shape, they must be broadcastable to a common shape (which becomes the shape of the output).</param>
+        /// <param name="y">x-coordinates. If x1.shape != x2.shape, they must be broadcastable to a common shape (which becomes the shape of the output).</param>
         /// <param name="outType">The dtype the returned ndarray should be of, only non integer values are supported.</param>
         /// <returns>The Array of angles in radians, in the range [-pi, pi]. This is a scalar if both x1 and x2 are scalars.</returns>
         /// <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.arctan2.html</remarks>
@@ -87,7 +87,7 @@ namespace NumSharp
         ///     By IEEE convention, this function is defined for x2 = +/-0 and for either or both of x1 and x2 = +/-inf
         /// </summary>
         /// <param name="x">Input array y-coordinates.</param>
-        /// <param name="x">x-coordinates. If x1.shape != x2.shape, they must be broadcastable to a common shape (which becomes the shape of the output).</param>
+        /// <param name="y">x-coordinates. If x1.shape != x2.shape, they must be broadcastable to a common shape (which becomes the shape of the output).</param>
         /// <param name="outType">The dtype the returned ndarray should be of, only non integer values are supported.</param>
         /// <returns>The Array of angles in radians, in the range [-pi, pi]. This is a scalar if both x1 and x2 are scalars.</returns>
         /// <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.arctan2.html</remarks>

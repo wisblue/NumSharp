@@ -1236,7 +1236,6 @@ namespace NumSharp.Utilities
         /// defragmentation, allowing faster execution; note that this is reasonable since 
         /// AddIfNotPresent attempts to insert new elements in re-opened spots.
         /// </summary>
-        /// <param name="sizeSuggestion"></param>
         private void IncreaseCapacity()
         {
             Debug.Assert(m_buckets != null, "IncreaseCapacity called on a set with no elements");
@@ -1983,7 +1982,7 @@ namespace NumSharp.Utilities
         /// <summary>
         /// Instantiates a BitHelper with a heap alloc'd array of ints
         /// </summary>
-        /// <param name="bitArray">int array to hold bits</param>
+        /// <param name="bitArrayPtr">int array to hold bits</param>
         /// <param name="length">length of int array</param>
         internal BitHelper(int* bitArrayPtr, int length)
         {

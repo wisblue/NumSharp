@@ -17,7 +17,7 @@ namespace NumSharp
             /// <param name="x">Input array.  If `axis` is None, `x` must be 1-D or 2-D.</param>
             /// <param name="ord">non-zero int, "inf", "-inf" or "fro", optional
             /// Order of the norm(see table under ``Notes``). </param>
-            /// <param name="axis">int, 2-tuple of ints int[], null}, optional
+            /// <param name="axis_obj">object, optional
             /// If `axis` is an integer, it specifies the axis of `x` along which to
             /// compute the vector norms.If `axis` is a 2-tuple, it specifies the
             /// axes that hold 2-D matrices, and the matrix norms of these matrices

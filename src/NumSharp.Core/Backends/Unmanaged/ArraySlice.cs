@@ -69,7 +69,7 @@ namespace NumSharp.Backends.Unmanaged
         }
 
         /// <summary>
-        ///     Wrap a <param name="val"/> inside <see cref="ArraySlice{T}"/>.
+        ///     Wrap a <paramref name="val"/> inside <see cref="ArraySlice{T}"/>.
         /// </summary>
         /// <param name="val"></param>
         /// <returns></returns>
@@ -180,7 +180,6 @@ namespace NumSharp.Backends.Unmanaged
             return new ArraySlice<T>(UnmanagedMemoryBlock<T>.FromBuffer(arr, copy));
         }
 
-        /// <param name="count">The length in objects of <typeparamref name="T"/> and not in bytes.</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ArraySlice<T> FromPool<T>(StackedMemoryPool pool) where T : unmanaged
         {

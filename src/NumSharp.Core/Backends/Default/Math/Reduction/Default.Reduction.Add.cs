@@ -868,7 +868,7 @@ namespace NumSharp.Backends
 			            default:
 				            throw new NotSupportedException();
 		            }
-                    break;
+                    //break;
                 }
 			    case NPTypeCode.Double: 
                 {
@@ -932,7 +932,7 @@ namespace NumSharp.Backends
 			            default:
 				            throw new NotSupportedException();
 		            }
-                    break;
+                    //break;
                 }
 			    default:
 				    throw new NotSupportedException();

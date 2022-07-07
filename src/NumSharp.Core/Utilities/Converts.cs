@@ -12,18 +12,16 @@ namespace NumSharp.Utilities
     {
         /// <summary>Returns an object of the specified type whose value is equivalent to the specified object.</summary>
         /// <param name="value">An object that implements the <see cref="T:System.IConvertible"></see> interface.</param>
-        /// <param name="typeCode">The type of object to return.</param>
-        /// <returns>An object whose underlying type is <paramref name="typeCode">typeCode</paramref> and whose value is equivalent to <paramref name="value">value</paramref>.
         /// -or-
-        /// A null reference (Nothing in Visual Basic), if <paramref name="value">value</paramref> is null and <paramref name="typeCode">typeCode</paramref> is <see cref="System.TypeCode.Empty"></see>, <see cref="System.TypeCode.String"></see>, or <see cref="System.TypeCode.Object"></see>.</returns>
+        /// <returns>A null reference (Nothing in Visual Basic), if <paramref name="value">value</paramref> is null and <see cref="NPTypeCode">typeCode</see> is <see cref="System.TypeCode.Empty"></see>, <see cref="System.TypeCode.String"></see>, or <see cref="System.TypeCode.Object"></see>.</returns>
         /// <exception cref="T:System.InvalidCastException">This conversion is not supported.
         /// -or-
-        /// <paramref name="value">value</paramref> is null and <paramref name="typeCode">typeCode</paramref> specifies a value type.
+        /// <paramref name="value">value</paramref> is null and <see cref="NPTypeCode"></see> specifies a value type.
         /// -or-
         /// <paramref name="value">value</paramref> does not implement the <see cref="System.IConvertible"></see> interface.</exception>
-        /// <exception cref="T:System.FormatException"><paramref name="value">value</paramref> is not in a format recognized by the <paramref name="typeCode">typeCode</paramref> type.</exception>
-        /// <exception cref="T:System.OverflowException"><paramref name="value">value</paramref> represents a number that is out of the range of the <paramref name="typeCode">typeCode</paramref> type.</exception>
-        /// <exception cref="T:System.ArgumentException"><paramref name="typeCode">typeCode</paramref> is invalid.</exception>
+        /// <exception cref="T:System.FormatException"><paramref name="value">value</paramref> is not in a format recognized by the <see cref="NPTypeCode"></see> type.</exception>
+        /// <exception cref="T:System.OverflowException"><paramref name="value">value</paramref> represents a number that is out of the range of the<see cref="NPTypeCode"></see> type.</exception>
+        /// <exception cref="T:System.ArgumentException"><see cref="NPTypeCode"></see> is invalid.</exception>
         [MethodImpl((MethodImplOptions)512)]
         public static TOut ChangeType<TOut>(Object value)
         {

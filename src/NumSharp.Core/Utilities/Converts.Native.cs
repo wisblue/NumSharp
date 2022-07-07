@@ -2547,9 +2547,7 @@ namespace NumSharp.Utilities
         /// This method is a bit lengthy on purpose. We are trying to avoid jumps to helpers in the loop
         /// to aid performance.
         /// </summary>
-        /// <param name="inputPtr">Pointer to first input char</param>
         /// <param name="inputLength">Number of input chars</param>
-        /// <param name="destPtr">Pointer to location for teh first result byte</param>
         /// <param name="destLength">Max length of the preallocated result buffer</param>
         /// <returns>If the result buffer was not large enough to write all result bytes, return -1;
         /// Otherwise return the number of result bytes actually produced.</returns>

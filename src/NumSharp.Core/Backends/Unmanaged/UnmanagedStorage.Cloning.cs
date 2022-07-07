@@ -142,7 +142,7 @@ namespace NumSharp.Backends
         /// </summary>
         /// <param name="dtype">The dtype to convert to</param>
         /// <returns>A copy of this <see cref="UnmanagedStorage"/> casted to a specific dtype.</returns>
-        /// <remarks>Copies only if dtypes does not match <paramref name="typeCode"/></remarks>
+        /// <remarks>Copies only if dtypes does not match <paramref name="dtype"/></remarks>
         public UnmanagedStorage CastIfNecessary(Type dtype)
         {
             return CastIfNecessary(dtype.GetTypeCode());

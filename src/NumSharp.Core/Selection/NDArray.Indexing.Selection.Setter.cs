@@ -486,7 +486,6 @@ namespace NumSharp
         /// <param name="dst"></param>
         /// <param name="dstOffsets"></param>
         /// <param name="retShape"></param>
-        /// <param name="absolute">Is the given <paramref name="dstOffsets"/> already point to the offset of <paramref name="dst"/>.</param>
         /// <returns></returns>
         protected static unsafe void SetIndicesND<T>(NDArray<T> dst, NDArray<int> dstOffsets, NDArray[] dstIndices, int ndsCount, int[] retShape, int[] subShape, NDArray<T> values) where T : unmanaged
         {
@@ -530,9 +529,7 @@ namespace NumSharp
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="source"></param>
-        /// <param name="offsets"></param>
         /// <param name="retShape"></param>
-        /// <param name="absolute">Is the given <paramref name="offsets"/> already point to the offset of <paramref name="source"/>.</param>
         /// <returns></returns>
         [SuppressMessage("ReSharper", "SuggestVarOrType_Elsewhere")]
         protected static unsafe void SetIndicesNDNonLinear<T>(NDArray<T> source, NDArray[] indices, int ndsCount, int[] retShape, int[] subShape, NDArray<T> values) where T : unmanaged

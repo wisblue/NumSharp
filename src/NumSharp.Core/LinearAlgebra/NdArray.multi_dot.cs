@@ -2,13 +2,6 @@
 {
     public partial class NDArray
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="np1"></param>
-        /// <param name="np2"></param>
-        /// <typeparam name="TData"></typeparam>
-        /// <returns></returns>
         public NDArray multi_dot(params NDArray[] np2Multi)
         {
             return null;

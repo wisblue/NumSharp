@@ -90,7 +90,6 @@ namespace NumSharp
         /// </summary>
         /// <param name="a">Array containing numbers whose mean is desired. If a is not an array, a conversion is attempted.</param>
         /// <param name="axis">Axis or axes along which the means are computed. The default is to compute the mean of the flattened array.</param>
-        /// <param name="type">Type to use in computing the mean. For integer inputs, the default is float64; for floating point inputs, it is the same as the input dtype.</param>
         /// <param name="keepdims">
         ///     If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array.
         ///     If the default value is passed, then keepdims will not be passed through to the mean method of sub-classes of ndarray, however any non-default value will be.If the sub-class’ method does not implement keepdims any exceptions will be raised.

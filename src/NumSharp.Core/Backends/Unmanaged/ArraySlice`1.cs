@@ -68,7 +68,6 @@ namespace NumSharp.Backends.Unmanaged
         ///     Creates a sliced <see cref="ArraySlice{T}"/>.
         /// </summary>
         /// <param name="memoryBlock"></param>
-        /// <param name="start">The offset in <typeparamref name="T"/> and not bytes - relative to the <paramref name="memoryBlock"/>.</param>
         /// <param name="count">The number of <typeparamref name="T"/> this slice should contain - relative to the <paramref name="memoryBlock"/></param>
         public ArraySlice(UnmanagedMemoryBlock<T> memoryBlock, T* address, int count)
         {
@@ -83,7 +82,6 @@ namespace NumSharp.Backends.Unmanaged
         ///     Creates a sliced <see cref="ArraySlice{T}"/>.
         /// </summary>
         /// <param name="memoryBlock"></param>
-        /// <param name="start">The offset in <typeparamref name="T"/> and not bytes - relative to the <paramref name="memoryBlock"/>.</param>
         /// <param name="count">The number of <typeparamref name="T"/> this slice should contain - relative to the <paramref name="memoryBlock"/></param>
         public ArraySlice(UnmanagedMemoryBlock<T> memoryBlock, T* address, long count)
         {

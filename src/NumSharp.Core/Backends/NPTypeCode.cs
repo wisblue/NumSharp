@@ -606,7 +606,7 @@ namespace NumSharp
             #endregion
 #endif
 
-            return typeCode;
+            //return typeCode;
         }
         
         /// <summary>

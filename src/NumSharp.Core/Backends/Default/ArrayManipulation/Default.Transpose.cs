@@ -32,7 +32,6 @@ namespace NumSharp.Backends
         ///         Used internally by multi-axis-checking logic.
         /// </summary>
         /// <param name="axis">The un-normalized index or indices of the axis.</param>
-        /// <param name="ndim">The number of dimensions of the array that `axis` should be normalized against.</param>
         /// <param name="argname">A prefix to put before the error message, typically the name of the argument.</param>
         /// <param name="allow_duplicate">If False, the default, disallow an axis from being specified twice.</param>
         /// <returns>The normalized axis index, such that `0 &lt;= normalized_axis &lt; ndim`</returns>
@@ -54,7 +53,6 @@ namespace NumSharp.Backends
         ///         Used internally by multi-axis-checking logic.
         /// </summary>
         /// <param name="axis">The un-normalized index or indices of the axis.</param>
-        /// <param name="ndim">The number of dimensions of the array that `axis` should be normalized against.</param>
         /// <param name="argname">A prefix to put before the error message, typically the name of the argument.</param>
         /// <param name="allow_duplicate">If False, the default, disallow an axis from being specified twice.</param>
         /// <returns>The normalized axis index, such that `0 &lt;&#61; normalized_axis &lt; ndim`</returns>

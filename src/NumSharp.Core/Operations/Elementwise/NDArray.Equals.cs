@@ -63,7 +63,6 @@ namespace NumSharp
         /// <summary>
         ///     True if two arrays have the same shape and elements, False otherwise.
         /// </summary>
-        /// <param name="a">Input array.</param>
         /// <param name="rhs">Input array.</param>
         /// <returns>Returns True if the arrays are equal.</returns>
         /// <remarks>https://docs.scipy.org/doc/numpy-1.16.0/reference/generated/numpy.array_equal.html</remarks>

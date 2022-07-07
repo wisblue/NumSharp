@@ -61,7 +61,6 @@ namespace NumSharp.Generic
         /// Constructor for init data type
         /// internal storage is 1D with 1 element
         /// </summary>
-        /// <param name="dtype">Data type of elements</param>
         /// <param name="engine">The engine of this <see cref="NDArray"/></param>
         /// <remarks>This constructor does not call allocation/></remarks>
         protected internal NDArray(TensorEngine engine) : base(InfoOf<TDType>.NPTypeCode, engine) { }
@@ -70,14 +69,12 @@ namespace NumSharp.Generic
         /// Constructor for init data type
         /// internal storage is 1D with 1 element
         /// </summary>
-        /// <param name="dtype">Data type of elements</param>
         /// <remarks>This constructor does not call allocation/></remarks>
         public NDArray() : base(InfoOf<TDType>.NPTypeCode) { }
 
         /// <summary>
         ///     Constructor which initialize elements with length of <paramref name="size"/>
         /// </summary>
-        /// <param name="dtype">Internal data type</param>
         /// <param name="size">The size as a single dimension shape</param>
         /// <param name="fillZeros">Should set the values of the new allocation to default(dtype)? otherwise - old memory noise</param>
         /// <remarks>This constructor calls <see cref="UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
@@ -134,7 +131,6 @@ namespace NumSharp.Generic
         /// Constructor which initialize elements with 0
         /// type and shape are given.
         /// </summary>
-        /// <param name="dtype">internal data type</param>
         /// <param name="shape">Shape of NDArray</param>
         /// <param name="fillZeros">Should set the values of the new allocation to default(dtype)? otherwise - old memory noise</param>
         /// <remarks>This constructor calls <see cref="UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>

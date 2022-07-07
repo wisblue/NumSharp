@@ -18,7 +18,7 @@ namespace NumSharp.Utilities
         #region Cloning
 
         /// <summary>
-        ///     Creates a clone of given <param name="sourceArray"/>.
+        ///     Creates a clone of given <paramref name="sourceArray"/>.
         /// </summary>
         /// <param name="sourceArray">The array to clone</param>
         /// <remarks>If possible, for performance reasons use generic version of this method.</remarks>
@@ -55,7 +55,7 @@ namespace NumSharp.Utilities
         }
 
         /// <summary>
-        ///     Creates a clone of given <param name="sourceArray"/>.
+        ///     Creates a clone of given <paramref name="sourceArray"/>.
         /// </summary>
         /// <param name="sourceArray">The array to clone</param>
         public static T[] Clone<T>(T[] sourceArray)
@@ -72,7 +72,7 @@ namespace NumSharp.Utilities
         }
 
         /// <summary>
-        ///     Creates a clone of given <param name="sourceArray"/> using <see cref="Array.CopyTo(System.Array,int)"/>.
+        ///     Creates a clone of given <paramref name="sourceArray"/> using <see cref="Array.CopyTo(System.Array,int)"/>.
         /// </summary>
         /// <param name="sourceArray">The array to clone</param>
         public static T[,] Clone<T>(T[,] sourceArray)
@@ -89,7 +89,7 @@ namespace NumSharp.Utilities
         }
 
         /// <summary>
-        ///     Creates a clone of given <param name="sourceArray"/> using <see cref="Array.CopyTo(System.Array,int)"/>.
+        ///     Creates a clone of given <paramref name="sourceArray"/> using <see cref="Array.CopyTo(System.Array,int)"/>.
         /// </summary>
         /// <param name="sourceArray">The array to clone</param>
         public static T[,,] Clone<T>(T[,,] sourceArray)
@@ -106,7 +106,7 @@ namespace NumSharp.Utilities
         }
 
         /// <summary>
-        ///     Creates a clone of given <param name="sourceArray"/> using <see cref="Array.CopyTo(System.Array,int)"/>.
+        ///     Creates a clone of given <paramref name="sourceArray"/> using <see cref="Array.CopyTo(System.Array,int)"/>.
         /// </summary>
         /// <param name="sourceArray">The array to clone</param>
         public static T[,,,] Clone<T>(T[,,,] sourceArray)
@@ -202,7 +202,6 @@ namespace NumSharp.Utilities
         ///     Converts <paramref name="sourceArray"/> to an array of type T.
         /// </summary>
         /// <param name="sourceArray">The array to convert</param>
-        /// <param name="returnType">The type to convert the data to</param>
         /// <returns></returns>
         public static T[] To<T>(Array sourceArray)
         {

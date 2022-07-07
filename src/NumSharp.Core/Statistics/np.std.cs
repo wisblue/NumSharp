@@ -10,7 +10,6 @@ namespace NumSharp
         ///     Returns the standard deviation, a measure of the spread of a distribution, of the array elements. The standard deviation is computed for the flattened array by default, otherwise over the specified axis.
         /// </summary>
         /// <param name="a">Calculate the standard deviation of these values.</param>
-        /// <param name="axis">Axis or axes along which the standard deviation is computed. The default is to compute the standard deviation of the flattened array.</param>
         /// <param name="keepdims">
         ///     If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array.
         /// </param>

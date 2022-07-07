@@ -11,8 +11,7 @@ namespace NumSharp
         ///     Repeat elements of an array.
         /// </summary>
         /// <param name="a">Input array.</param>
-        /// <param name="repeats">The number of repetitions for each element. repeats is broadcasted to fit the shape of the given axis.</param>
-        /// <param name="axis"></param>
+        /// <param name="repeats">The number of repetitions for each element. repeats is broadcasted to fit the shape of the given axis.</param> 
         /// <returns></returns>
         /// <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.repeat.html</remarks>
         public static NDArray repeat(NDArray a, int repeats) //TODO! , int axis = -1
@@ -101,7 +100,6 @@ namespace NumSharp
         /// </summary>
         /// <param name="a">Input scalar.</param>
         /// <param name="repeats">The number of repetitions for each element. repeats is broadcasted to fit the shape of the given axis.</param>
-        /// <param name="axis"></param>
         /// <returns></returns>
         /// <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.repeat.html</remarks>
         public static NDArray repeat<T>(T a, int repeats) where T : unmanaged //TODO! , int axis = -1

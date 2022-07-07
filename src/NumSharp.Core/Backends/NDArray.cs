@@ -385,9 +385,9 @@ namespace NumSharp
         /// <summary>
         ///     Copy of the array, cast to a specified type.
         /// </summary>
-        /// <param name="dtype">The dtype to cast this array.</param>
+        /// <param name="typeCode">The dtype to cast this array.</param>
         /// <param name="copy">By default, astype always returns a newly allocated array. If this is set to false, the input internal array is replaced instead of returning a new NDArray with the casted data.</param>
-        /// <returns>An <see cref="NDArray"/> of given <paramref name="dtype"/>.</returns>
+        /// <returns>An <see cref="NDArray"/> of given <paramref name="typeCode"/>.</returns>
         /// <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.astype.html</remarks>
         public NDArray astype(NPTypeCode typeCode, bool copy = true) => TensorEngine.Cast(this, typeCode, copy);
 
@@ -462,10 +462,6 @@ namespace NumSharp
         /// <summary>
         ///     New view of array with the same data.
         /// </summary>
-        /// <param name="dtype">
-        ///     Data-type descriptor of the returned view, e.g., float32 or int16. The default, None, results in the view having the same data-type as a.
-        ///     This argument can also be specified as an ndarray sub-class, which then specifies the type of the returned object (this is equivalent to setting the type parameter).
-        /// </param>
         /// <returns></returns>
         /// <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.view.html</remarks>
         public NDArray<T> view<T>() where T : unmanaged 

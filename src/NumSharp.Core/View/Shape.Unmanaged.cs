@@ -110,9 +110,9 @@ namespace NumSharp
         }
 
         /// <summary>
-        ///     Gets the shape based on given <paramref name="indicies"/> and the index offset (C-Contiguous) inside the current storage.
+        ///     Gets the shape based on given <paramref name="ndims"/> and the index offset (C-Contiguous) inside the current storage.
         /// </summary>
-        /// <param name="indicies">The selection of indexes 0 based.</param>
+        /// <param name="ndims">The selection of indexes 0 based.</param>
         /// <returns></returns>
         /// <remarks>Used for slicing, returned shape is the new shape of the slice and offset is the offset from current address.</remarks>
         [MethodImpl((MethodImplOptions)768)]

@@ -57,8 +57,7 @@ namespace NumSharp
         /// <summary>
         ///     Return a new double array of given shape, filled with zeros.
         /// </summary>
-        /// <param name="shape">Shape of the new array,</param>
-        /// <param name="dtype">The desired data-type for the array, e.g., <see cref="uint8"/>. Default is <see cref="float64"/> / <see cref="double"/>.</param>
+        /// <param name="shape">Shape of the new array,</param>       
         /// <returns>Array of zeros with the given shape, dtype.</returns>
         /// <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.zeros.html</remarks>
         public static NDArray zeros(Shape shape)

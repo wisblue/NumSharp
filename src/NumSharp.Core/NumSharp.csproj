@@ -49,7 +49,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>TRACE;DEBUG;NETSTANDARD;NETSTANDARD2_0;</DefineConstants>
-    <WarningLevel>1</WarningLevel>
+    <WarningLevel>2</WarningLevel>
     <NoWarn>1701;1702;IDE1006;0029</NoWarn>
     <DocumentationFile>NumSharp.xml</DocumentationFile>
     <SignAssembly>false</SignAssembly>
@@ -154,7 +154,7 @@
   </ItemGroup>
 
   <ItemGroup>
-      <None Include="numsharp.icon128.png" Pack="true" PackagePath=""/>
+      <None Include="numsharp.icon128.png" Pack="true" PackagePath="" />
   </ItemGroup>
 
   <Target Name="LogDebugInfo">

@@ -40,7 +40,6 @@ namespace NumSharp.Backends.Unmanaged
         /// <summary>
         ///     Copies the entire contents of this storage to given address (using <see cref="Buffer.MemoryCopy"/>).
         /// </summary>
-        /// <param name="dst">The block to copy to.</param>
         public static unsafe void CopyTo(this IMemoryBlock src, void* dstAddress, int countOffsetDesitinion)
         {
             if (dstAddress == null)

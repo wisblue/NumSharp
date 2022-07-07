@@ -735,7 +735,7 @@ namespace NumSharp.Backends
 			            default:
 				            throw new NotSupportedException();
 		            }
-                    break;
+                    //break;
                 }
 			    case NPTypeCode.Int32: 
                 {
@@ -824,7 +824,7 @@ namespace NumSharp.Backends
 			            default:
 				            throw new NotSupportedException();
 		            }
-                    break;
+                    //break;
                 }
 			    case NPTypeCode.Int64: 
                 {
@@ -913,7 +913,7 @@ namespace NumSharp.Backends
 			            default:
 				            throw new NotSupportedException();
 		            }
-                    break;
+                    //break;
                 }
 			    case NPTypeCode.Single: 
                 {
@@ -1002,7 +1002,7 @@ namespace NumSharp.Backends
 			            default:
 				            throw new NotSupportedException();
 		            }
-                    break;
+                    //break;
                 }
 			    case NPTypeCode.Double: 
                 {
@@ -1091,7 +1091,7 @@ namespace NumSharp.Backends
 			            default:
 				            throw new NotSupportedException();
 		            }
-                    break;
+                    //break;
                 }
 			    default:
 				    throw new NotSupportedException();

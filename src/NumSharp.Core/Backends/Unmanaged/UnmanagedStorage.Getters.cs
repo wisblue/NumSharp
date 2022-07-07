@@ -98,9 +98,9 @@ namespace NumSharp.Backends
         }
 
         /// <summary>
-        ///     Gets a subshape based on given <paramref name="indices"/>.
+        ///     Gets a subshape based on given <paramref name="ndims"/>.
         /// </summary>
-        /// <param name="indices"></param>
+        /// <param name="ndims"></param>
         /// <returns></returns>
         /// <remarks>Does not copy, returns a <see cref="Slice"/> or a memory slice</remarks>
         [MethodImpl((MethodImplOptions)768)]

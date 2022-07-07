@@ -769,7 +769,6 @@
                 Return a new array of given shape and type, without initializing entries.
             </summary>
             <param name="shape">Shape of the empty array, e.g., (2, 3) or 2.</param>
-            <param name="dtype">Desired output data-type for the array, e.g, numpy.int8. Default is numpy.float64.</param>
             <returns>Array of uninitialized (arbitrary) data of the given shape, dtype, and order. Object arrays will be initialized to None.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.empty.html</remarks>
         </member>
@@ -980,7 +979,6 @@
                 Return a new array of given shape and type, filled with ones.
             </summary>
             <param name="shapes">Shape of the new array.</param>
-            <param name="dtype">The desired data-type for the array, e.g., <see cref="F:NumSharp.np.uint8"/>. Default is <see cref="F:NumSharp.np.float64"/> / <see cref="T:System.Double"/>.</param>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.ones.html</remarks>
         </member>
         <member name="M:NumSharp.np.ones(System.Type,System.Int32[])">
@@ -1012,7 +1010,6 @@
                 Return a new array of given shape and type, filled with ones.
             </summary>
             <param name="shape">Shape of the new array.</param>
-            <param name="dtype">The desired data-type for the array, e.g., <see cref="F:NumSharp.np.uint8"/>. Default is <see cref="F:NumSharp.np.float64"/> / <see cref="T:System.Double"/>.</param>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.ones.html</remarks>
         </member>
         <member name="M:NumSharp.np.ones(NumSharp.Shape,NumSharp.NPTypeCode)">
@@ -1090,8 +1087,7 @@
             <summary>
                 Return a new double array of given shape, filled with zeros.
             </summary>
-            <param name="shape">Shape of the new array,</param>
-            <param name="dtype">The desired data-type for the array, e.g., <see cref="F:NumSharp.np.uint8"/>. Default is <see cref="F:NumSharp.np.float64"/> / <see cref="T:System.Double"/>.</param>
+            <param name="shape">Shape of the new array,</param>       
             <returns>Array of zeros with the given shape, dtype.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.zeros.html</remarks>
         </member>
@@ -1142,7 +1138,7 @@
             <param name="x">Input array.  If `axis` is None, `x` must be 1-D or 2-D.</param>
             <param name="ord">non-zero int, "inf", "-inf" or "fro", optional
             Order of the norm(see table under ``Notes``). </param>
-            <param name="axis">int, 2-tuple of ints int[], null}, optional
+            <param name="axis_obj">object, optional
             If `axis` is an integer, it specifies the axis of `x` along which to
             compute the vector norms.If `axis` is a 2-tuple, it specifies the
             axes that hold 2-D matrices, and the matrix norms of these matrices
@@ -1212,7 +1208,7 @@
             <summary>
                 Test whether all array elements along a given axis evaluate to True.
             </summary>
-            <param name="a">Input array or object that can be converted to an array.</param>
+            <param name="nd">Input array or object that can be converted to an array.</param>
             <param name="axis">Axis or axes along which a logical OR reduction is performed. The default (axis = None) is to perform a logical OR over all the dimensions of the input array. axis may be negative, in which case it counts from the last to the first axis.</param>
             <returns>A new boolean or ndarray is returned unless out is specified, in which case a reference to out is returned.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.all.html</remarks>
@@ -1248,7 +1244,7 @@
             <summary>
                 Test whether any array element along a given axis evaluates to True.
             </summary>
-            <param name="a">Input array or object that can be converted to an array.</param>
+            <param name="nd">Input array or object that can be converted to an array.</param>
             <param name="axis">Axis or axes along which a logical OR reduction is performed. The default (axis = None) is to perform a logical OR over all the dimensions of the input array. axis may be negative, in which case it counts from the last to the first axis.</param>
             <returns>A new boolean or ndarray is returned unless out is specified, in which case a reference to out is returned.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.any.html</remarks>
@@ -1291,7 +1287,6 @@
                 Determine common type following standard coercion rules.
             </summary>
             <param name="array_types">A list of dtypes or dtype convertible objects representing arrays. Can be null.</param>
-            <param name="scalar_types">A list of dtypes or dtype convertible objects representing scalars.Can be null.</param>
             <returns>The common data type, which is the maximum of array_types ignoring scalar_types, unless the maximum of scalar_types is of a different kind (dtype.kind). If the kind is not understood, then None is returned.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.find_common_type.html</remarks>
         </member>
@@ -1660,8 +1655,7 @@
                 Repeat elements of an array.
             </summary>
             <param name="a">Input array.</param>
-            <param name="repeats">The number of repetitions for each element. repeats is broadcasted to fit the shape of the given axis.</param>
-            <param name="axis"></param>
+            <param name="repeats">The number of repetitions for each element. repeats is broadcasted to fit the shape of the given axis.</param> 
             <returns></returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.repeat.html</remarks>
         </member>
@@ -1671,7 +1665,6 @@
             </summary>
             <param name="a">Input scalar.</param>
             <param name="repeats">The number of repetitions for each element. repeats is broadcasted to fit the shape of the given axis.</param>
-            <param name="axis"></param>
             <returns></returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.repeat.html</remarks>
         </member>
@@ -2168,7 +2161,7 @@
             </summary>
             <param name="x1">The arrays holding the elements to be compared. If x1.shape != x2.shape, they must be broadcastable to a common shape (which becomes the shape of the output).</param>
             <param name="x2">The arrays holding the elements to be compared. If x1.shape != x2.shape, they must be broadcastable to a common shape (which becomes the shape of the output).</param>
-            <param name="@out">A location into which the result is stored. If provided, it must have a shape that the inputs broadcast to. If not provided or None, a freshly-allocated array is returned. A tuple (possible only as a keyword argument) must have length equal to the number of outputs.</param>
+            <param name="out">A location into which the result is stored. If provided, it must have a shape that the inputs broadcast to. If not provided or None, a freshly-allocated array is returned. A tuple (possible only as a keyword argument) must have length equal to the number of outputs.</param>
             <returns>The maximum of x1 and x2, element-wise. This is a scalar if both x1 and x2 are scalars.</returns>
         </member>
         <member name="M:NumSharp.np.fmax(NumSharp.NDArray@,NumSharp.NDArray@,System.Nullable{NumSharp.NPTypeCode})">
@@ -2178,7 +2171,7 @@
             </summary>
             <param name="x1">The arrays holding the elements to be compared. If x1.shape != x2.shape, they must be broadcastable to a common shape (which becomes the shape of the output).</param>
             <param name="x2">The arrays holding the elements to be compared. If x1.shape != x2.shape, they must be broadcastable to a common shape (which becomes the shape of the output).</param>
-            <param name="@out">A location into which the result is stored. If provided, it must have a shape that the inputs broadcast to. If not provided or None, a freshly-allocated array is returned. A tuple (possible only as a keyword argument) must have length equal to the number of outputs.</param>
+            <param name="outType">A location into which the result is stored. If provided, it must have a shape that the inputs broadcast to. If not provided or None, a freshly-allocated array is returned. A tuple (possible only as a keyword argument) must have length equal to the number of outputs.</param>
             <returns>The maximum of x1 and x2, element-wise. This is a scalar if both x1 and x2 are scalars.</returns>
         </member>
         <member name="M:NumSharp.np.fmax(NumSharp.NDArray@,NumSharp.NDArray@,System.Type)">
@@ -2188,7 +2181,7 @@
             </summary>
             <param name="x1">The arrays holding the elements to be compared. If x1.shape != x2.shape, they must be broadcastable to a common shape (which becomes the shape of the output).</param>
             <param name="x2">The arrays holding the elements to be compared. If x1.shape != x2.shape, they must be broadcastable to a common shape (which becomes the shape of the output).</param>
-            <param name="@out">A location into which the result is stored. If provided, it must have a shape that the inputs broadcast to. If not provided or None, a freshly-allocated array is returned. A tuple (possible only as a keyword argument) must have length equal to the number of outputs.</param>
+            <param name="outType">A location into which the result is stored. If provided, it must have a shape that the inputs broadcast to. If not provided or None, a freshly-allocated array is returned. A tuple (possible only as a keyword argument) must have length equal to the number of outputs.</param>
             <returns>The maximum of x1 and x2, element-wise. This is a scalar if both x1 and x2 are scalars.</returns>
         </member>
         <member name="M:NumSharp.np.fmax(NumSharp.NDArray@,NumSharp.NDArray@,NumSharp.NDArray)">
@@ -2198,7 +2191,7 @@
             </summary>
             <param name="x1">The arrays holding the elements to be compared. If x1.shape != x2.shape, they must be broadcastable to a common shape (which becomes the shape of the output).</param>
             <param name="x2">The arrays holding the elements to be compared. If x1.shape != x2.shape, they must be broadcastable to a common shape (which becomes the shape of the output).</param>
-            <param name="@out">A location into which the result is stored. If provided, it must have a shape that the inputs broadcast to. If not provided or None, a freshly-allocated array is returned. A tuple (possible only as a keyword argument) must have length equal to the number of outputs.</param>
+            <param name="out">A location into which the result is stored. If provided, it must have a shape that the inputs broadcast to. If not provided or None, a freshly-allocated array is returned. A tuple (possible only as a keyword argument) must have length equal to the number of outputs.</param>
             <returns>The maximum of x1 and x2, element-wise. This is a scalar if both x1 and x2 are scalars.</returns>
         </member>
         <member name="M:NumSharp.np.minimum(NumSharp.NDArray@,NumSharp.NDArray@,System.Nullable{NumSharp.NPTypeCode})">
@@ -2228,7 +2221,7 @@
             </summary>
             <param name="x1">The arrays holding the elements to be compared. If x1.shape != x2.shape, they must be broadcastable to a common shape (which becomes the shape of the output).</param>
             <param name="x2">The arrays holding the elements to be compared. If x1.shape != x2.shape, they must be broadcastable to a common shape (which becomes the shape of the output).</param>
-            <param name="@out">A location into which the result is stored. If provided, it must have a shape that the inputs broadcast to. If not provided or None, a freshly-allocated array is returned. A tuple (possible only as a keyword argument) must have length equal to the number of outputs.</param>
+            <param name="out">A location into which the result is stored. If provided, it must have a shape that the inputs broadcast to. If not provided or None, a freshly-allocated array is returned. A tuple (possible only as a keyword argument) must have length equal to the number of outputs.</param>
             <returns>The maximum of x1 and x2, element-wise. This is a scalar if both x1 and x2 are scalars.</returns>
         </member>
         <member name="M:NumSharp.np.fmin(NumSharp.NDArray@,NumSharp.NDArray@,System.Nullable{NumSharp.NPTypeCode})">
@@ -2258,7 +2251,7 @@
             </summary>
             <param name="x1">The arrays holding the elements to be compared. If x1.shape != x2.shape, they must be broadcastable to a common shape (which becomes the shape of the output).</param>
             <param name="x2">The arrays holding the elements to be compared. If x1.shape != x2.shape, they must be broadcastable to a common shape (which becomes the shape of the output).</param>
-            <param name="@out">A location into which the result is stored. If provided, it must have a shape that the inputs broadcast to. If not provided or None, a freshly-allocated array is returned. A tuple (possible only as a keyword argument) must have length equal to the number of outputs.</param>
+            <param name="out">A location into which the result is stored. If provided, it must have a shape that the inputs broadcast to. If not provided or None, a freshly-allocated array is returned. A tuple (possible only as a keyword argument) must have length equal to the number of outputs.</param>
             <returns>The maximum of x1 and x2, element-wise. This is a scalar if both x1 and x2 are scalars.</returns>
         </member>
         <member name="M:NumSharp.np.modf(NumSharp.NDArray@,System.Nullable{NumSharp.NPTypeCode})">
@@ -2459,9 +2452,6 @@
                 Sum of array elements over a given axis.
             </summary>
             <param name="a">Elements to sum.</param>
-            <param name="axis">Axis or axes along which a sum is performed. The default, axis=None, will sum all of the elements of the input array. If axis is negative it counts from the last to the first axis. </param>
-            <param name="dtype">The type of the returned array and of the accumulator in which the elements are summed. The dtype of a is used by default unless a has an integer dtype of less precision than the default platform integer. In that case, if a is signed then the platform integer is used while if a is unsigned then an unsigned integer of the same precision as the platform integer is used.</param>
-            <param name="keepdims">If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array. If the default value is passed, then keepdims will not be passed through to the sum method of sub-classes of ndarray, however any non-default value will be.If the sub-class’ method does not implement keepdims any exceptions will be raised.</param>
             <returns>An array with the same shape as a, with the specified axis removed. If a is a 0-d array, or if axis is None, a scalar is returned. If an output array is specified, a reference to out is returned.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.sum.html</remarks>
         </member>
@@ -2471,8 +2461,6 @@
             </summary>
             <param name="a">Elements to sum.</param>
             <param name="axis">Axis or axes along which a sum is performed. The default, axis=None, will sum all of the elements of the input array. If axis is negative it counts from the last to the first axis. </param>
-            <param name="dtype">The type of the returned array and of the accumulator in which the elements are summed. The dtype of a is used by default unless a has an integer dtype of less precision than the default platform integer. In that case, if a is signed then the platform integer is used while if a is unsigned then an unsigned integer of the same precision as the platform integer is used.</param>
-            <param name="keepdims">If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array. If the default value is passed, then keepdims will not be passed through to the sum method of sub-classes of ndarray, however any non-default value will be.If the sub-class’ method does not implement keepdims any exceptions will be raised.</param>
             <returns>An array with the same shape as a, with the specified axis removed. If a is a 0-d array, or if axis is None, a scalar is returned. If an output array is specified, a reference to out is returned.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.sum.html</remarks>
         </member>
@@ -2481,8 +2469,6 @@
                 Sum of array elements over a given axis.
             </summary>
             <param name="a">Elements to sum.</param>
-            <param name="axis">Axis or axes along which a sum is performed. The default, axis=None, will sum all of the elements of the input array. If axis is negative it counts from the last to the first axis. </param>
-            <param name="dtype">The type of the returned array and of the accumulator in which the elements are summed. The dtype of a is used by default unless a has an integer dtype of less precision than the default platform integer. In that case, if a is signed then the platform integer is used while if a is unsigned then an unsigned integer of the same precision as the platform integer is used.</param>
             <param name="keepdims">If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array. If the default value is passed, then keepdims will not be passed through to the sum method of sub-classes of ndarray, however any non-default value will be.If the sub-class’ method does not implement keepdims any exceptions will be raised.</param>
             <returns>An array with the same shape as a, with the specified axis removed. If a is a 0-d array, or if axis is None, a scalar is returned. If an output array is specified, a reference to out is returned.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.sum.html</remarks>
@@ -2493,7 +2479,6 @@
             </summary>
             <param name="a">Elements to sum.</param>
             <param name="axis">Axis or axes along which a sum is performed. The default, axis=None, will sum all of the elements of the input array. If axis is negative it counts from the last to the first axis. </param>
-            <param name="dtype">The type of the returned array and of the accumulator in which the elements are summed. The dtype of a is used by default unless a has an integer dtype of less precision than the default platform integer. In that case, if a is signed then the platform integer is used while if a is unsigned then an unsigned integer of the same precision as the platform integer is used.</param>
             <param name="keepdims">If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array. If the default value is passed, then keepdims will not be passed through to the sum method of sub-classes of ndarray, however any non-default value will be.If the sub-class’ method does not implement keepdims any exceptions will be raised.</param>
             <returns>An array with the same shape as a, with the specified axis removed. If a is a 0-d array, or if axis is None, a scalar is returned. If an output array is specified, a reference to out is returned.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.sum.html</remarks>
@@ -2527,7 +2512,6 @@
             <param name="a">Elements to sum.</param>
             <param name="axis">Axis or axes along which a sum is performed. The default, axis=None, will sum all of the elements of the input array. If axis is negative it counts from the last to the first axis. </param>
             <param name="dtype">The type of the returned array and of the accumulator in which the elements are summed. The dtype of a is used by default unless a has an integer dtype of less precision than the default platform integer. In that case, if a is signed then the platform integer is used while if a is unsigned then an unsigned integer of the same precision as the platform integer is used.</param>
-            <param name="keepdims">If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array. If the default value is passed, then keepdims will not be passed through to the sum method of sub-classes of ndarray, however any non-default value will be.If the sub-class’ method does not implement keepdims any exceptions will be raised.</param>
             <returns>An array with the same shape as a, with the specified axis removed. If a is a 0-d array, or if axis is None, a scalar is returned. If an output array is specified, a reference to out is returned.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.sum.html</remarks>
         </member>
@@ -2546,9 +2530,7 @@
                 Sum of array elements over a given axis.
             </summary>
             <param name="a">Elements to sum.</param>
-            <param name="axis">Axis or axes along which a sum is performed. The default, axis=None, will sum all of the elements of the input array. If axis is negative it counts from the last to the first axis. </param>
             <param name="dtype">The type of the returned array and of the accumulator in which the elements are summed. The dtype of a is used by default unless a has an integer dtype of less precision than the default platform integer. In that case, if a is signed then the platform integer is used while if a is unsigned then an unsigned integer of the same precision as the platform integer is used.</param>
-            <param name="keepdims">If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array. If the default value is passed, then keepdims will not be passed through to the sum method of sub-classes of ndarray, however any non-default value will be.If the sub-class’ method does not implement keepdims any exceptions will be raised.</param>
             <returns>An array with the same shape as a, with the specified axis removed. If a is a 0-d array, or if axis is None, a scalar is returned. If an output array is specified, a reference to out is returned.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.sum.html</remarks>
         </member>
@@ -2557,9 +2539,7 @@
                 Sum of array elements over a given axis.
             </summary>
             <param name="a">Elements to sum.</param>
-            <param name="axis">Axis or axes along which a sum is performed. The default, axis=None, will sum all of the elements of the input array. If axis is negative it counts from the last to the first axis. </param>
             <param name="typeCode">The type of the returned array and of the accumulator in which the elements are summed. The dtype of a is used by default unless a has an integer dtype of less precision than the default platform integer. In that case, if a is signed then the platform integer is used while if a is unsigned then an unsigned integer of the same precision as the platform integer is used.</param>
-            <param name="keepdims">If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array. If the default value is passed, then keepdims will not be passed through to the sum method of sub-classes of ndarray, however any non-default value will be.If the sub-class’ method does not implement keepdims any exceptions will be raised.</param>
             <returns>An array with the same shape as a, with the specified axis removed. If a is a 0-d array, or if axis is None, a scalar is returned. If an output array is specified, a reference to out is returned.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.sum.html</remarks>
         </member>
@@ -2628,7 +2608,7 @@
                 By IEEE convention, this function is defined for x2 = +/-0 and for either or both of x1 and x2 = +/-inf
             </summary>
             <param name="x">Input array y-coordinates.</param>
-            <param name="x">x-coordinates. If x1.shape != x2.shape, they must be broadcastable to a common shape (which becomes the shape of the output).</param>
+            <param name="y">x-coordinates. If x1.shape != x2.shape, they must be broadcastable to a common shape (which becomes the shape of the output).</param>
             <param name="outType">The dtype the returned ndarray should be of, only non integer values are supported.</param>
             <returns>The Array of angles in radians, in the range [-pi, pi]. This is a scalar if both x1 and x2 are scalars.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.arctan2.html</remarks>
@@ -2639,7 +2619,7 @@
                 By IEEE convention, this function is defined for x2 = +/-0 and for either or both of x1 and x2 = +/-inf
             </summary>
             <param name="x">Input array y-coordinates.</param>
-            <param name="x">x-coordinates. If x1.shape != x2.shape, they must be broadcastable to a common shape (which becomes the shape of the output).</param>
+            <param name="y">x-coordinates. If x1.shape != x2.shape, they must be broadcastable to a common shape (which becomes the shape of the output).</param>
             <param name="outType">The dtype the returned ndarray should be of, only non integer values are supported.</param>
             <returns>The Array of angles in radians, in the range [-pi, pi]. This is a scalar if both x1 and x2 are scalars.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.arctan2.html</remarks>
@@ -2923,7 +2903,6 @@
             </summary>
             <param name="a">Array containing numbers whose mean is desired. If a is not an array, a conversion is attempted.</param>
             <param name="axis">Axis or axes along which the means are computed. The default is to compute the mean of the flattened array.</param>
-            <param name="type">Type to use in computing the mean. For integer inputs, the default is float64; for floating point inputs, it is the same as the input dtype.</param>
             <param name="keepdims">
                 If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array.
                 If the default value is passed, then keepdims will not be passed through to the mean method of sub-classes of ndarray, however any non-default value will be.If the sub-class’ method does not implement keepdims any exceptions will be raised.
@@ -2936,7 +2915,6 @@
                 Returns the standard deviation, a measure of the spread of a distribution, of the array elements. The standard deviation is computed for the flattened array by default, otherwise over the specified axis.
             </summary>
             <param name="a">Calculate the standard deviation of these values.</param>
-            <param name="axis">Axis or axes along which the standard deviation is computed. The default is to compute the standard deviation of the flattened array.</param>
             <param name="keepdims">
                 If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array.
             </param>
@@ -3041,7 +3019,6 @@
                 The variance is computed for the flattened array by default, otherwise over the specified axis.
             </summary>
             <param name="a">Array containing numbers whose variance is desired. If a is not an array, a conversion is attempted.</param>
-            <param name="axis">Axis or axes along which the variance is computed. The default is to compute the variance of the flattened array.</param>
             <param name="keepdims">
                 If this is set to True, the axes which are reduced are left in the result as dimensions with size one.
                 With this option, the result will broadcast correctly against the input array.
@@ -3057,11 +3034,6 @@
                 The variance is computed for the flattened array by default, otherwise over the specified axis.
             </summary>
             <param name="a">Array containing numbers whose variance is desired. If a is not an array, a conversion is attempted.</param>
-            <param name="axis">Axis or axes along which the variance is computed. The default is to compute the variance of the flattened array.</param>
-            <param name="keepdims">
-                If this is set to True, the axes which are reduced are left in the result as dimensions with size one.
-                With this option, the result will broadcast correctly against the input array.
-            </param>
             <param name="ddof">Means Delta Degrees of Freedom. The divisor used in calculations is N - ddof, where N represents the number of elements. By default ddof is zero.</param>
             <returns> returns a new array containing the var values, otherwise a reference to the output array is returned.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.var.html</remarks>
@@ -3074,10 +3046,6 @@
             </summary>
             <param name="a">Array containing numbers whose variance is desired. If a is not an array, a conversion is attempted.</param>
             <param name="axis">Axis or axes along which the variance is computed. The default is to compute the variance of the flattened array.</param>
-            <param name="keepdims">
-                If this is set to True, the axes which are reduced are left in the result as dimensions with size one.
-                With this option, the result will broadcast correctly against the input array.
-            </param>
             <param name="ddof">Means Delta Degrees of Freedom. The divisor used in calculations is N - ddof, where N represents the number of elements. By default ddof is zero.</param>
             <returns> returns a new array containing the var values, otherwise a reference to the output array is returned.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.var.html</remarks>
@@ -3089,7 +3057,6 @@
                 The variance is computed for the flattened array by default, otherwise over the specified axis.
             </summary>
             <param name="a">Array containing numbers whose variance is desired. If a is not an array, a conversion is attempted.</param>
-            <param name="axis">Axis or axes along which the variance is computed. The default is to compute the variance of the flattened array.</param>
             <param name="keepdims">
                 If this is set to True, the axes which are reduced are left in the result as dimensions with size one.
                 With this option, the result will broadcast correctly against the input array.
@@ -3450,9 +3417,9 @@
             <summary>
                 Copy of the array, cast to a specified type.
             </summary>
-            <param name="dtype">The dtype to cast this array.</param>
+            <param name="typeCode">The dtype to cast this array.</param>
             <param name="copy">By default, astype always returns a newly allocated array. If this is set to false, the input internal array is replaced instead of returning a new NDArray with the casted data.</param>
-            <returns>An <see cref="T:NumSharp.NDArray"/> of given <paramref name="dtype"/>.</returns>
+            <returns>An <see cref="T:NumSharp.NDArray"/> of given <paramref name="typeCode"/>.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.astype.html</remarks>
         </member>
         <member name="M:NumSharp.NDArray.System#ICloneable#Clone">
@@ -3484,10 +3451,6 @@
             <summary>
                 New view of array with the same data.
             </summary>
-            <param name="dtype">
-                Data-type descriptor of the returned view, e.g., float32 or int16. The default, None, results in the view having the same data-type as a.
-                This argument can also be specified as an ndarray sub-class, which then specifies the type of the returned object (this is equivalent to setting the type parameter).
-            </param>
             <returns></returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.view.html</remarks>
         </member>
@@ -4100,7 +4063,6 @@
                 Stack arrays in sequence vertically (row wise).<br></br>
                 This is equivalent to concatenation along the first axis after 1-D arrays of shape(N,) have been reshaped to(1, N). Rebuilds arrays divided by vsplit.
             </summary>
-            <typeparam name="T">The type dtype to return.</typeparam>
             <param name="tup">The arrays must have the same shape along all but the first axis. 1-D arrays must have the same length.</param>
             <returns>https://docs.scipy.org/doc/numpy/reference/generated/numpy.vstack.html</returns>
         </member>
@@ -4138,15 +4100,6 @@
             <param name="nDArrayB">Result NDArray B</param>
             <param name="rcon"></param>
             <returns>NArray X</returns>
-        </member>
-        <member name="M:NumSharp.NDArray.multi_dot(NumSharp.NDArray[])">
-            <summary>
-            
-            </summary>
-            <param name="np1"></param>
-            <param name="np2"></param>
-            <typeparam name="TData"></typeparam>
-            <returns></returns>
         </member>
         <member name="M:NumSharp.NDArray.flatten(System.Boolean)">
             <summary>
@@ -4198,7 +4151,6 @@
             <summary>
                 Interchange two axes of an array.
             </summary>
-            <param name="a">Input array.</param>
             <param name="axis1">First axis.</param>
             <param name="axis2">Second axis.</param>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.swapaxes.html</remarks>
@@ -4306,8 +4258,6 @@
                 Sum of array elements over a given axis.
             </summary>
             <param name="axis">Axis or axes along which a sum is performed. The default, axis=None, will sum all of the elements of the input array. If axis is negative it counts from the last to the first axis.</param>
-            <param name="dtype">The type of the returned array and of the accumulator in which the elements are summed. The dtype of a is used by default unless a has an integer dtype of less precision than the default platform integer. In that case, if a is signed then the platform integer is used while if a is unsigned then an unsigned integer of the same precision as the platform integer is used.</param>
-            <param name="keepdims">If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array. If the default value is passed, then keepdims will not be passed through to the sum method of sub-classes of ndarray, however any non-default value will be.If the sub-class’ method does not implement keepdims any exceptions will be raised.</param>
             <returns>An array with the same shape as a, with the specified axis removed. If a is a 0-d array, or if axis is None, a scalar is returned. If an output array is specified, a reference to out is returned.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.sum.html</remarks>
         </member>
@@ -4315,9 +4265,6 @@
             <summary>
                 Sum of array elements into a scalar.
             </summary>
-            <param name="axis">Axis or axes along which a sum is performed. The default, axis=None, will sum all of the elements of the input array. If axis is negative it counts from the last to the first axis.</param>
-            <param name="typeCode">The type of the returned array and of the accumulator in which the elements are summed. The dtype of a is used by default unless a has an integer dtype of less precision than the default platform integer. In that case, if a is signed then the platform integer is used while if a is unsigned then an unsigned integer of the same precision as the platform integer is used.</param>
-            <param name="keepdims">If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array. If the default value is passed, then keepdims will not be passed through to the sum method of sub-classes of ndarray, however any non-default value will be.If the sub-class’ method does not implement keepdims any exceptions will be raised.</param>
             <returns>An array with the same shape as a, with the specified axis removed. If a is a 0-d array, or if axis is None, a scalar is returned. If an output array is specified, a reference to out is returned.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.sum.html</remarks>
         </member>
@@ -4340,7 +4287,6 @@
             <summary>
                 True if two arrays have the same shape and elements, False otherwise.
             </summary>
-            <param name="a">Input array.</param>
             <param name="rhs">Input array.</param>
             <returns>Returns True if the arrays are equal.</returns>
             <remarks>https://docs.scipy.org/doc/numpy-1.16.0/reference/generated/numpy.array_equal.html</remarks>
@@ -4418,7 +4364,7 @@
             <summary>
                 Used to perform selection based on indices, equivalent to nd[NDArray[]].
             </summary>
-            <param name="@out">Alternative output array in which to place the result. It must have the same shape as the expected output and be of dtype <see cref="T:System.Int32"/>.</param>
+            <param name="out">Alternative output array in which to place the result. It must have the same shape as the expected output and be of dtype <see cref="T:System.Int32"/>.</param>
             <remarks>https://docs.scipy.org/doc/numpy-1.17.0/user/basics.indexing.html</remarks>
             <exception cref="T:System.IndexOutOfRangeException">When one of the indices exceeds limits.</exception>
             <exception cref="T:System.ArgumentException">indices must be of Int type (byte, u/short, u/int, u/long).</exception>
@@ -4431,7 +4377,6 @@
             <param name="src"></param>
             <param name="offsets"></param>
             <param name="retShape"></param>
-            <param name="absolute">Is the given <paramref name="offsets"/> already point to the offset of <paramref name="src"/>.</param>
             <returns></returns>
         </member>
         <member name="M:NumSharp.NDArray.FetchIndicesNDNonLinear``1(NumSharp.Generic.NDArray{``0},NumSharp.NDArray[],System.Int32,System.Int32[],System.Int32[],NumSharp.NDArray)">
@@ -4440,9 +4385,7 @@
             </summary>
             <typeparam name="T"></typeparam>
             <param name="source"></param>
-            <param name="offsets"></param>
             <param name="retShape"></param>
-            <param name="absolute">Is the given <paramref name="offsets"/> already point to the offset of <paramref name="source"/>.</param>
             <returns></returns>
         </member>
         <member name="M:NumSharp.NDArray.SetIndices(NumSharp.NDArray,NumSharp.NDArray[])">
@@ -4462,7 +4405,6 @@
             <param name="dst"></param>
             <param name="dstOffsets"></param>
             <param name="retShape"></param>
-            <param name="absolute">Is the given <paramref name="dstOffsets"/> already point to the offset of <paramref name="dst"/>.</param>
             <returns></returns>
         </member>
         <member name="M:NumSharp.NDArray.SetIndicesNDNonLinear``1(NumSharp.Generic.NDArray{``0},NumSharp.NDArray[],System.Int32,System.Int32[],System.Int32[],NumSharp.Generic.NDArray{``0})">
@@ -4471,9 +4413,7 @@
             </summary>
             <typeparam name="T"></typeparam>
             <param name="source"></param>
-            <param name="offsets"></param>
             <param name="retShape"></param>
-            <param name="absolute">Is the given <paramref name="offsets"/> already point to the offset of <paramref name="source"/>.</param>
             <returns></returns>
         </member>
         <member name="M:NumSharp.NDArray.argsort``1(System.Int32)">
@@ -4666,13 +4606,6 @@
                 The average is taken over the flattened array by default, otherwise over the specified axis.
                 float64 intermediate and return values are used for integer inputs.
             </summary>
-            <param name="nd">Array containing numbers whose mean is desired. If a is not an array, a conversion is attempted.</param>
-            <param name="axis">Axis or axes along which the means are computed. The default is to compute the mean of the flattened array.</param>
-            <param name="type">Type to use in computing the mean. For integer inputs, the default is float64; for floating point inputs, it is the same as the input dtype.</param>
-            <param name="keepdims">
-                If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array.
-                If the default value is passed, then keepdims will not be passed through to the mean method of sub-classes of ndarray, however any non-default value will be.If the sub-class’ method does not implement keepdims any exceptions will be raised.
-            </param>
             <returns> returns a new array containing the mean values, otherwise a reference to the output array is returned.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.mean.html</remarks>
         </member>
@@ -4683,13 +4616,7 @@
                 The average is taken over the flattened array by default, otherwise over the specified axis.
                 float64 intermediate and return values are used for integer inputs.
             </summary>
-            <param name="nd">Array containing numbers whose mean is desired. If a is not an array, a conversion is attempted.</param>
             <param name="axis">Axis or axes along which the means are computed. The default is to compute the mean of the flattened array.</param>
-            <param name="type">Type to use in computing the mean. For integer inputs, the default is float64; for floating point inputs, it is the same as the input dtype.</param>
-            <param name="keepdims">
-                If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array.
-                If the default value is passed, then keepdims will not be passed through to the mean method of sub-classes of ndarray, however any non-default value will be.If the sub-class’ method does not implement keepdims any exceptions will be raised.
-            </param>
             <returns> returns a new array containing the mean values, otherwise a reference to the output array is returned.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.mean.html</remarks>
         </member>
@@ -4700,7 +4627,6 @@
                 The average is taken over the flattened array by default, otherwise over the specified axis.
                 float64 intermediate and return values are used for integer inputs.
             </summary>
-            <param name="nd">Array containing numbers whose mean is desired. If a is not an array, a conversion is attempted.</param>
             <param name="axis">Axis or axes along which the means are computed. The default is to compute the mean of the flattened array.</param>
             <param name="type">Type to use in computing the mean. For integer inputs, the default is float64; for floating point inputs, it is the same as the input dtype.</param>
             <param name="keepdims">
@@ -4717,7 +4643,6 @@
                 The average is taken over the flattened array by default, otherwise over the specified axis.
                 float64 intermediate and return values are used for integer inputs.
             </summary>
-            <param name="nd">Array containing numbers whose mean is desired. If a is not an array, a conversion is attempted.</param>
             <param name="axis">Axis or axes along which the means are computed. The default is to compute the mean of the flattened array.</param>
             <param name="type">Type to use in computing the mean. For integer inputs, the default is float64; for floating point inputs, it is the same as the input dtype.</param>
             <param name="keepdims">
@@ -4734,9 +4659,7 @@
                 The average is taken over the flattened array by default, otherwise over the specified axis.
                 float64 intermediate and return values are used for integer inputs.
             </summary>
-            <param name="nd">Array containing numbers whose mean is desired. If a is not an array, a conversion is attempted.</param>
             <param name="axis">Axis or axes along which the means are computed. The default is to compute the mean of the flattened array.</param>
-            <param name="type">Type to use in computing the mean. For integer inputs, the default is float64; for floating point inputs, it is the same as the input dtype.</param>
             <param name="keepdims">
                 If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array.
                 If the default value is passed, then keepdims will not be passed through to the mean method of sub-classes of ndarray, however any non-default value will be.If the sub-class’ method does not implement keepdims any exceptions will be raised.
@@ -4835,7 +4758,6 @@
                     Used internally by multi-axis-checking logic.
             </summary>
             <param name="axis">The un-normalized index or indices of the axis.</param>
-            <param name="ndim">The number of dimensions of the array that `axis` should be normalized against.</param>
             <param name="argname">A prefix to put before the error message, typically the name of the argument.</param>
             <param name="allow_duplicate">If False, the default, disallow an axis from being specified twice.</param>
             <returns>The normalized axis index, such that `0 &lt;= normalized_axis &lt; ndim`</returns>
@@ -4850,7 +4772,6 @@
                     Used internally by multi-axis-checking logic.
             </summary>
             <param name="axis">The un-normalized index or indices of the axis.</param>
-            <param name="ndim">The number of dimensions of the array that `axis` should be normalized against.</param>
             <param name="argname">A prefix to put before the error message, typically the name of the argument.</param>
             <param name="allow_duplicate">If False, the default, disallow an axis from being specified twice.</param>
             <returns>The normalized axis index, such that `0 &lt;&#61; normalized_axis &lt; ndim`</returns>
@@ -4978,13 +4899,10 @@
         </member>
         <member name="M:NumSharp.Backends.Unmanaged.ArraySlice.Scalar``1(``0)">
             <summary>
-                Wrap a <param name="val"/> inside <see cref="T:NumSharp.Backends.Unmanaged.ArraySlice`1"/>.
+                Wrap a <paramref name="val"/> inside <see cref="T:NumSharp.Backends.Unmanaged.ArraySlice`1"/>.
             </summary>
             <param name="val"></param>
             <returns></returns>
-        </member>
-        <member name="M:NumSharp.Backends.Unmanaged.ArraySlice.FromPool``1(NumSharp.Unmanaged.Memory.StackedMemoryPool)">
-            <param name="count">The length in objects of <typeparamref name="T"/> and not in bytes.</param>
         </member>
         <member name="M:NumSharp.Backends.Unmanaged.ArraySlice.Allocate``1(System.Int32,``0)">
             <summary>
@@ -5047,7 +4965,6 @@
                 Creates a sliced <see cref="T:NumSharp.Backends.Unmanaged.ArraySlice`1"/>.
             </summary>
             <param name="memoryBlock"></param>
-            <param name="start">The offset in <typeparamref name="T"/> and not bytes - relative to the <paramref name="memoryBlock"/>.</param>
             <param name="count">The number of <typeparamref name="T"/> this slice should contain - relative to the <paramref name="memoryBlock"/></param>
         </member>
         <member name="M:NumSharp.Backends.Unmanaged.ArraySlice`1.#ctor(NumSharp.Backends.Unmanaged.UnmanagedMemoryBlock{`0},`0*,System.Int64)">
@@ -5055,7 +4972,6 @@
                 Creates a sliced <see cref="T:NumSharp.Backends.Unmanaged.ArraySlice`1"/>.
             </summary>
             <param name="memoryBlock"></param>
-            <param name="start">The offset in <typeparamref name="T"/> and not bytes - relative to the <paramref name="memoryBlock"/>.</param>
             <param name="count">The number of <typeparamref name="T"/> this slice should contain - relative to the <paramref name="memoryBlock"/></param>
         </member>
         <member name="P:NumSharp.Backends.Unmanaged.ArraySlice`1.NumSharp#Backends#Unmanaged#IArraySlice#Item(System.Int32)">
@@ -5319,7 +5235,6 @@
             <summary>
                 Copies the entire contents of this storage to given address (using <see cref="M:System.Buffer.MemoryCopy(System.Void*,System.Void*,System.Int64,System.Int64)"/>).
             </summary>
-            <param name="dst">The block to copy to.</param>
         </member>
         <member name="M:NumSharp.Backends.Unmanaged.UnmanagedHelper.CopyTo(NumSharp.Backends.Unmanaged.IMemoryBlock,System.Void*)">
             <summary>
@@ -5646,7 +5561,7 @@
             </summary>
             <param name="dtype">The dtype to convert to</param>
             <returns>A copy of this <see cref="T:NumSharp.Backends.UnmanagedStorage"/> casted to a specific dtype.</returns>
-            <remarks>Copies only if dtypes does not match <paramref name="typeCode"/></remarks>
+            <remarks>Copies only if dtypes does not match <paramref name="dtype"/></remarks>
         </member>
         <member name="M:NumSharp.Backends.UnmanagedStorage.CloneData">
             <summary>
@@ -5776,7 +5691,7 @@
             </summary>
             <param name="sourceArray">The array to change his type</param>
             <remarks>If the return type is equal to source type, this method does not return a copy.</remarks>
-            <returns>Returns <param name="sourceArray"/> or new array with changed type to <see cref="T:NumSharp.Backends.Unmanaged.ArraySlice`1"/></returns>
+            <returns>Returns <paramref name="sourceArray"/> or new array with changed type to <see cref="T:NumSharp.Backends.Unmanaged.ArraySlice`1"/></returns>
         </member>
         <member name="M:NumSharp.Backends.UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)">
             <summary>
@@ -5892,9 +5807,9 @@
         </member>
         <member name="M:NumSharp.Backends.UnmanagedStorage.GetData(System.Int32*,System.Int32)">
             <summary>
-                Gets a subshape based on given <paramref name="indices"/>.
+                Gets a subshape based on given <paramref name="ndims"/>.
             </summary>
-            <param name="indices"></param>
+            <param name="ndims"></param>
             <returns></returns>
             <remarks>Does not copy, returns a <see cref="T:NumSharp.Slice"/> or a memory slice</remarks>
         </member>
@@ -6320,15 +6235,13 @@
             <summary>
                 Creates a new iterator to iterate given <paramref name="nd"/>.
             </summary>
-            <typeparam name="T"></typeparam>
             <param name="nd">The ndarray to iterate.</param>
             <param name="autoreset">Should this iterator loop forever?</param>
         </member>
         <member name="M:NumSharp.NDIteratorExtensions.AsIterator(NumSharp.Backends.UnmanagedStorage,System.Boolean)">
             <summary>
-                Creates a new iterator to iterate given <paramref name="nd"/>.
+                Creates a new iterator to iterate given <paramref name="us"/>.
             </summary>
-            <typeparam name="T"></typeparam>
             <param name="us">The ndarray to iterate.</param>
             <param name="autoreset">Should this iterator loop forever?</param>
         </member>
@@ -6336,15 +6249,13 @@
             <summary>
                 Creates a new iterator to iterate given <paramref name="arr"/> as if it were shaped like <paramref name="shape"/>.
             </summary>
-            <typeparam name="T"></typeparam>
             <param name="arr">The IArraySlice to iterate.</param>
-            <param name="autoreset">Should this iterator loop forever?</param>
+            <param name="shape"></param>
         </member>
         <member name="M:NumSharp.NDIteratorExtensions.AsIterator(NumSharp.Backends.Unmanaged.IArraySlice,NumSharp.Shape,System.Boolean)">
             <summary>
                 Creates a new iterator to iterate given <paramref name="arr"/> as if it were shaped like <paramref name="shape"/>.
             </summary>
-            <typeparam name="T"></typeparam>
             <param name="arr">The IArraySlice to iterate.</param>
             <param name="autoreset">Should this iterator loop forever?</param>
             <param name="shape">The original shape, non-broadcasted, to represent this iterator.</param>
@@ -6353,9 +6264,7 @@
             <summary>
                 Creates a new iterator to iterate given <paramref name="arr"/> as if it were shaped like <paramref name="shape"/>.
             </summary>
-            <typeparam name="T"></typeparam>
             <param name="arr">The IArraySlice to iterate.</param>
-            <param name="autoreset">Should this iterator loop forever?</param>
             <param name="shape">The original shape, non-broadcasted.</param>
             <param name="broadcastShape">The broadcasted shape of <paramref name="shape"/></param>
         </member>
@@ -6683,7 +6592,6 @@
             Constructor for init data type
             internal storage is 1D with 1 element
             </summary>
-            <param name="dtype">Data type of elements</param>
             <param name="engine">The engine of this <see cref="T:NumSharp.NDArray"/></param>
             <remarks>This constructor does not call allocation/></remarks>
         </member>
@@ -6692,14 +6600,12 @@
             Constructor for init data type
             internal storage is 1D with 1 element
             </summary>
-            <param name="dtype">Data type of elements</param>
             <remarks>This constructor does not call allocation/></remarks>
         </member>
         <member name="M:NumSharp.Generic.NDArray`1.#ctor(System.Int32,System.Boolean)">
             <summary>
                 Constructor which initialize elements with length of <paramref name="size"/>
             </summary>
-            <param name="dtype">Internal data type</param>
             <param name="size">The size as a single dimension shape</param>
             <param name="fillZeros">Should set the values of the new allocation to default(dtype)? otherwise - old memory noise</param>
             <remarks>This constructor calls <see cref="M:NumSharp.Backends.UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
@@ -6746,7 +6652,6 @@
             Constructor which initialize elements with 0
             type and shape are given.
             </summary>
-            <param name="dtype">internal data type</param>
             <param name="shape">Shape of NDArray</param>
             <param name="fillZeros">Should set the values of the new allocation to default(dtype)? otherwise - old memory noise</param>
             <remarks>This constructor calls <see cref="M:NumSharp.Backends.UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
@@ -6826,7 +6731,7 @@
             <summary>
                 Gives a new shape to an array without changing its data.
             </summary>
-            <param name="newshape">The new shape should be compatible with the original shape. If an integer, then the result will be a 1-D array of that length. One shape dimension can be -1. In this case, the value is inferred from the length of the array and remaining dimensions.</param>
+            <param name="newShape">The new shape should be compatible with the original shape. If an integer, then the result will be a 1-D array of that length. One shape dimension can be -1. In this case, the value is inferred from the length of the array and remaining dimensions.</param>
             <returns>This will be a new view object if possible; otherwise, it will be a copy. Note there is no guarantee of the memory layout (C- or Fortran- contiguous) of the returned array.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.reshape.html</remarks>
         </member>
@@ -7262,10 +7167,7 @@
         </member>
         <member name="M:NumSharp.Randomizer.NextLong">
             <summary>Returns a non-negative random integer that is less than the specified maximum.</summary>
-            <param name="maxValue">The exclusive upper bound of the random number to be generated. <paramref name="maxValue" /> must be greater than or equal to 0.</param>
-            <returns>A 32-bit signed integer that is greater than or equal to 0, and less than <paramref name="maxValue" />; that is, the range of return values ordinarily includes 0 but not <paramref name="maxValue" />. However, if <paramref name="maxValue" /> equals 0, <paramref name="maxValue" /> is returned.</returns>
-            <exception cref="T:System.ArgumentOutOfRangeException">
-            <paramref name="maxValue" /> is less than 0.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException" />
         </member>
         <member name="M:NumSharp.Randomizer.NextLong(System.Int64,System.Int64)">
             <summary>Returns a random integer that is within a specified range.</summary>
@@ -7313,32 +7215,32 @@
         </member>
         <member name="M:NumSharp.Utilities.ArrayConvert.Clone(System.Array)">
             <summary>
-                Creates a clone of given <param name="sourceArray"/>.
+                Creates a clone of given <paramref name="sourceArray"/>.
             </summary>
             <param name="sourceArray">The array to clone</param>
             <remarks>If possible, for performance reasons use generic version of this method.</remarks>
         </member>
         <member name="M:NumSharp.Utilities.ArrayConvert.Clone``1(``0[])">
             <summary>
-                Creates a clone of given <param name="sourceArray"/>.
+                Creates a clone of given <paramref name="sourceArray"/>.
             </summary>
             <param name="sourceArray">The array to clone</param>
         </member>
         <member name="M:NumSharp.Utilities.ArrayConvert.Clone``1(``0[0:,0:])">
             <summary>
-                Creates a clone of given <param name="sourceArray"/> using <see cref="M:System.Array.CopyTo(System.Array,System.Int32)"/>.
+                Creates a clone of given <paramref name="sourceArray"/> using <see cref="M:System.Array.CopyTo(System.Array,System.Int32)"/>.
             </summary>
             <param name="sourceArray">The array to clone</param>
         </member>
         <member name="M:NumSharp.Utilities.ArrayConvert.Clone``1(``0[0:,0:,0:])">
             <summary>
-                Creates a clone of given <param name="sourceArray"/> using <see cref="M:System.Array.CopyTo(System.Array,System.Int32)"/>.
+                Creates a clone of given <paramref name="sourceArray"/> using <see cref="M:System.Array.CopyTo(System.Array,System.Int32)"/>.
             </summary>
             <param name="sourceArray">The array to clone</param>
         </member>
         <member name="M:NumSharp.Utilities.ArrayConvert.Clone``1(``0[0:,0:,0:,0:])">
             <summary>
-                Creates a clone of given <param name="sourceArray"/> using <see cref="M:System.Array.CopyTo(System.Array,System.Int32)"/>.
+                Creates a clone of given <paramref name="sourceArray"/> using <see cref="M:System.Array.CopyTo(System.Array,System.Int32)"/>.
             </summary>
             <param name="sourceArray">The array to clone</param>
         </member>
@@ -7365,7 +7267,6 @@
                 Converts <paramref name="sourceArray"/> to an array of type T.
             </summary>
             <param name="sourceArray">The array to convert</param>
-            <param name="returnType">The type to convert the data to</param>
             <returns></returns>
         </member>
         <member name="M:NumSharp.Utilities.ArrayConvert.ToBoolean(System.Boolean[])">
@@ -7851,7 +7752,6 @@
                 Performs fast concatenation of multiple arrays
             </summary>
             <typeparam name="T"></typeparam>
-            <param name="arrays"></param>
             <returns></returns>
         </member>
         <member name="M:NumSharp.Utilities.Arrays.ResolveElementType(System.Array)">
@@ -7885,16 +7785,13 @@
             <summary>
                 Creates an array of 1D of type <paramref name="type"/>.
             </summary>
-            <typeparam name="T">The type of the array</typeparam>
             <param name="type">The type to create this array.</param>
-            <param name="length">The length of the array</param>
             <remarks>Do not use this if you are trying to create jagged or multidimensional array.</remarks>
         </member>
         <member name="M:NumSharp.Utilities.Arrays.Create(System.Type,System.Int32)">
             <summary>
                 Creates an array of 1D of type <paramref name="type"/>.
             </summary>
-            <typeparam name="T">The type of the array</typeparam>
             <param name="type">The type to create this array.</param>
             <param name="length">The length of the array</param>
             <remarks>Do not use this if you are trying to create jagged or multidimensional array.</remarks>
@@ -7945,7 +7842,7 @@
             <summary>
                 Slice an array.
             </summary>
-            <remarks>Supports negative <paramref name="end"/> index</remarks>
+            <remarks>Supports negative <paramref name="source"/> index</remarks>
         </member>
         <member name="T:NumSharp.Utilities.Converts">
             <summary>
@@ -7955,18 +7852,16 @@
         <member name="M:NumSharp.Utilities.Converts.ChangeType``1(System.Object)">
             <summary>Returns an object of the specified type whose value is equivalent to the specified object.</summary>
             <param name="value">An object that implements the <see cref="T:System.IConvertible"></see> interface.</param>
-            <param name="typeCode">The type of object to return.</param>
-            <returns>An object whose underlying type is <paramref name="typeCode">typeCode</paramref> and whose value is equivalent to <paramref name="value">value</paramref>.
             -or-
-            A null reference (Nothing in Visual Basic), if <paramref name="value">value</paramref> is null and <paramref name="typeCode">typeCode</paramref> is <see cref="F:System.TypeCode.Empty"></see>, <see cref="F:System.TypeCode.String"></see>, or <see cref="F:System.TypeCode.Object"></see>.</returns>
+            <returns>A null reference (Nothing in Visual Basic), if <paramref name="value">value</paramref> is null and <see cref="T:NumSharp.NPTypeCode">typeCode</see> is <see cref="F:System.TypeCode.Empty"></see>, <see cref="F:System.TypeCode.String"></see>, or <see cref="F:System.TypeCode.Object"></see>.</returns>
             <exception cref="T:System.InvalidCastException">This conversion is not supported.
             -or-
-            <paramref name="value">value</paramref> is null and <paramref name="typeCode">typeCode</paramref> specifies a value type.
+            <paramref name="value">value</paramref> is null and <see cref="T:NumSharp.NPTypeCode"></see> specifies a value type.
             -or-
             <paramref name="value">value</paramref> does not implement the <see cref="T:System.IConvertible"></see> interface.</exception>
-            <exception cref="T:System.FormatException"><paramref name="value">value</paramref> is not in a format recognized by the <paramref name="typeCode">typeCode</paramref> type.</exception>
-            <exception cref="T:System.OverflowException"><paramref name="value">value</paramref> represents a number that is out of the range of the <paramref name="typeCode">typeCode</paramref> type.</exception>
-            <exception cref="T:System.ArgumentException"><paramref name="typeCode">typeCode</paramref> is invalid.</exception>
+            <exception cref="T:System.FormatException"><paramref name="value">value</paramref> is not in a format recognized by the <see cref="T:NumSharp.NPTypeCode"></see> type.</exception>
+            <exception cref="T:System.OverflowException"><paramref name="value">value</paramref> represents a number that is out of the range of the<see cref="T:NumSharp.NPTypeCode"></see> type.</exception>
+            <exception cref="T:System.ArgumentException"><see cref="T:NumSharp.NPTypeCode"></see> is invalid.</exception>
         </member>
         <member name="M:NumSharp.Utilities.Converts.ChangeType(System.Object,NumSharp.NPTypeCode)">
             <summary>Returns an object of the specified type whose value is equivalent to the specified object.</summary>
@@ -8041,9 +7936,7 @@
             This method is a bit lengthy on purpose. We are trying to avoid jumps to helpers in the loop
             to aid performance.
             </summary>
-            <param name="inputPtr">Pointer to first input char</param>
             <param name="inputLength">Number of input chars</param>
-            <param name="destPtr">Pointer to location for teh first result byte</param>
             <param name="destLength">Max length of the preallocated result buffer</param>
             <returns>If the result buffer was not large enough to write all result bytes, return -1;
             Otherwise return the number of result bytes actually produced.</returns>
@@ -8488,7 +8381,6 @@
             defragmentation, allowing faster execution; note that this is reasonable since 
             AddIfNotPresent attempts to insert new elements in re-opened spots.
             </summary>
-            <param name="sizeSuggestion"></param>
         </member>
         <member name="M:NumSharp.Utilities.Hashset`1.SetCapacity(System.Int32,System.Boolean)">
             <summary>
@@ -8660,7 +8552,7 @@
             <summary>
             Instantiates a BitHelper with a heap alloc'd array of ints
             </summary>
-            <param name="bitArray">int array to hold bits</param>
+            <param name="bitArrayPtr">int array to hold bits</param>
             <param name="length">length of int array</param>
         </member>
         <member name="M:NumSharp.Utilities.BitHelper.#ctor(System.Int32[],System.Int32)">
@@ -11372,9 +11264,9 @@
         </member>
         <member name="M:NumSharp.Shape.GetSubshape(System.Int32*,System.Int32)">
             <summary>
-                Gets the shape based on given <paramref name="indicies"/> and the index offset (C-Contiguous) inside the current storage.
+                Gets the shape based on given <paramref name="ndims"/> and the index offset (C-Contiguous) inside the current storage.
             </summary>
-            <param name="indicies">The selection of indexes 0 based.</param>
+            <param name="ndims">The selection of indexes 0 based.</param>
             <returns></returns>
             <remarks>Used for slicing, returned shape is the new shape of the slice and offset is the offset from current address.</remarks>
         </member>

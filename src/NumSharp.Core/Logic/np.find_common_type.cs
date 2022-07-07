@@ -501,7 +501,6 @@ namespace NumSharp
         ///     Determine common type following standard coercion rules.
         /// </summary>
         /// <param name="array_types">A list of dtypes or dtype convertible objects representing arrays. Can be null.</param>
-        /// <param name="scalar_types">A list of dtypes or dtype convertible objects representing scalars.Can be null.</param>
         /// <returns>The common data type, which is the maximum of array_types ignoring scalar_types, unless the maximum of scalar_types is of a different kind (dtype.kind). If the kind is not understood, then None is returned.</returns>
         /// <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.find_common_type.html</remarks>
         public static NPTypeCode find_common_type(Type[] array_types)
