@@ -291,6 +291,8 @@
             <summary>
                 Creates an <see cref="T:NumSharp.NDArray"/> from an array with an unknown size or dtype.
             </summary>
+            <param name="array"></param>
+            <param name="dtype"></param>
             <param name="ndmin">Specifies the minimum number of dimensions that the resulting array should have. Ones will be pre-pended to the shape as needed to meet this requirement.</param>
             <param name="copy">Always copies if the array is larger than 1-d.</param>
             <param name="order">Not used.</param>
@@ -320,6 +322,7 @@
             </summary>
             <typeparam name="T">The type of given array, must be compliant to numpy's supported dtypes.</typeparam>
             <param name="data">The enumeration of data to create <see cref="T:NumSharp.NDArray"/> from.</param>
+            <param name="size"></param>
             <returns>An <see cref="T:NumSharp.NDArray"/> with the data and shape of the given array.</returns>
             <remarks>
                 https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html <br></br>
@@ -960,7 +963,8 @@
             1-D and 0-D cases are allowed.
             </summary>
             <param name="x1"> 1-D arrays representing the coordinates of a grid</param>
-            /// <param name="x2"> 1-D arrays representing the coordinates of a grid</param>
+            <param name="x2"> 1-D arrays representing the coordinates of a grid</param>
+            <param name="kwargs"></param>
             <returns></returns>
         </member>
         <member name="M:NumSharp.np.mgrid(NumSharp.NDArray,NumSharp.NDArray)">
@@ -2010,6 +2014,7 @@
                 Base-2 logarithm of x.
             </summary>
             <param name="x">Input value.</param>
+            <param name="outType"></param>
             <returns>Base-2 logarithm of x. This is a scalar if x is a scalar.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.log2.html</remarks>
         </member>
@@ -2018,6 +2023,7 @@
                 Base-2 logarithm of x.
             </summary>
             <param name="x">Input value.</param>
+            <param name="outType"></param>
             <returns>Base-2 logarithm of x. This is a scalar if x is a scalar.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.log2.html</remarks>
         </member>
@@ -2034,6 +2040,7 @@
                 Return the base 10 logarithm of the input array, element-wise.
             </summary>
             <param name="x">Input value.</param>
+            <param name="outType"></param>
             <returns>The logarithm to the base 10 of x, element-wise. NaNs are returned where x is negative. This is a scalar if x is a scalar.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.log10.html</remarks>
         </member>
@@ -2042,6 +2049,7 @@
                 Return the base 10 logarithm of the input array, element-wise.
             </summary>
             <param name="x">Input value.</param>
+            <param name="outType"></param>
             <returns>The logarithm to the base 10 of x, element-wise. NaNs are returned where x is negative. This is a scalar if x is a scalar.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.log10.html</remarks>
         </member>
@@ -2059,6 +2067,7 @@
                 Calculates log(1 + x).
             </summary>
             <param name="x">Input value.</param>
+            <param name="outType"></param>
             <returns>Natural logarithm of 1 + x, element-wise. This is a scalar if x is a scalar.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.log1p.html</remarks>
         </member>
@@ -2068,6 +2077,7 @@
                 Calculates log(1 + x).
             </summary>
             <param name="x">Input value.</param>
+            <param name="outType"></param>
             <returns>Natural logarithm of 1 + x, element-wise. This is a scalar if x is a scalar.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.log1p.html</remarks>
         </member>
@@ -2636,6 +2646,7 @@
             <summary>
                 Return the maximum of an array or maximum along an axis.
             </summary>
+            <param name="a"></param>
             <param name="axis">Axis or axes along which to operate.</param>
             <param name="keepdims">If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array.</param>
             <param name="dtype">the type expected as a return, null will remain the same dtype.</param>
@@ -2646,6 +2657,7 @@
             <summary>
                 Return the maximum of an array or maximum along an axis.
             </summary>
+            <param name="a"></param>
             <param name="axis">Axis or axes along which to operate.</param>
             <param name="keepdims">If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array.</param>
             <param name="dtype">the type expected as a return, null will remain the same dtype.</param>
@@ -2779,6 +2791,7 @@
                 Calculate 2**p for all p in the input array.
             </summary>
             <param name="a">Input value.</param>
+            <param name="dtype"></param>
             <returns>Element-wise 2 to the power x. This is a scalar if x is a scalar.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.exp2.html</remarks>
         </member>
@@ -2787,6 +2800,7 @@
                 Calculate 2**p for all p in the input array.
             </summary>
             <param name="a">Input value.</param>
+            <param name="typeCode"></param>
             <returns>Element-wise 2 to the power x. This is a scalar if x is a scalar.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.exp2.html</remarks>
         </member>
@@ -2803,6 +2817,7 @@
                 Calculate exp(x) - 1 for all elements in the array.
             </summary>
             <param name="a">Input value.</param>
+            <param name="dtype"></param>
             <returns>Element-wise exponential minus one: out = exp(x) - 1. This is a scalar if x is a scalar.</returns>
             <remarks>https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.expm1.html</remarks>
         </member>
@@ -2811,6 +2826,7 @@
                 Calculate exp(x) - 1 for all elements in the array.
             </summary>
             <param name="a">Input value.</param>
+            <param name="typeCode"></param>
             <returns>Element-wise exponential minus one: out = exp(x) - 1. This is a scalar if x is a scalar.</returns>
             <remarks>https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.expm1.html</remarks>
         </member>
@@ -2918,6 +2934,7 @@
             <param name="keepdims">
                 If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array.
             </param>
+            <param name="dtype"></param>
             <param name="ddof">Means Delta Degrees of Freedom. The divisor used in calculations is N - ddof, where N represents the number of elements. By default ddof is zero.</param>
             <returns> returns a new array containing the std values, otherwise a reference to the output array is returned.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.std.html</remarks>
@@ -2963,6 +2980,7 @@
             </summary>
             <param name="a">Calculate the standard deviation of these values.</param>
             <param name="axis">Axis or axes along which the standard deviation is computed. The default is to compute the standard deviation of the flattened array.</param>
+            <param name="dtype"></param>
             <param name="keepdims">
                 If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array.
             </param>
@@ -2977,6 +2995,7 @@
             </summary>
             <param name="a">Calculate the standard deviation of these values.</param>
             <param name="axis">Axis or axes along which the standard deviation is computed. The default is to compute the standard deviation of the flattened array.</param>
+            <param name="type"></param>
             <param name="keepdims">
                 If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array.
             </param>
@@ -3009,6 +3028,7 @@
                 If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array.
             </param>
             <param name="ddof">Means Delta Degrees of Freedom. The divisor used in calculations is N - ddof, where N represents the number of elements. By default ddof is zero.</param>
+            <param name="dtype"></param>
             <returns> returns a new array containing the std values, otherwise a reference to the output array is returned.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.std.html</remarks>
         </member>
@@ -3024,6 +3044,7 @@
                 With this option, the result will broadcast correctly against the input array.
             </param>
             <param name="ddof">Means Delta Degrees of Freedom. The divisor used in calculations is N - ddof, where N represents the number of elements. By default ddof is zero.</param>
+            <param name="dtype"></param>
             <returns> returns a new array containing the var values, otherwise a reference to the output array is returned.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.var.html</remarks>
         </member>
@@ -3078,6 +3099,7 @@
                 With this option, the result will broadcast correctly against the input array.
             </param>
             <param name="ddof">Means Delta Degrees of Freedom. The divisor used in calculations is N - ddof, where N represents the number of elements. By default ddof is zero.</param>
+            <param name="dtype"></param>
             <returns> returns a new array containing the var values, otherwise a reference to the output array is returned.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.var.html</remarks>
         </member>
@@ -3089,6 +3111,7 @@
             </summary>
             <param name="a">Array containing numbers whose variance is desired. If a is not an array, a conversion is attempted.</param>
             <param name="axis">Axis or axes along which the variance is computed. The default is to compute the variance of the flattened array.</param>
+            <param name="type"></param>
             <param name="keepdims">
                 If this is set to True, the axes which are reduced are left in the result as dimensions with size one.
                 With this option, the result will broadcast correctly against the input array.
@@ -3126,6 +3149,7 @@
                 With this option, the result will broadcast correctly against the input array.
             </param>
             <param name="ddof">Means Delta Degrees of Freedom. The divisor used in calculations is N - ddof, where N represents the number of elements. By default ddof is zero.</param>
+            <param name="dtype"></param>
             <returns> returns a new array containing the var values, otherwise a reference to the output array is returned.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.var.html</remarks>
         </member>
@@ -3190,6 +3214,7 @@
             <summary>
                 Creates a new <see cref="T:NumSharp.NDArray"/> with this storage.
             </summary>
+            <param name="storage"></param>
             <param name="shape">The shape to set for this NDArray, does not perform checks.</param>
             <remarks>Doesn't copy. Does not perform checks for <paramref name="shape"/>.</remarks>
         </member>
@@ -3197,6 +3222,7 @@
             <summary>
                 Creates a new <see cref="T:NumSharp.NDArray"/> with this storage.
             </summary>
+            <param name="storage"></param>
             <param name="shape">The shape to set for this NDArray, does not perform checks.</param>
             <remarks>Doesn't copy. Does not perform checks for <paramref name="shape"/>.</remarks>
         </member>
@@ -3687,6 +3713,7 @@
             <summary>
                 Retrieves value at given linear (offset) <paramref name="index"/>.
             </summary>
+            <param name="obj"></param>
             <param name="index"></param>
             <returns></returns>
         </member>
@@ -3694,6 +3721,7 @@
             <summary>
                 Retrieves value of 
             </summary>
+            <param name="value"></param>
             <param name="index"></param>
             <returns></returns>
         </member>
@@ -4364,6 +4392,7 @@
             <summary>
                 Used to perform selection based on indices, equivalent to nd[NDArray[]].
             </summary>
+            <param name="indices"></param>
             <param name="out">Alternative output array in which to place the result. It must have the same shape as the expected output and be of dtype <see cref="T:System.Int32"/>.</param>
             <remarks>https://docs.scipy.org/doc/numpy-1.17.0/user/basics.indexing.html</remarks>
             <exception cref="T:System.IndexOutOfRangeException">When one of the indices exceeds limits.</exception>
@@ -4376,6 +4405,10 @@
             <typeparam name="T"></typeparam>
             <param name="src"></param>
             <param name="offsets"></param>
+            <param name="indices"></param>
+            <param name="ndsCount"></param>
+            <param name="out"></param>
+            <param name="subShape"></param>
             <param name="retShape"></param>
             <returns></returns>
         </member>
@@ -4386,6 +4419,10 @@
             <typeparam name="T"></typeparam>
             <param name="source"></param>
             <param name="retShape"></param>
+            <param name="out"></param>
+            <param name="subShape"></param>
+            <param name="ndsCount"></param>
+            <param name="indices"></param>
             <returns></returns>
         </member>
         <member name="M:NumSharp.NDArray.SetIndices(NumSharp.NDArray,NumSharp.NDArray[])">
@@ -4393,6 +4430,7 @@
                 Used to perform set a selection based on indices, equivalent to nd[NDArray[]] = values.
             </summary>
             <param name="values">The values to set via .</param>
+            <param name="indices"></param>
             <remarks>https://docs.scipy.org/doc/numpy-1.17.0/user/basics.indexing.html</remarks>
             <exception cref="T:System.IndexOutOfRangeException">When one of the indices exceeds limits.</exception>
             <exception cref="T:System.ArgumentException">indices must be of Int type (byte, u/short, u/int, u/long).</exception>
@@ -4405,6 +4443,10 @@
             <param name="dst"></param>
             <param name="dstOffsets"></param>
             <param name="retShape"></param>
+            <param name="ndsCount"></param>
+            <param name="subShape"></param>
+            <param name="dstIndices"></param>
+            <param name="values"></param>
             <returns></returns>
         </member>
         <member name="M:NumSharp.NDArray.SetIndicesNDNonLinear``1(NumSharp.Generic.NDArray{``0},NumSharp.NDArray[],System.Int32,System.Int32[],System.Int32[],NumSharp.Generic.NDArray{``0})">
@@ -4413,7 +4455,11 @@
             </summary>
             <typeparam name="T"></typeparam>
             <param name="source"></param>
+            <param name="indices"></param>
+            <param name="ndsCount"></param>
             <param name="retShape"></param>
+            <param name="subShape"></param>
+            <param name="values"></param>
             <returns></returns>
         </member>
         <member name="M:NumSharp.NDArray.argsort``1(System.Int32)">
@@ -4675,6 +4721,7 @@
                 If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array.
             </param>
             <param name="ddof">Means Delta Degrees of Freedom. The divisor used in calculations is N - ddof, where N represents the number of elements. By default ddof is zero.</param>
+            <param name="dtype"></param>
             <returns> returns a new array containing the std values, otherwise a reference to the output array is returned.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.std.html</remarks>
         </member>
@@ -4688,6 +4735,7 @@
                 If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array.
             </param>
             <param name="ddof">Means Delta Degrees of Freedom. The divisor used in calculations is N - ddof, where N represents the number of elements. By default ddof is zero.</param>
+            <param name="dtype"></param>
             <returns> returns a new array containing the std values, otherwise a reference to the output array is returned.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.std.html</remarks>
         </member>
@@ -4700,6 +4748,7 @@
                 If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array.
             </param>
             <param name="ddof">Means Delta Degrees of Freedom. The divisor used in calculations is N - ddof, where N represents the number of elements. By default ddof is zero.</param>
+            <param name="dtype"></param>
             <returns> returns a new array containing the std values, otherwise a reference to the output array is returned.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.std.html</remarks>
         </member>
@@ -4713,6 +4762,7 @@
                 If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array.
             </param>
             <param name="ddof">Means Delta Degrees of Freedom. The divisor used in calculations is N - ddof, where N represents the number of elements. By default ddof is zero.</param>
+            <param name="dtype"></param>
             <returns> returns a new array containing the std values, otherwise a reference to the output array is returned.</returns>
             <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.std.html</remarks>
         </member>
@@ -4815,6 +4865,7 @@
              Infs are treated as equal if they are in the same place and of the same
              sign in both arrays.
              </summary>
+             <param name="a"></param>
              <param name="b">Input array to compare with a.</param>
              <param name="rtol">The relative tolerance parameter(see Notes)</param>
              <param name="atol">The absolute tolerance parameter(see Notes)</param>
@@ -4965,6 +5016,7 @@
                 Creates a sliced <see cref="T:NumSharp.Backends.Unmanaged.ArraySlice`1"/>.
             </summary>
             <param name="memoryBlock"></param>
+            <param name="address"></param>
             <param name="count">The number of <typeparamref name="T"/> this slice should contain - relative to the <paramref name="memoryBlock"/></param>
         </member>
         <member name="M:NumSharp.Backends.Unmanaged.ArraySlice`1.#ctor(NumSharp.Backends.Unmanaged.UnmanagedMemoryBlock{`0},`0*,System.Int64)">
@@ -4972,6 +5024,7 @@
                 Creates a sliced <see cref="T:NumSharp.Backends.Unmanaged.ArraySlice`1"/>.
             </summary>
             <param name="memoryBlock"></param>
+            <param name="address"></param>
             <param name="count">The number of <typeparamref name="T"/> this slice should contain - relative to the <paramref name="memoryBlock"/></param>
         </member>
         <member name="P:NumSharp.Backends.Unmanaged.ArraySlice`1.NumSharp#Backends#Unmanaged#IArraySlice#Item(System.Int32)">
@@ -5009,6 +5062,8 @@
                 Copies the entire array to address.
             </summary>
             <param name="dst">The address to copy to</param>
+            <param name="sourceCount"></param>
+            <param name="sourceOffset"></param>
             <remarks>The destiniton has to be atleast the size of this array, otherwise memory corruption is likely to occur.</remarks>
         </member>
         <member name="M:NumSharp.Backends.Unmanaged.ArraySlice`1.CopyTo(System.Span{`0},System.Int32)">
@@ -5223,13 +5278,16 @@
             <summary>
                 Copies the entire contents of this storage to given address (using <see cref="M:System.Buffer.MemoryCopy(System.Void*,System.Void*,System.Int64,System.Int64)"/>).
             </summary>
+            <param name="src"></param>
             <param name="dst">The block to copy to.</param>
         </member>
         <member name="M:NumSharp.Backends.Unmanaged.UnmanagedHelper.CopyTo(NumSharp.Backends.Unmanaged.IMemoryBlock,NumSharp.Backends.Unmanaged.IMemoryBlock,System.Int32)">
             <summary>
                 Copies the entire contents of this storage to given address (using <see cref="M:System.Buffer.MemoryCopy(System.Void*,System.Void*,System.Int64,System.Int64)"/>).
             </summary>
+            <param name="src"></param>
             <param name="dst">The block to copy to.</param>
+            <param name="countOffsetDesitinion"></param>
         </member>
         <member name="M:NumSharp.Backends.Unmanaged.UnmanagedHelper.CopyTo(NumSharp.Backends.Unmanaged.IMemoryBlock,System.Void*,System.Int32)">
             <summary>
@@ -5282,6 +5340,8 @@
             </summary>
             <param name="source"></param>
             <param name="out"></param>
+            <param name="bytesOffset"></param>
+            <param name="countOffset"></param>
             <returns></returns>
             <remarks>Returns a copy.</remarks>
         </member>
@@ -5661,6 +5721,7 @@
                 Wraps given <paramref name="arraySlice"/> in <see cref="T:NumSharp.Backends.UnmanagedStorage"/>.
             </summary>
             <param name="arraySlice">The slice to wrap </param>
+            <param name="shape"></param>
         </member>
         <member name="M:NumSharp.Backends.UnmanagedStorage.SetInternalArray(System.Array)">
             <summary>
@@ -5706,6 +5767,7 @@
             </summary>
             <param name="dtype">The type of the Array, if null <see cref="P:NumSharp.Backends.UnmanagedStorage.DType"/> is used.</param>
             <param name="shape">The shape of the array.</param>
+            <param name="fillZeros"></param>
         </member>
         <member name="M:NumSharp.Backends.UnmanagedStorage.Allocate(NumSharp.Shape,NumSharp.NPTypeCode,System.Boolean)">
             <summary>
@@ -5713,6 +5775,7 @@
             </summary>
             <param name="dtype">The type of the Array, if null <see cref="P:NumSharp.Backends.UnmanagedStorage.DType"/> is used.</param>
             <param name="shape">The shape of the array.</param>
+            <param name="fillZeros"></param>
         </member>
         <member name="M:NumSharp.Backends.UnmanagedStorage.Allocate(System.Array)">
             <summary>
@@ -5810,6 +5873,7 @@
                 Gets a subshape based on given <paramref name="ndims"/>.
             </summary>
             <param name="ndims"></param>
+            <param name="dims"></param>
             <returns></returns>
             <remarks>Does not copy, returns a <see cref="T:NumSharp.Slice"/> or a memory slice</remarks>
         </member>
@@ -6155,6 +6219,8 @@
                 Gets the iterators of <paramref name="lhs"/> and <paramref name="rhs"/>.
             </summary>
             <param name="broadcast"></param>
+            <param name="lhs"></param>
+            <param name="rhs"></param>
         </member>
         <member name="M:NumSharp.MultiIterator.GetIterators``1(NumSharp.Backends.UnmanagedStorage,NumSharp.Backends.UnmanagedStorage,System.Boolean)">
             <summary>
@@ -6267,6 +6333,7 @@
             <param name="arr">The IArraySlice to iterate.</param>
             <param name="shape">The original shape, non-broadcasted.</param>
             <param name="broadcastShape">The broadcasted shape of <paramref name="shape"/></param>
+            <param name="autoReset"></param>
         </member>
         <member name="T:NumSharp.NPTypeCode">
             <summary>
@@ -6580,12 +6647,14 @@
                 Creates a new <see cref="T:NumSharp.NDArray"/> with this storage.
             </summary>
             <param name="storage"></param>
+            <param name="shape"></param>
         </member>
         <member name="M:NumSharp.Generic.NDArray`1.#ctor(NumSharp.Backends.UnmanagedStorage,NumSharp.Shape@)">
             <summary>
                 Creates a new <see cref="T:NumSharp.NDArray"/> with this storage.
             </summary>
             <param name="storage"></param>
+            <param name="shape"></param>
         </member>
         <member name="M:NumSharp.Generic.NDArray`1.#ctor(NumSharp.TensorEngine)">
             <summary>
@@ -7702,6 +7771,7 @@
             </summary>
             <param name="source">The array to insert copy and insert value to.</param>
             <param name="index">The index to insert to.</param>
+            <param name="value"></param>
             <returns>a copy of <paramref name="source"/> with the appended value.</returns>
         </member>
         <member name="M:NumSharp.Utilities.Arrays.RemoveAt``1(``0[],System.Int32)">
@@ -7786,6 +7856,7 @@
                 Creates an array of 1D of type <paramref name="type"/>.
             </summary>
             <param name="type">The type to create this array.</param>
+            <param name="enumerable"></param>
             <remarks>Do not use this if you are trying to create jagged or multidimensional array.</remarks>
         </member>
         <member name="M:NumSharp.Utilities.Arrays.Create(System.Type,System.Int32)">
@@ -7882,6 +7953,7 @@
         <member name="M:NumSharp.Utilities.Converts.ChangeType(System.Object,NumSharp.NPTypeCode,System.IFormatProvider)">
             <summary>Returns an object of the specified type whose value is equivalent to the specified object.</summary>
             <param name="value">An object that implements the <see cref="T:System.IConvertible"></see> interface.</param>
+            <param name="provider"></param>
             <param name="typeCode">The type of object to return.</param>
             <returns>An object whose underlying type is <paramref name="typeCode">typeCode</paramref> and whose value is equivalent to <paramref name="value">value</paramref>.
             -or-
@@ -7936,7 +8008,9 @@
             This method is a bit lengthy on purpose. We are trying to avoid jumps to helpers in the loop
             to aid performance.
             </summary>
+            <param name="startDestPtr"></param>
             <param name="inputLength">Number of input chars</param>
+            <param name="startInputPtr"></param>
             <param name="destLength">Max length of the preallocated result buffer</param>
             <returns>If the result buffer was not large enough to write all result bytes, return -1;
             Otherwise return the number of result bytes actually produced.</returns>
@@ -8590,11 +8664,14 @@
             <summary>Initializes a new instance of the <see cref="T:System.Object"></see> class.</summary>
         </member>
         <member name="M:NumSharp.Utilities.NDExtendedCoordinatesIncrementor.#ctor(NumSharp.Shape,System.Int32,System.Action{NumSharp.Utilities.NDExtendedCoordinatesIncrementor})">
+            <param name="shape"></param>
             <param name="extendBy">By how many items should <see cref="F:NumSharp.Utilities.NDExtendedCoordinatesIncrementor.Index"/> be extended</param>
+            <param name="endCallback"></param>
         </member>
         <member name="M:NumSharp.Utilities.NDExtendedCoordinatesIncrementor.#ctor(System.Int32[],System.Int32,System.Action{NumSharp.Utilities.NDExtendedCoordinatesIncrementor})">
             <param name="dims">The dims has to be not extended, use <see cref="M:System.Array.Resize``1(``0[]@,System.Int32)"/> if it already extended</param>
             <param name="extendBy">By how many items should <see cref="F:NumSharp.Utilities.NDExtendedCoordinatesIncrementor.Index"/> be extended</param>
+            <param name="endCallback"></param>
         </member>
         <member name="T:NumSharp.Utilities.InfoOf`1">
             <summary>
@@ -11223,6 +11300,8 @@
                 Creates a complete copy of this Shape.
             </summary>
             <param name="deep">Should make a complete deep clone or a shallow if false.</param>
+            <param name="unbroadcast"></param>
+            <param name="unview"></param>
         </member>
         <member name="M:NumSharp.Shape.Clean">
             <summary>
@@ -11235,6 +11314,7 @@
             <summary>
                 Changes the shape representing this storage.
             </summary>
+            <param name="newShape"></param>
             <exception cref="T:NumSharp.IncorrectShapeException">If shape's size mismatches current shape size.</exception>
             <exception cref="T:System.ArgumentException">If <paramref name="newShape"/>'s size == 0</exception>
             <param name="unsafe">When true, then guards are skipped.</param>
@@ -11266,6 +11346,7 @@
             <summary>
                 Gets the shape based on given <paramref name="ndims"/> and the index offset (C-Contiguous) inside the current storage.
             </summary>
+            <param name="dims"></param>
             <param name="ndims">The selection of indexes 0 based.</param>
             <returns></returns>
             <remarks>Used for slicing, returned shape is the new shape of the slice and offset is the offset from current address.</remarks>
@@ -11278,6 +11359,7 @@
             </summary>
             <param name="dimensions">The dimensions these coordinates are targeting</param>
             <param name="coords">The coordinates.</param>
+            <param name="coordsCount"></param>
             <returns>Coordinates without negative indices.</returns>
         </member>
         <member name="M:NumSharp.Shape.GetOffset_broadcasted(System.Int32*,System.Int32)">
@@ -11285,6 +11367,7 @@
                 Get offset index out of coordinate indices.
             </summary>
             <param name="indices">The coordinates to turn into linear offset</param>
+            <param name="ndims"></param>
             <returns>The index in the memory block that refers to a specific value.</returns>
             <remarks>Handles sliced indices and broadcasting</remarks>
         </member>

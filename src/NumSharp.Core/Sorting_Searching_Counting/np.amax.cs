@@ -15,6 +15,7 @@ namespace NumSharp
         /// <summary>
         ///     Return the maximum of an array or maximum along an axis.
         /// </summary>
+        /// <param name="a"></param>
         /// <param name="axis">Axis or axes along which to operate.</param>
         /// <param name="keepdims">If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array.</param>
         /// <param name="dtype">the type expected as a return, null will remain the same dtype.</param>
@@ -30,6 +31,7 @@ namespace NumSharp
         /// <summary>
         ///     Return the maximum of an array or maximum along an axis.
         /// </summary>
+        /// <param name="a"></param>
         /// <param name="axis">Axis or axes along which to operate.</param>
         /// <param name="keepdims">If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array.</param>
         /// <param name="dtype">the type expected as a return, null will remain the same dtype.</param>

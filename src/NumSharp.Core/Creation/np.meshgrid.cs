@@ -11,7 +11,8 @@
         /// 1-D and 0-D cases are allowed.
         /// </summary>
         /// <param name="x1"> 1-D arrays representing the coordinates of a grid</param>
-        /// /// <param name="x2"> 1-D arrays representing the coordinates of a grid</param>
+        /// <param name="x2"> 1-D arrays representing the coordinates of a grid</param>
+        /// <param name="kwargs"></param>
         /// <returns></returns>
         public static (NDArray, NDArray) meshgrid(NDArray x1, NDArray x2, Kwargs kwargs = null)
         {

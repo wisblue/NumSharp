@@ -112,6 +112,7 @@ namespace NumSharp
         /// <summary>
         ///     Gets the shape based on given <paramref name="ndims"/> and the index offset (C-Contiguous) inside the current storage.
         /// </summary>
+        /// <param name="dims"></param>
         /// <param name="ndims">The selection of indexes 0 based.</param>
         /// <returns></returns>
         /// <remarks>Used for slicing, returned shape is the new shape of the slice and offset is the offset from current address.</remarks>
@@ -196,6 +197,7 @@ namespace NumSharp
         /// </summary>
         /// <param name="dimensions">The dimensions these coordinates are targeting</param>
         /// <param name="coords">The coordinates.</param>
+        /// <param name="coordsCount"></param>
         /// <returns>Coordinates without negative indices.</returns>
         [SuppressMessage("ReSharper", "ParameterHidesMember"), MethodImpl((MethodImplOptions)512)]
         public static unsafe void InferNegativeCoordinates(int[] dimensions, int* coords, int coordsCount)
@@ -212,6 +214,7 @@ namespace NumSharp
         ///     Get offset index out of coordinate indices.
         /// </summary>
         /// <param name="indices">The coordinates to turn into linear offset</param>
+        /// <param name="ndims"></param>
         /// <returns>The index in the memory block that refers to a specific value.</returns>
         /// <remarks>Handles sliced indices and broadcasting</remarks>
         [MethodImpl((MethodImplOptions)768)]

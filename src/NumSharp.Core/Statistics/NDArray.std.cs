@@ -14,6 +14,7 @@ namespace NumSharp
         ///     If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array.
         /// </param>
         /// <param name="ddof">Means Delta Degrees of Freedom. The divisor used in calculations is N - ddof, where N represents the number of elements. By default ddof is zero.</param>
+        /// <param name="dtype"></param>
         /// <returns> returns a new array containing the std values, otherwise a reference to the output array is returned.</returns>
         /// <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.std.html</remarks>
         public NDArray std(bool keepdims = false, int? ddof = null, NPTypeCode? dtype = null)
@@ -30,6 +31,7 @@ namespace NumSharp
         ///     If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array.
         /// </param>
         /// <param name="ddof">Means Delta Degrees of Freedom. The divisor used in calculations is N - ddof, where N represents the number of elements. By default ddof is zero.</param>
+        /// <param name="dtype"></param>
         /// <returns> returns a new array containing the std values, otherwise a reference to the output array is returned.</returns>
         /// <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.std.html</remarks>
         public NDArray std(int axis, bool keepdims = false, int? ddof = null, NPTypeCode? dtype = null)

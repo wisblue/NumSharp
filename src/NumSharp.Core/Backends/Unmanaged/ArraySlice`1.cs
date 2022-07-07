@@ -68,6 +68,7 @@ namespace NumSharp.Backends.Unmanaged
         ///     Creates a sliced <see cref="ArraySlice{T}"/>.
         /// </summary>
         /// <param name="memoryBlock"></param>
+        /// <param name="address"></param>
         /// <param name="count">The number of <typeparamref name="T"/> this slice should contain - relative to the <paramref name="memoryBlock"/></param>
         public ArraySlice(UnmanagedMemoryBlock<T> memoryBlock, T* address, int count)
         {
@@ -82,6 +83,7 @@ namespace NumSharp.Backends.Unmanaged
         ///     Creates a sliced <see cref="ArraySlice{T}"/>.
         /// </summary>
         /// <param name="memoryBlock"></param>
+        /// <param name="address"></param>
         /// <param name="count">The number of <typeparamref name="T"/> this slice should contain - relative to the <paramref name="memoryBlock"/></param>
         public ArraySlice(UnmanagedMemoryBlock<T> memoryBlock, T* address, long count)
         {
@@ -304,6 +306,8 @@ namespace NumSharp.Backends.Unmanaged
         ///     Copies the entire array to address.
         /// </summary>
         /// <param name="dst">The address to copy to</param>
+        /// <param name="sourceCount"></param>
+        /// <param name="sourceOffset"></param>
         /// <remarks>The destiniton has to be atleast the size of this array, otherwise memory corruption is likely to occur.</remarks>
         [MethodImpl((MethodImplOptions)768)]
         public void CopyTo(IntPtr dst, int sourceOffset, int sourceCount)

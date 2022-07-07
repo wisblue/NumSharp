@@ -102,6 +102,7 @@ namespace NumSharp.Utilities
         /// </summary>
         /// <param name="source">The array to insert copy and insert value to.</param>
         /// <param name="index">The index to insert to.</param>
+        /// <param name="value"></param>
         /// <returns>a copy of <paramref name="source"/> with the appended value.</returns>
         public static T[] AppendAt<T>(T[] source, int index, T value)
         {
@@ -356,6 +357,7 @@ namespace NumSharp.Utilities
         ///     Creates an array of 1D of type <paramref name="type"/>.
         /// </summary>
         /// <param name="type">The type to create this array.</param>
+        /// <param name="enumerable"></param>
         /// <remarks>Do not use this if you are trying to create jagged or multidimensional array.</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Array Create(Type type, IEnumerable enumerable)

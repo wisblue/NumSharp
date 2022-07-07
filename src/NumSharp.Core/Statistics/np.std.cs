@@ -13,6 +13,7 @@ namespace NumSharp
         /// <param name="keepdims">
         ///     If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array.
         /// </param>
+        /// <param name="dtype"></param>
         /// <param name="ddof">Means Delta Degrees of Freedom. The divisor used in calculations is N - ddof, where N represents the number of elements. By default ddof is zero.</param>
         /// <returns> returns a new array containing the std values, otherwise a reference to the output array is returned.</returns>
         /// <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.std.html</remarks>
@@ -64,6 +65,7 @@ namespace NumSharp
         /// </summary>
         /// <param name="a">Calculate the standard deviation of these values.</param>
         /// <param name="axis">Axis or axes along which the standard deviation is computed. The default is to compute the standard deviation of the flattened array.</param>
+        /// <param name="dtype"></param>
         /// <param name="keepdims">
         ///     If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array.
         /// </param>
@@ -79,6 +81,7 @@ namespace NumSharp
         /// </summary>
         /// <param name="a">Calculate the standard deviation of these values.</param>
         /// <param name="axis">Axis or axes along which the standard deviation is computed. The default is to compute the standard deviation of the flattened array.</param>
+        /// <param name="type"></param>
         /// <param name="keepdims">
         ///     If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array.
         /// </param>
@@ -113,6 +116,7 @@ namespace NumSharp
         ///     If this is set to True, the axes which are reduced are left in the result as dimensions with size one. With this option, the result will broadcast correctly against the input array.
         /// </param>
         /// <param name="ddof">Means Delta Degrees of Freedom. The divisor used in calculations is N - ddof, where N represents the number of elements. By default ddof is zero.</param>
+        /// <param name="dtype"></param>
         /// <returns> returns a new array containing the std values, otherwise a reference to the output array is returned.</returns>
         /// <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.std.html</remarks>
         public static NDArray std(NDArray a, int axis, bool keepdims = false, int? ddof = null, NPTypeCode? dtype = null)

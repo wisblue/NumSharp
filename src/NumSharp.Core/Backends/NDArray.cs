@@ -57,6 +57,7 @@ namespace NumSharp
         /// <summary>
         ///     Creates a new <see cref="NDArray"/> with this storage.
         /// </summary>
+        /// <param name="storage"></param>
         /// <param name="shape">The shape to set for this NDArray, does not perform checks.</param>
         /// <remarks>Doesn't copy. Does not perform checks for <paramref name="shape"/>.</remarks>
         protected internal NDArray(UnmanagedStorage storage, Shape shape)
@@ -68,6 +69,7 @@ namespace NumSharp
         /// <summary>
         ///     Creates a new <see cref="NDArray"/> with this storage.
         /// </summary>
+        /// <param name="storage"></param>
         /// <param name="shape">The shape to set for this NDArray, does not perform checks.</param>
         /// <remarks>Doesn't copy. Does not perform checks for <paramref name="shape"/>.</remarks>
         protected internal NDArray(UnmanagedStorage storage, ref Shape shape)
@@ -780,6 +782,7 @@ namespace NumSharp
         /// <summary>
         ///     Retrieves value at given linear (offset) <paramref name="index"/>.
         /// </summary>
+        /// <param name="obj"></param>
         /// <param name="index"></param>
         /// <returns></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -788,6 +791,7 @@ namespace NumSharp
         /// <summary>
         ///     Retrieves value of 
         /// </summary>
+        /// <param name="value"></param>
         /// <param name="index"></param>
         /// <returns></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

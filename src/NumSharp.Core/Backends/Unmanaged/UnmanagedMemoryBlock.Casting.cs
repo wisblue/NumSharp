@@ -439,6 +439,8 @@ namespace NumSharp.Backends.Unmanaged
         /// </summary>
         /// <param name="source"></param>
         /// <param name="out"></param>
+        /// <param name="bytesOffset"></param>
+        /// <param name="countOffset"></param>
         /// <returns></returns>
         /// <remarks>Returns a copy.</remarks>
         [MethodImpl((MethodImplOptions)768)]

@@ -13,6 +13,7 @@
         /// Infs are treated as equal if they are in the same place and of the same
         /// sign in both arrays.
         /// </summary>
+        /// <param name="a"></param>
         /// <param name="b">Input array to compare with a.</param>
         /// <param name="rtol">The relative tolerance parameter(see Notes)</param>
         /// <param name="atol">The absolute tolerance parameter(see Notes)</param>

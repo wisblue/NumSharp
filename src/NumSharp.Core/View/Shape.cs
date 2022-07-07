@@ -1338,6 +1338,8 @@ namespace NumSharp
         ///     Creates a complete copy of this Shape.
         /// </summary>
         /// <param name="deep">Should make a complete deep clone or a shallow if false.</param>
+        /// <param name="unbroadcast"></param>
+        /// <param name="unview"></param>
         public Shape Clone(bool deep = true, bool unview = false, bool unbroadcast = false)
         {
             if (IsEmpty)

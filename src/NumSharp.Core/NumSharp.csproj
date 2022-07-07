@@ -49,8 +49,8 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>TRACE;DEBUG;NETSTANDARD;NETSTANDARD2_0;</DefineConstants>
-    <WarningLevel>3</WarningLevel>
-    <NoWarn>1701;1702;IDE1006;0029</NoWarn>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>1701;1702;IDE1006;0029;1591</NoWarn>
     <DocumentationFile>NumSharp.xml</DocumentationFile>
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>

@@ -103,6 +103,7 @@ namespace NumSharp.Utilities
 
         /// <summary>Returns an object of the specified type whose value is equivalent to the specified object.</summary>
         /// <param name="value">An object that implements the <see cref="T:System.IConvertible"></see> interface.</param>
+        /// <param name="provider"></param>
         /// <param name="typeCode">The type of object to return.</param>
         /// <returns>An object whose underlying type is <paramref name="typeCode">typeCode</paramref> and whose value is equivalent to <paramref name="value">value</paramref>.
         /// -or-

@@ -16,6 +16,7 @@ namespace NumSharp
         ///     With this option, the result will broadcast correctly against the input array.
         /// </param>
         /// <param name="ddof">Means Delta Degrees of Freedom. The divisor used in calculations is N - ddof, where N represents the number of elements. By default ddof is zero.</param>
+        /// <param name="dtype"></param>
         /// <returns> returns a new array containing the var values, otherwise a reference to the output array is returned.</returns>
         /// <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.var.html</remarks>
         public static NDArray var(NDArray a, bool keepdims = false, int? ddof = null, NPTypeCode? dtype = null)
@@ -76,6 +77,7 @@ namespace NumSharp
         ///     With this option, the result will broadcast correctly against the input array.
         /// </param>
         /// <param name="ddof">Means Delta Degrees of Freedom. The divisor used in calculations is N - ddof, where N represents the number of elements. By default ddof is zero.</param>
+        /// <param name="dtype"></param>
         /// <returns> returns a new array containing the var values, otherwise a reference to the output array is returned.</returns>
         /// <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.var.html</remarks>
         public static NDArray var(in NDArray a, int axis, Type dtype, bool keepdims = false, int? ddof = null)
@@ -88,6 +90,7 @@ namespace NumSharp
         /// </summary>
         /// <param name="a">Array containing numbers whose variance is desired. If a is not an array, a conversion is attempted.</param>
         /// <param name="axis">Axis or axes along which the variance is computed. The default is to compute the variance of the flattened array.</param>
+        /// <param name="type"></param>
         /// <param name="keepdims">
         ///     If this is set to True, the axes which are reduced are left in the result as dimensions with size one.
         ///     With this option, the result will broadcast correctly against the input array.
@@ -127,6 +130,7 @@ namespace NumSharp
         ///     With this option, the result will broadcast correctly against the input array.
         /// </param>
         /// <param name="ddof">Means Delta Degrees of Freedom. The divisor used in calculations is N - ddof, where N represents the number of elements. By default ddof is zero.</param>
+        /// <param name="dtype"></param>
         /// <returns> returns a new array containing the var values, otherwise a reference to the output array is returned.</returns>
         /// <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.var.html</remarks>
         public static NDArray var(NDArray a, int axis, bool keepdims = false, int? ddof = null, NPTypeCode? dtype = null)

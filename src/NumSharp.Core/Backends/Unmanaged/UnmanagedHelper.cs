@@ -8,6 +8,7 @@ namespace NumSharp.Backends.Unmanaged
         /// <summary>
         ///     Copies the entire contents of this storage to given address (using <see cref="Buffer.MemoryCopy(void*, void*, long, long)"/>).
         /// </summary>
+        /// <param name="src"></param>
         /// <param name="dst">The block to copy to.</param>
         public static unsafe void CopyTo(this IMemoryBlock src, IMemoryBlock dst)
         {
@@ -24,7 +25,9 @@ namespace NumSharp.Backends.Unmanaged
         /// <summary>
         ///     Copies the entire contents of this storage to given address (using <see cref="Buffer.MemoryCopy(void*, void*, long, long)"/>).
         /// </summary>
+        /// <param name="src"></param>
         /// <param name="dst">The block to copy to.</param>
+        /// <param name="countOffsetDesitinion"></param>
         public static unsafe void CopyTo(this IMemoryBlock src, IMemoryBlock dst, int countOffsetDesitinion)
         {
             if (dst.TypeCode != src.TypeCode)

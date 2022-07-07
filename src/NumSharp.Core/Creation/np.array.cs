@@ -26,6 +26,8 @@ namespace NumSharp
         /// <summary>
         ///     Creates an <see cref="NDArray"/> from an array with an unknown size or dtype.
         /// </summary>
+        /// <param name="array"></param>
+        /// <param name="dtype"></param>
         /// <param name="ndmin">Specifies the minimum number of dimensions that the resulting array should have. Ones will be pre-pended to the shape as needed to meet this requirement.</param>
         /// <param name="copy">Always copies if the array is larger than 1-d.</param>
         /// <param name="order">Not used.</param>
@@ -96,6 +98,7 @@ namespace NumSharp
         /// </summary>
         /// <typeparam name="T">The type of given array, must be compliant to numpy's supported dtypes.</typeparam>
         /// <param name="data">The enumeration of data to create <see cref="NDArray"/> from.</param>
+        /// <param name="size"></param>
         /// <returns>An <see cref="NDArray"/> with the data and shape of the given array.</returns>
         /// <remarks>
         ///     https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html <br></br>

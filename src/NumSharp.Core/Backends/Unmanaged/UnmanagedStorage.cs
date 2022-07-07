@@ -191,6 +191,7 @@ namespace NumSharp.Backends
         ///     Wraps given <paramref name="arraySlice"/> in <see cref="UnmanagedStorage"/>.
         /// </summary>
         /// <param name="arraySlice">The slice to wrap </param>
+        /// <param name="shape"></param>
         public UnmanagedStorage(IArraySlice arraySlice, Shape shape)
         {
             if (shape.IsEmpty)
@@ -623,6 +624,7 @@ namespace NumSharp.Backends
         /// </summary>
         /// <param name="dtype">The type of the Array, if null <see cref="DType"/> is used.</param>
         /// <param name="shape">The shape of the array.</param>
+        /// <param name="fillZeros"></param>
         public void Allocate(Shape shape, Type dtype, bool fillZeros)
         {
             if (shape.IsEmpty)
@@ -636,6 +638,7 @@ namespace NumSharp.Backends
         /// </summary>
         /// <param name="dtype">The type of the Array, if null <see cref="DType"/> is used.</param>
         /// <param name="shape">The shape of the array.</param>
+        /// <param name="fillZeros"></param>
         public void Allocate(Shape shape, NPTypeCode dtype, bool fillZeros)
         {
             if (shape.IsEmpty)

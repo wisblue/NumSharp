@@ -170,6 +170,7 @@ namespace NumSharp
         /// <param name="arr">The IArraySlice to iterate.</param>
         /// <param name="shape">The original shape, non-broadcasted.</param>
         /// <param name="broadcastShape">The broadcasted shape of <paramref name="shape"/></param>
+        /// <param name="autoReset"></param>
         public static NDIterator AsIterator(this IArraySlice arr, Shape shape, Shape broadcastShape, bool autoReset)
         {
 #if _REGEN1

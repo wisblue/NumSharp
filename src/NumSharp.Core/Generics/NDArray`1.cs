@@ -41,6 +41,7 @@ namespace NumSharp.Generic
         ///     Creates a new <see cref="NDArray"/> with this storage.
         /// </summary>
         /// <param name="storage"></param>
+        /// <param name="shape"></param>
         protected internal NDArray(UnmanagedStorage storage, Shape shape) : base(storage, shape)
         {
             if (storage.DType != typeof(TDType))
@@ -51,6 +52,7 @@ namespace NumSharp.Generic
         ///     Creates a new <see cref="NDArray"/> with this storage.
         /// </summary>
         /// <param name="storage"></param>
+        /// <param name="shape"></param>
         protected internal NDArray(UnmanagedStorage storage, ref Shape shape) : base(storage, ref shape)
         {
             if (storage.DType != typeof(TDType))

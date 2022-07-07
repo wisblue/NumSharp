@@ -15,6 +15,7 @@ namespace NumSharp
         /// <summary>
         ///     Used to perform selection based on indices, equivalent to nd[NDArray[]].
         /// </summary>
+        /// <param name="indices"></param>
         /// <param name="out">Alternative output array in which to place the result. It must have the same shape as the expected output and be of dtype <see cref="Int32"/>.</param>
         /// <remarks>https://docs.scipy.org/doc/numpy-1.17.0/user/basics.indexing.html</remarks>
         /// <exception cref="IndexOutOfRangeException">When one of the indices exceeds limits.</exception>
@@ -482,6 +483,10 @@ namespace NumSharp
         /// <typeparam name="T"></typeparam>
         /// <param name="src"></param>
         /// <param name="offsets"></param>
+        /// <param name="indices"></param>
+        /// <param name="ndsCount"></param>
+        /// <param name="out"></param>
+        /// <param name="subShape"></param>
         /// <param name="retShape"></param>
         /// <returns></returns>
         protected static unsafe NDArray<T> FetchIndicesND<T>(NDArray<T> src, NDArray<int> offsets, NDArray[] indices, int ndsCount, int[] retShape, int[] subShape, NDArray @out) where T : unmanaged
@@ -529,6 +534,10 @@ namespace NumSharp
         /// <typeparam name="T"></typeparam>
         /// <param name="source"></param>
         /// <param name="retShape"></param>
+        /// <param name="out"></param>
+        /// <param name="subShape"></param>
+        /// <param name="ndsCount"></param>
+        /// <param name="indices"></param>
         /// <returns></returns>
         [SuppressMessage("ReSharper", "SuggestVarOrType_Elsewhere")]
         protected static unsafe NDArray<T> FetchIndicesNDNonLinear<T>(NDArray<T> source, NDArray[] indices, int ndsCount, int[] retShape, int[] subShape, NDArray @out) where T : unmanaged

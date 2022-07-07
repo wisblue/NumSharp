@@ -35,6 +35,7 @@ namespace NumSharp
         ///     Calculate 2**p for all p in the input array.
         /// </summary>
         /// <param name="a">Input value.</param>
+        /// <param name="dtype"></param>
         /// <returns>Element-wise 2 to the power x. This is a scalar if x is a scalar.</returns>
         /// <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.exp2.html</remarks>
         public static NDArray exp2(in NDArray a, Type dtype) => a.TensorEngine.Exp2(a, dtype);
@@ -43,6 +44,7 @@ namespace NumSharp
         ///     Calculate 2**p for all p in the input array.
         /// </summary>
         /// <param name="a">Input value.</param>
+        /// <param name="typeCode"></param>
         /// <returns>Element-wise 2 to the power x. This is a scalar if x is a scalar.</returns>
         /// <remarks>https://docs.scipy.org/doc/numpy/reference/generated/numpy.exp2.html</remarks>
         public static NDArray exp2(in NDArray a, NPTypeCode typeCode) => a.TensorEngine.Exp2(a, typeCode);
@@ -59,6 +61,7 @@ namespace NumSharp
         ///     Calculate exp(x) - 1 for all elements in the array.
         /// </summary>
         /// <param name="a">Input value.</param>
+        /// <param name="dtype"></param>
         /// <returns>Element-wise exponential minus one: out = exp(x) - 1. This is a scalar if x is a scalar.</returns>
         /// <remarks>https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.expm1.html</remarks>
         public static NDArray expm1(in NDArray a, Type dtype) => a.TensorEngine.Expm1(a, dtype);
@@ -67,6 +70,7 @@ namespace NumSharp
         ///     Calculate exp(x) - 1 for all elements in the array.
         /// </summary>
         /// <param name="a">Input value.</param>
+        /// <param name="typeCode"></param>
         /// <returns>Element-wise exponential minus one: out = exp(x) - 1. This is a scalar if x is a scalar.</returns>
         /// <remarks>https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.expm1.html</remarks>
         public static NDArray expm1(in NDArray a, NPTypeCode typeCode) => a.TensorEngine.Expm1(a, typeCode);

@@ -14,7 +14,9 @@ namespace NumSharp.Utilities
         private int subcursor;
         public bool ResetEntireArray { get; set; }
 
+        /// <param name="shape"></param>
         /// <param name="extendBy">By how many items should <see cref="Index"/> be extended</param>
+        /// <param name="endCallback"></param>
         public NDExtendedCoordinatesIncrementor(Shape shape, int extendBy, Action<NDExtendedCoordinatesIncrementor> endCallback = null)
         {
             if (shape.IsEmpty || shape.size == 0)
@@ -30,6 +32,7 @@ namespace NumSharp.Utilities
 
         /// <param name="dims">The dims has to be not extended, use <see cref="Array.Resize{T}"/> if it already extended</param>
         /// <param name="extendBy">By how many items should <see cref="Index"/> be extended</param>
+        /// <param name="endCallback"></param>
         public NDExtendedCoordinatesIncrementor(int[] dims, int extendBy, Action<NDExtendedCoordinatesIncrementor> endCallback = null) : this(new Shape(dims), extendBy, endCallback) { }
 
         public void Reset()

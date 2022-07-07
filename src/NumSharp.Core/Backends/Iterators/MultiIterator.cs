@@ -107,6 +107,8 @@ namespace NumSharp
         ///     Gets the iterators of <paramref name="lhs"/> and <paramref name="rhs"/>.
         /// </summary>
         /// <param name="broadcast"></param>
+        /// <param name="lhs"></param>
+        /// <param name="rhs"></param>
         public static (NDIterator, NDIterator) GetIterators(UnmanagedStorage lhs, UnmanagedStorage rhs, bool broadcast) 
         {
             if (broadcast)

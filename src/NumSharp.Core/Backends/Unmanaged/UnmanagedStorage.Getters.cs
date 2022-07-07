@@ -101,6 +101,7 @@ namespace NumSharp.Backends
         ///     Gets a subshape based on given <paramref name="ndims"/>.
         /// </summary>
         /// <param name="ndims"></param>
+        /// <param name="dims"></param>
         /// <returns></returns>
         /// <remarks>Does not copy, returns a <see cref="Slice"/> or a memory slice</remarks>
         [MethodImpl((MethodImplOptions)768)]
