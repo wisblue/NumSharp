@@ -91,5 +91,15 @@ namespace NumSharp
                 SetIndices(indicesObjects, value);
             }
         }
+
+        public NDArray row(int i)
+        {
+            return this[i];
+        }
+
+        public NDArray col(int i)
+        {
+            return this[Slice.All, i];
+        }
     }
 }
