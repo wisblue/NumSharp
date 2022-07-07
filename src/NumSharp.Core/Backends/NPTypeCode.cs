@@ -563,9 +563,9 @@ namespace NumSharp
         }
 
         /// <summary>
-        ///     Gets the dtype that is used as return type in case when statistics are computed with high decimal precision like <see cref="np.sin"/>
+        ///     Gets the dtype that is used as return type in case when statistics are computed with high decimal precision like <see cref="np.sin(in NDArray, Type)"/>
         /// </summary>
-        /// <returns>dtype in case when statistics are computed like <see cref="np.mean"/></returns>
+        /// <returns>dtype in case when statistics are computed like <see cref="np.mean(in NDArray)"/></returns>
         public static NPTypeCode GetComputingType(this NPTypeCode typeCode)
         {
             if (typeCode < NPTypeCode.Single)
@@ -575,9 +575,9 @@ namespace NumSharp
         }
         
         /// <summary>
-        ///     Gets the dtype that is used as accumulation in case when statistics are computed like <see cref="np.sum"/>
+        ///     Gets the dtype that is used as accumulation in case when statistics are computed like <see cref="np.sum(in NDArray)"/>
         /// </summary>
-        /// <returns>dtype in case when statistics are computed like <see cref="np.sum"/></returns>
+        /// <returns>dtype in case when statistics are computed like <see cref="np.sum(in NDArray)"/></returns>
         public static NPTypeCode GetAccumulatingType(this NPTypeCode typeCode)
         {
 #if _REGEN1

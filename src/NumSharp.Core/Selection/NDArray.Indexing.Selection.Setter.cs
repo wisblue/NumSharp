@@ -128,7 +128,7 @@ namespace NumSharp
             _NDArrayFound:
             var @this = this;
             var indices = new List<NDArray>();
-            bool foundNewAxis = false;
+            //bool foundNewAxis = false;
             int countNewAxes = 0;
             //handle ndarray indexing
             bool hasCustomExpandedSlice = false; //use for premature slicing detection
@@ -151,7 +151,7 @@ namespace NumSharp
                         {
                             //TODO: whats the approach to handling a newaxis in setter, findout.
                             countNewAxes++;
-                            foundNewAxis = true;
+                            //foundNewAxis = true;
                             continue;
                         }
 

@@ -984,7 +984,7 @@ namespace NumSharp.Utilities
                 }
             }
         }
-
+#pragma warning disable CS0693
         public static void CopyTo<T>(Hashset<T> src, ArraySlice<T> array) where T : unmanaged
         {
             CopyTo<T>(src, array, 0, src.Count);
@@ -1029,7 +1029,7 @@ namespace NumSharp.Utilities
                 }
             }
         }
-
+#pragma warning restore CS0693
         /// <summary>
         /// Remove elements that match specified predicate. Returns the number of elements removed
         /// </summary>
@@ -1153,6 +1153,7 @@ namespace NumSharp.Utilities
 #if !FEATURE_NETCORE
         [Serializable()]
 #endif
+#pragma warning disable CS0693
         internal class HashSetEqualityComparer<T> : IEqualityComparer<Hashset<T>>
         {
             private IEqualityComparer<T> m_comparer;
@@ -1880,6 +1881,7 @@ namespace NumSharp.Utilities
             internal int next; // Index of next entry, -1 if last
             internal T value;
         }
+#pragma warning restore CS0693
 
 #if !SILVERLIGHT
         [Serializable()]

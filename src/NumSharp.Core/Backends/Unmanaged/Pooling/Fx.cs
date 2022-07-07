@@ -23,12 +23,12 @@ namespace NumSharp.Memory.Pooling
         const string FastDebugName = "FastDebug";
         const string StealthDebuggerName = "StealthDebugger";
 
-        static bool breakOnExceptionTypesRetrieved;
-        static Type[] breakOnExceptionTypesCache;
-        static bool fastDebugRetrieved;
-        static bool fastDebugCache;
-        static bool stealthDebuggerRetrieved;
-        static bool stealthDebuggerCache;
+        //static bool breakOnExceptionTypesRetrieved;
+        //static Type[] breakOnExceptionTypesCache;
+        //static bool fastDebugRetrieved;
+        //static bool fastDebugCache;
+        //static bool stealthDebuggerRetrieved;
+        //static bool stealthDebuggerCache;
 #endif
 
 

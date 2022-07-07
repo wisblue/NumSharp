@@ -126,7 +126,7 @@ namespace NumSharp
         /// <param name="shape"></param>
         /// <param name="order"></param>
         /// <returns>Array with values</returns>
-        /// <remarks>This constructor calls <see cref="UnmanagedStorage.Allocate"/></remarks>
+        /// <remarks>This constructor calls <see cref="UnmanagedStorage.Allocate(IArraySlice, Shape, bool)"/></remarks>
         public NDArray(Array values, Shape shape = default, char order = 'C') : this(values.GetType().GetElementType())
         {
             if (order != 'C')
@@ -359,7 +359,7 @@ namespace NumSharp
         }
 
         /// <summary>
-        ///     Get: Gets internal storage array by calling <see cref="UnmanagedStorage.GetData"/><br></br>
+        ///     Get: Gets internal storage array by calling <see cref="UnmanagedStorage.InternalArray"/><br></br>
         /// </summary>
         /// <remarks>Setting does not replace internal storage array.</remarks>
         protected internal IArraySlice Array

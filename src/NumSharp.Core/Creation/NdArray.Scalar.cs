@@ -13,7 +13,7 @@ namespace NumSharp
         /// <param name="value">The value of the scalar</param>
         /// <param name="dtype">The type of the scalar.</param>
         /// <returns></returns>
-        /// <remarks>In case when <paramref name="value"/> is not <paramref name="dtype"/>, <see cref="NumSharp.Utilities.Converts.ChangeType"/> will be called.</remarks>
+        /// <remarks>In case when <paramref name="value"/> is not <paramref name="dtype"/>, <see cref="NumSharp.Utilities.Converts.ChangeType(object, NPTypeCode)"/> will be called.</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static NDArray Scalar(object value, Type dtype)
         {
@@ -25,7 +25,7 @@ namespace NumSharp
         /// </summary>
         /// <param name="value">The value of the scalar</param>
         /// <returns></returns>
-        /// <remarks>In case when <paramref crefname="value"/> is not <see cref="dtype"/>, <see cref="NumSharp.Utilities.Converts.ChangeType"/> will be called.</remarks>
+        /// <remarks>In case when <paramref crefname="value"/> is not <see cref="dtype"/>, <see cref="NumSharp.Utilities.Converts.ChangeType(object, NPTypeCode)"/> will be called.</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static NDArray Scalar(object value)
         {
@@ -37,7 +37,7 @@ namespace NumSharp
         /// </summary>
         /// <param name="value">The value of the scalar</param>
         /// <returns></returns>
-        /// <remarks>In case when <paramref name="value"/> is not <see cref="ValueType"/>, <see cref="NumSharp.Utilities.Converts.ChangeType"/> will be called.</remarks>
+        /// <remarks>In case when <paramref name="value"/> is not <see cref="ValueType"/>, <see cref="NumSharp.Utilities.Converts.ChangeType(object, NPTypeCode)"/> will be called.</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static NDArray Scalar(ValueType value)
         {
@@ -72,7 +72,7 @@ namespace NumSharp
         /// <param name="value">The value of the scalar</param>
         /// <param name="typeCode">The type code of the scalar.</param>
         /// <returns></returns>
-        /// <remarks>In case when <paramref name="value"/> is not <see cref="dtype"/>, <see cref="NumSharp.Utilities.Converts.ChangeType"/> will be called.</remarks>
+        /// <remarks>In case when <paramref name="value"/> is not <see cref="dtype"/>, <see cref="NumSharp.Utilities.Converts.ChangeType(object, NPTypeCode)"/> will be called.</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static NDArray Scalar(object value, NPTypeCode typeCode)
         {

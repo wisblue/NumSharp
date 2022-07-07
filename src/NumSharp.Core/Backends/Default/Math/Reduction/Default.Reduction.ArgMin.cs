@@ -86,7 +86,7 @@ namespace NumSharp.Backends
 		    {
 			    case NPTypeCode.Byte: 
                 {
-                    int at;
+                    //int at;
                     do
                     {
                         var iter = arr[slices].AsIterator<byte>();
@@ -112,7 +112,7 @@ namespace NumSharp.Backends
                 }
 			    case NPTypeCode.Int32: 
                 {
-                    int at;
+                    //int at;
                     do
                     {
                         var iter = arr[slices].AsIterator<int>();
@@ -138,7 +138,7 @@ namespace NumSharp.Backends
                 }
 			    case NPTypeCode.Int64: 
                 {
-                    int at;
+                    //int at;
                     do
                     {
                         var iter = arr[slices].AsIterator<long>();
@@ -164,7 +164,7 @@ namespace NumSharp.Backends
                 }
 			    case NPTypeCode.Single: 
                 {
-                    int at;
+                    //int at;
                     do
                     {
                         var iter = arr[slices].AsIterator<float>();
@@ -190,7 +190,7 @@ namespace NumSharp.Backends
                 }
 			    case NPTypeCode.Double: 
                 {
-                    int at;
+                    //int at;
                     do
                     {
                         var iter = arr[slices].AsIterator<double>();

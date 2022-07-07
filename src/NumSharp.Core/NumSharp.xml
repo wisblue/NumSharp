@@ -3243,7 +3243,7 @@
             <param name="shape"></param>
             <param name="order"></param>
             <returns>Array with values</returns>
-            <remarks>This constructor calls <see cref="M:NumSharp.Backends.UnmanagedStorage.Allocate(NumSharp.Shape,System.Type)"/></remarks>
+            <remarks>This constructor calls <see cref="M:NumSharp.Backends.UnmanagedStorage.Allocate(NumSharp.Backends.Unmanaged.IArraySlice,NumSharp.Shape,System.Boolean)"/></remarks>
         </member>
         <member name="M:NumSharp.NDArray.#ctor(NumSharp.Backends.Unmanaged.IArraySlice,NumSharp.Shape,System.Char)">
             <summary>
@@ -3400,7 +3400,7 @@
         </member>
         <member name="P:NumSharp.NDArray.Array">
             <summary>
-                Get: Gets internal storage array by calling <see cref="M:NumSharp.Backends.UnmanagedStorage.GetData(System.Int32[])"/><br></br>
+                Get: Gets internal storage array by calling <see cref="F:NumSharp.Backends.UnmanagedStorage.InternalArray"/><br></br>
             </summary>
             <remarks>Setting does not replace internal storage array.</remarks>
         </member>
@@ -3940,7 +3940,7 @@
         </member>
         <member name="M:NumSharp.NDArray.AsOrMakeGeneric``1">
             <summary>
-                Tries to cast to <see cref="T:NumSharp.Generic.NDArray`1"/>, otherwise calls <see cref="M:NumSharp.NDArray.astype(System.Type,System.Boolean)"/>.
+                Tries to cast to <see cref="T:NumSharp.Generic.NDArray`1"/>, otherwise calls <see cref="M:NumSharp.NDArray.astype(NumSharp.NPTypeCode,System.Boolean)"/>.
             </summary>
             <typeparam name="T">The type of the generic</typeparam>
             <returns>This NDArray as a generic version.</returns>
@@ -6395,7 +6395,7 @@
         </member>
         <member name="M:NumSharp.NPTypeCodeExtensions.GetComputingType(NumSharp.NPTypeCode)">
             <summary>
-                Gets the dtype that is used as return type in case when statistics are computed with high decimal precision like <see cref="M:NumSharp.np.sin(NumSharp.NDArray@,System.Nullable{NumSharp.NPTypeCode})"/>
+                Gets the dtype that is used as return type in case when statistics are computed with high decimal precision like <see cref="M:NumSharp.np.sin(NumSharp.NDArray@,System.Type)"/>
             </summary>
             <returns>dtype in case when statistics are computed like <see cref="M:NumSharp.np.mean(NumSharp.NDArray@)"/></returns>
         </member>

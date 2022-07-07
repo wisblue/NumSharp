@@ -49,7 +49,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>TRACE;DEBUG;NETSTANDARD;NETSTANDARD2_0;</DefineConstants>
-    <WarningLevel>2</WarningLevel>
+    <WarningLevel>3</WarningLevel>
     <NoWarn>1701;1702;IDE1006;0029</NoWarn>
     <DocumentationFile>NumSharp.xml</DocumentationFile>
     <SignAssembly>false</SignAssembly>
