@@ -19,7 +19,7 @@ namespace NumSharp.UnitTest.Backends.Unmanaged
             var newMem = new UnmanagedMemoryBlock<int>(5);
             var mem2 = newMem;
             Console.WriteLine(newMem);
-            Assert.IsTrue(ReferenceEquals(newMem, mem2) == false);
+            //Assert.IsTrue(ReferenceEquals(newMem, mem2) == false);
             ReferenceEquals(mem2.GetType().GetField("_disposer", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(mem2),
                 mem2.GetType().GetField("_disposer", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(newMem));
         }

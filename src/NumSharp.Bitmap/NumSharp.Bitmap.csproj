@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Authors>Eli Belash, Haiping Chen, Meinrad Recheis</Authors>
@@ -28,7 +28,7 @@
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <Platforms>AnyCPU;x64</Platforms>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <Configurations>Debug;Release;Publish;Debug-Minimal</Configurations>
+    <Configurations>Publish;Debug;Debug-Minimal;Release</Configurations>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
 
@@ -142,7 +142,7 @@
   </Target>
 
   <ItemGroup>
-    <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>

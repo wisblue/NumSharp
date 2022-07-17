@@ -2,14 +2,14 @@
 
   <PropertyGroup>
     <!--<TargetFramework>net472</TargetFramework>-->
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <!--<TargetFramework>netstandard2.0</TargetFramework>-->
     <IsPackable>false</IsPackable>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <Platforms>AnyCPU;x64</Platforms>
     <AssemblyOriginatorKeyFile>Open.snk</AssemblyOriginatorKeyFile>
-    <Configurations>Debug;Release;Publish;Debug-Minimal</Configurations>
+    <Configurations>Debug;Debug-Minimal;Publish;Release</Configurations>
   </PropertyGroup>
 
   <PropertyGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^net\d'))">
@@ -27,6 +27,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>TRACE;DEBUG;NETCORE;</DefineConstants>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Minimal|AnyCPU'">
@@ -48,6 +49,11 @@
 	<DefineConstants>SIGNING</DefineConstants>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType></DebugType>
+    <WarningLevel>4</WarningLevel>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
   <ItemGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^netstandard\d'))">      
     <PackageReference Include="System.Drawing.Common" Version="4.5.1" />
     <PackageReference Include="Microsoft.Windows.Compatibility" Version="2.0.1" />
@@ -67,13 +73,15 @@
     <EmbeddedResource Remove="data\**" />
     <None Remove="Backends\Unmanaged\Iterators\**" />
     <None Remove="data\**" />
+    <None Remove="NumSharp" />
+    <None Remove="FluentAssertions" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Codecov" Version="1.12.2" />
-    <PackageReference Include="FluentAssertions" Version="5.10.3" />
+    <PackageReference Include="Codecov" Version="1.13.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="OpenCover" Version="4.7.922" />
+    <PackageReference Include="OpenCover" Version="4.7.1221" />
+    <PackageReference Include="FluentAssertions" Version="5.10.3" />
   </ItemGroup>
 
   <Target Name="LogDebugInfo">
@@ -81,10 +89,10 @@
   </Target>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
-    <PackageReference Include="MSTest.TestAdapter" Version="2.1.2" />
-    <PackageReference Include="MSTest.TestFramework" Version="2.1.2" />
-    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.7.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.2.10" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.2.10" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
   </ItemGroup>
 
 
@@ -101,7 +109,11 @@
 
 
   <ItemGroup>
+    <Reference Include="NumSharp">
+      <HintPath>..\..\src\NumSharp.Core\bin\Debug\netstandard2.1\NumSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\src\NumSharp.Bitmap\NumSharp.Bitmap.csproj" />
-    <ProjectReference Include="..\..\src\NumSharp.Core\NumSharp.csproj" />
   </ItemGroup>
 </Project>

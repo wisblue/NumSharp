@@ -1294,7 +1294,7 @@ namespace NumSharp.UnitTest.Selection
         [TestMethod]
         public void GetCoordinates_Broadcasted()
         {
-            var nd = np.broadcast_to(np.array(1), (2, 2, 2));
+            var nd = np.broadcast_to(np.array(1), (Shape)(2, 2, 2));
             var t = nd.Shape.GetCoordinatesFromAbsoluteIndex(15);
             print(t);
             t.Should().AllBeEquivalentTo(0);
@@ -1401,7 +1401,7 @@ namespace NumSharp.UnitTest.Selection
         [TestMethod]
         public void IndexNDArray_Set_Case8_Broadcasted()
         {
-            var a = np.broadcast_to(np.arange(4).reshape(1, 4), (2, 4));
+            var a = np.broadcast_to(np.arange(4).reshape(1, 4), (Shape)(2, 4));
 
             new Action(() =>
             {
@@ -1413,7 +1413,7 @@ namespace NumSharp.UnitTest.Selection
         [TestMethod]
         public void IndexNDArray_Get_Case1_Broadcasted()
         {
-            var a = np.broadcast_to(np.arange(4).reshape(1, 4), (2, 4));
+            var a = np.broadcast_to(np.arange(4).reshape(1, 4), (Shape)(2, 4));
             a[0].Should().BeShaped(4).And.BeOfValues(0, 1, 2, 3);
             a[1].Should().BeShaped(4).And.BeOfValues(0, 1, 2, 3);
         }
@@ -1421,21 +1421,21 @@ namespace NumSharp.UnitTest.Selection
         [TestMethod]
         public void IndexNDArray_Get_Case2_Broadcasted()
         {
-            var a = np.broadcast_to(np.arange(4).reshape(1, 4), (2, 4));
+            var a = np.broadcast_to(np.arange(4).reshape(1, 4), (Shape)(2, 4));
             a["0:1"].Should().BeShaped(1, 4).And.BeOfValues(0, 1, 2, 3);
         }
 
         [TestMethod]
         public void IndexNDArray_Get_Case3_Broadcasted()
         {
-            var a = np.broadcast_to(np.arange(4).reshape(1, 4), (2, 4));
+            var a = np.broadcast_to(np.arange(4).reshape(1, 4), (Shape)(2, 4));
             a["0:1, :"].Should().BeShaped(1, 4).And.BeOfValues(0, 1, 2, 3);
         }
 
         [TestMethod]
         public void IndexNDArray_Get_Case4_Broadcasted()
         {
-            var a = np.broadcast_to(np.arange(4).reshape(1, 4), (2, 4));
+            var a = np.broadcast_to(np.arange(4).reshape(1, 4), (Shape)(2, 4));
             var g = a["0:1:-1, :"];
             g.Should().BeShaped();
         }
@@ -1444,14 +1444,14 @@ namespace NumSharp.UnitTest.Selection
         [TestMethod]
         public void IndexNDArray_Get_Case5_Broadcasted()
         {
-            var a = np.broadcast_to(np.arange(4).reshape(1, 4), (2, 4));
+            var a = np.broadcast_to(np.arange(4).reshape(1, 4), (Shape)(2, 4));
             a[Slice.Index(0)].Should().BeShaped(4).And.BeOfValues(0, 1, 2, 3);
         }
 
         [TestMethod]
         public void IndexNDArray_Get_Case6_Broadcasted()
         {
-            var a = np.broadcast_to(np.arange(4).reshape(1, 4), (2, 4));
+            var a = np.broadcast_to(np.arange(4).reshape(1, 4), (Shape)(2, 4));
             a[new Slice(0, 1), Slice.All].Should().BeShaped(1, 4).And.BeOfValues(0, 1, 2, 3);
         }
 
@@ -1464,7 +1464,7 @@ namespace NumSharp.UnitTest.Selection
             //
             //(1, 4)
             //[[0 1 2 3]]
-            var a = np.broadcast_to(np.arange(4).reshape(1, 4), (2, 4));
+            var a = np.broadcast_to(np.arange(4).reshape(1, 4), (Shape)(2, 4));
             a[np.arange(1) + 1, Slice.All].Should().BeShaped(1, 4).And.BeOfValues(0, 1, 2, 3);
         }
 
@@ -1477,7 +1477,7 @@ namespace NumSharp.UnitTest.Selection
             //
             //(1, 1, 8)
             //[[[0 1 2 3 4 5 6 7]]]
-            var a = np.broadcast_to(np.arange(8).reshape(1, 1, 8), (2, 1, 8));
+            var a = np.broadcast_to(np.arange(8).reshape(1, 1, 8), (Shape)(2, 1, 8));
             var b = a[np.arange(1) + 1, Slice.All];
             print(b);
             b.Should().BeShaped(1, 1, 8).And.BeOfValues(0,1,2,3,4,5,6,7);
@@ -1493,7 +1493,7 @@ namespace NumSharp.UnitTest.Selection
             //
             //(1, 4)
             //[[0 1 2 3]]
-            var a = np.broadcast_to(np.arange(8).reshape(1, 2, 4), (2, 2, 4));
+            var a = np.broadcast_to(np.arange(8).reshape(1, 2, 4), (Shape)(2, 2, 4));
             a[np.arange(1) + 1, Slice.All].Should().BeShaped(1, 4).And.BeOfValues(0, 1, 2, 3);
         }
     }
