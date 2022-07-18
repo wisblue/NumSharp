@@ -27,7 +27,7 @@ namespace NumSharp
             return incr(a, shape, idim - 1);
         }
 
-        public static IEnumerable<int[]> ndindex(params int[] shp)
+        public static IEnumerable<NDArray> ndindex(params int[] shp)
         {
             var n = 1;
             foreach (var i in shp)
@@ -42,7 +42,7 @@ namespace NumSharp
             for (int i = 0; i < n; i++)
             {
                 int[] ret = new int[ndim];
-                yield return index;
+                yield return np.array(index);
                 index = incr(index, shp, ndim - 1);
                 //if (index is null)
                 //    break;
