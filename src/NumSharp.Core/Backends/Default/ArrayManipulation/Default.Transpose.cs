@@ -61,6 +61,45 @@ namespace NumSharp.Backends
             return normalize_axis_tuple(new int[] {axis}, argname, allow_duplicate);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="axis">int: The un-normalized index of the axis.Can be negative</param>
+        /// <param name="ndim">int: The number of dimensions of the array that `axis` should be normalized
+        ///  against</param>
+        /// <returns>normalized_axis : int:
+        /// The normalized axis index, such that `0  < = normalized_axis<ndim`</returns>
+        ///  Raises
+        /// ------
+        /// AxisError
+        ///     If the axis index is invalid, when `-ndim< = axis<ndim` is false.
+        /
+         /// Examples
+        /// --------
+        /// >>> normalize_axis_index(0, ndim= 3)
+        /// 0
+        /// >>> normalize_axis_index(1, ndim= 3)
+        /// 1
+        /// >>> normalize_axis_index(-1, ndim= 3)
+        /// 2
+        /
+         /// >>> normalize_axis_index(3, ndim= 3)
+        /// Traceback(most recent call last) :
+        /// ...
+        /// AxisError: axis 3 is out of bounds for array of dimension 3
+        /// >>> normalize_axis_index(-4, ndim= 3, msg_prefix= 'axes_arg')
+        /// Traceback(most recent call last) :
+        /// ...
+        /// AxisError: axes_arg: axis -4 is out of bounds for array of dimension 3
+        public static int normalize_axis_index(int axis, int ndim)
+        {
+            if (-ndim > axis || axis >= ndim)
+                throw new ArgumentOutOfRangeException(
+                  String.Format("axis {} is out of bounds for array of dimension {}", axis, ndim));
+
+            return axis % ndim;
+        }
+
         public override NDArray MoveAxis(in NDArray nd, int[] source, int[] destinition)
         {
             source = normalize_axis_tuple(source);
