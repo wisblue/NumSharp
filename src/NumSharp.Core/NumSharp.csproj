@@ -151,6 +151,8 @@
     <None Remove="QuickGraph" />
     <None Remove="QuikGraph" />
     <None Remove="Indexing\np.ndindex" />
+    <None Remove="Manipulation\np.normalize_axis_index" />
+    <None Remove="Manipulation\np.apply_along_axis" />
   </ItemGroup>
 
   <ItemGroup>

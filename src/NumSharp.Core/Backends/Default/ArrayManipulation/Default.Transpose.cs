@@ -73,8 +73,7 @@ namespace NumSharp.Backends
         /// ------
         /// AxisError
         ///     If the axis index is invalid, when `-ndim< = axis<ndim` is false.
-        /
-         /// Examples
+        /// Examples
         /// --------
         /// >>> normalize_axis_index(0, ndim= 3)
         /// 0
@@ -82,8 +81,7 @@ namespace NumSharp.Backends
         /// 1
         /// >>> normalize_axis_index(-1, ndim= 3)
         /// 2
-        /
-         /// >>> normalize_axis_index(3, ndim= 3)
+        /// >>> normalize_axis_index(3, ndim= 3)
         /// Traceback(most recent call last) :
         /// ...
         /// AxisError: axis 3 is out of bounds for array of dimension 3
