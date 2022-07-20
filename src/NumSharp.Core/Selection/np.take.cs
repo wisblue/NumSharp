@@ -23,12 +23,7 @@ namespace NumSharp
                 throw new System.ArrayTypeMismatchException("could not broadcast input array from shape " + shape_arr.ToString() + " into shape" + shape_out_arr.ToString());
             }
 
-            Slice[] slices = new Slice[a.ndim];
-            for (int i = 0; i < a.ndim; i++)
-            {
-                slices[i] = Slice.All;
-            }
-            out_arr[slices] = arr;
+            out_arr[Slice.Ellipsis] = arr;
 
             return out_arr;
         }
